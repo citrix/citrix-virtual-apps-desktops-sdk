@@ -3,9 +3,9 @@
 Imports a given AppDisk into AppDNA
 ## Syntax
 ```
-Invoke-AppLibAppDiskDnaImport -AppDiskName <String> -ReservedMachine <String> [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Invoke-AppLibAppDiskDnaImport -AppDiskName <String> -ReservedMachine <String> [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Invoke-AppLibAppDiskDnaImport -AppDiskUid <Guid> -ReservedMachine <String> [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Invoke-AppLibAppDiskDnaImport -AppDiskUid <Guid> -ReservedMachine <String> [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Will extract metadata from a provided AppDisk, import it into AppDNA and start an analysis of the imported metadata.
@@ -13,9 +13,9 @@ Will extract metadata from a provided AppDisk, import it into AppDNA and start a
 
 ## Related Commands
 
-* [Enable-AppLibAppDNAConnection](../Enable-AppLibAppDNAConnection/)
-* [Get-AppLibTask](../Get-AppLibTask/)
-* [Stop-AppLibTask](../Stop-AppLibTask/)
+* [Enable-AppLibAppDNAConnection](./Enable-AppLibAppDNAConnection/)
+* [Get-AppLibTask](./Get-AppLibTask/)
+* [Stop-AppLibTask](./Stop-AppLibTask/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -26,6 +26,7 @@ Will extract metadata from a provided AppDisk, import it into AppDNA and start a
 | PurgeJobOnSuccess | Purge the job from the list of tasks if successful. | false | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

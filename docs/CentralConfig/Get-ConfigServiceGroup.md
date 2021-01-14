@@ -3,7 +3,7 @@
 Gets the service groups that match the parameters supplied.
 ## Syntax
 ```
-Get-ConfigServiceGroup [-ServiceGroupUid <Guid>] [-ServiceGroupName <String>] [-ServiceType <String>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-ConfigServiceGroup [-ServiceGroupUid <Guid>] [-ServiceGroupName <String>] [-ServiceType <String>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this cmdlet to retrieve existing service groups that match the parameters supplied.  If no parameters are supplied, all the service groups are returned.
@@ -25,6 +25,7 @@ Use this cmdlet to retrieve existing service groups that match the parameters su
 | SortBy | See about\_Config\_Filtering for details. | false | false |  |
 | Filter | See about\_Config\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type
@@ -33,8 +34,8 @@ Use this cmdlet to retrieve existing service groups that match the parameters su
 
 ## Return Values
 
-### Citrix.Configuration.Sdk.Servicegroup<br>    This Represents A Service Instance And Has The Following Parameters;<br>    Servicegroupuid &lt;Guid&gt;<br>        The Unique Identifier For The Service Group.<br>    Servicegroupname &lt;String&gt;<br>        The Name Of The Service Group.<br>    Servicetype &lt;String&gt;<br>        The Type Of The Service Group.<br>    Metadata &lt;Citrix.Configuration.Sdk.Metadata\[\]&gt;<br>        The Metadata For The Service Group.
-
+### Citrix.Configuration.Sdk.Servicegroup
+This represents a service instance and has the following parameters;<br>    ServiceGroupUid &lt;Guid&gt;<br>        The unique identifier for the service group.<br>    ServiceGroupName &lt;string&gt;<br>        The name of the service group.<br>    ServiceType &lt;string&gt;<br>        The type of the service group.<br>    Metadata &lt;Citrix.Configuration.Sdk.Metadata\[\]&gt;<br>        The metadata for the service group.
 ## Notes
 In the case of failure, the following errors can result.<br>    Error Codes -----------<br>    DatabaseNotConfigured The operation could not be completed because the database for the service is not configured. PartialData Only a subset of the available data was returned. CouldNotQuueryDatabase The Query required to get the database was not defined. CommunicationError An error occurred while communicating with the service. InvalidFilter A filtering expression was supplied that could not be interpreted for this cmdlet. ExceptionThrown An unexpected error occurred.  To locate more details, see the Windows event logs on the controller being used or examine the XenDesktop logs.
 ## Examples

@@ -3,7 +3,7 @@
 Tests whether a database is suitable for use by the Citrix Broker Service.
 ## Syntax
 ```
-Test-BrokerDBConnection [-DBConnection] <String> [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Test-BrokerDBConnection [-DBConnection] <String> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Tests whether the database specified in the given connection string is suitable for use by the currently selected Citrix Broker Service instance.
@@ -17,15 +17,16 @@ The current service instance is the one on the local machine, or the one most re
 
 ## Related Commands
 
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Get-BrokerDBConnection](../Get-BrokerDBConnection/)
-* [Set-BrokerDBConnection](../Set-BrokerDBConnection/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Get-BrokerDBConnection](./Get-BrokerDBConnection/)
+* [Set-BrokerDBConnection](./Set-BrokerDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | DBConnection | Specifies the database connection string to be tested by the currently selected Citrix Broker Service instance. | true | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

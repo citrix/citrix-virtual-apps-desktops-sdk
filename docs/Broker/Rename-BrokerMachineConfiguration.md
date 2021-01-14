@@ -3,9 +3,9 @@
 Renames a machine configuration.
 ## Syntax
 ```
-Rename-BrokerMachineConfiguration [-InputObject] <MachineConfiguration[]> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Rename-BrokerMachineConfiguration [-InputObject] <MachineConfiguration[]> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Rename-BrokerMachineConfiguration [-Name] <String> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Rename-BrokerMachineConfiguration [-Name] <String> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Rename-MachineConfiguration cmdlet changes the name of a machine configuration. A machine configuration cannot have the same name as another machine configuration associated with the same slot.
@@ -13,11 +13,11 @@ The Rename-MachineConfiguration cmdlet changes the name of a machine configurati
 
 ## Related Commands
 
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Get-BrokerMachineConfiguration](../Get-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
-* [Remove-BrokerMachineConfiguration](../Remove-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Get-BrokerMachineConfiguration](./Get-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
+* [Remove-BrokerMachineConfiguration](./Remove-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ The Rename-MachineConfiguration cmdlet changes the name of a machine configurati
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

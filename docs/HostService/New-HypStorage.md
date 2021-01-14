@@ -3,7 +3,7 @@
 Creates a new storage tier definition for use in a subsequent New-Item operation.
 ## Syntax
 ```
-New-HypStorage [-JobGroup] <Guid> -StorageType <StorageType> -StoragePath <String[]> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+New-HypStorage [-JobGroup] <Guid> -StorageType <StorageType> -StoragePath <String[]> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this command to create a new storage tier definition, this definition can then be associated with a subsequent New-Item operation via the JobGroup reference.
@@ -18,6 +18,7 @@ Use this command to create a new storage tier definition, this definition can th
 | StorageType | The type of the new storage tier. Currently the only storage type is TemporaryStorage. | true | false |  |
 | StoragePath | Specifies the path to the storage that will be added. The path must be in one of the following formats: &lt;drive&gt;:\\Connections\\&lt;ConnectionName&gt;\\MyStorage.storage or  &lt;drive&gt;:\\Connections\\{&lt;Connection Uid&gt;}\\MyStorage.storage | true | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

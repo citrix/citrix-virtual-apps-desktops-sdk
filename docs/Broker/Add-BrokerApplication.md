@@ -3,9 +3,9 @@
 Adds applications to a desktop group or application group.
 ## Syntax
 ```
-Add-BrokerApplication [-InputObject] <Application[]> [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerApplication [-InputObject] <Application[]> [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Add-BrokerApplication [-Name] <String> [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerApplication [-Name] <String> [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Add-BrokerApplication cmdlet is used to associate one or more applications with an existing desktop group or application group.
@@ -17,13 +17,13 @@ See about\_Broker\_Desktops and about\_Broker\_Applications for more information
 
 ## Related Commands
 
-* [New-BrokerApplication](../New-BrokerApplication/)
-* [Add-BrokerApplication](../Add-BrokerApplication/)
-* [Add-BrokerTag](../Add-BrokerTag/)
-* [Remove-BrokerApplication](../Remove-BrokerApplication/)
-* [Rename-BrokerApplication](../Rename-BrokerApplication/)
-* [Move-BrokerApplication](../Move-BrokerApplication/)
-* [Set-BrokerApplication](../Set-BrokerApplication/)
+* [New-BrokerApplication](./New-BrokerApplication/)
+* [Add-BrokerApplication](./Add-BrokerApplication/)
+* [Add-BrokerTag](./Add-BrokerTag/)
+* [Remove-BrokerApplication](./Remove-BrokerApplication/)
+* [Rename-BrokerApplication](./Rename-BrokerApplication/)
+* [Move-BrokerApplication](./Move-BrokerApplication/)
+* [Set-BrokerApplication](./Set-BrokerApplication/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -35,6 +35,7 @@ See about\_Broker\_Desktops and about\_Broker\_Applications for more information
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

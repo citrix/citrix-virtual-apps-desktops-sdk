@@ -80,12 +80,12 @@ The AD distinguished name for the container is checked when the RemotePCAccount 
 
 ### Related Cmdlets
 
-* [New-BrokerRemotePCAccount](../New-BrokerRemotePCAccount/)
-* [Get-BrokerRemotePCAccount](../Get-BrokerRemotePCAccount/)
-* [Set-BrokerRemotePCAccount](../Set-BrokerRemotePCAccount/)
-* [Remove-BrokerRemotePCAccount](../Remove-BrokerRemotePCAccount/)
-* [New-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](../New-BrokerCatalog/)
-* [Set-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](../Set-BrokerCatalog/)
+* [New-BrokerRemotePCAccount](./New-BrokerRemotePCAccount/)
+* [Get-BrokerRemotePCAccount](./Get-BrokerRemotePCAccount/)
+* [Set-BrokerRemotePCAccount](./Set-BrokerRemotePCAccount/)
+* [Remove-BrokerRemotePCAccount](./Remove-BrokerRemotePCAccount/)
+* [New-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](./New-BrokerCatalog/)
+* [Set-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](./Set-BrokerCatalog/)
 
 ## Catalogs And Desktop Groups
 A Remote PC catalog may be associated with one or more Remote PC desktop groups. The catalog to desktop group associations support automated publishing of machines to users.
@@ -119,13 +119,13 @@ The temporary placement of the machines in a desktop group is not re-evaluated i
 
 ### Related Cmdlets
 
-* [Add-BrokerDesktopGroup -RemotePCCatalog &lt;Catalog&gt;](../Add-BrokerDesktopGroup/)
-* [Remove-BrokerDesktopGroup \[-RemotePCCatalog &lt;Catalog&gt;\]](../Remove-BrokerDesktopGroup/)
-* [Get-BrokerDesktopGroup \[-RemotePCCatalogUid &lt;Int32&gt;\]](../Get-BrokerDesktopGroup/)
-* [New-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](../New-BrokerCatalog/)
-* [Set-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](../Set-BrokerCatalog/)
-* [New-BrokerDesktopGroup \[-IsRemotePC &lt;Boolean&gt;\]](../New-BrokerDesktopGroup/)
-* [Set-BrokerDesktopGroup \[-IsRemotePC &lt;Boolean&gt;\]](../Set-BrokerDesktopGroup/)
+* [Add-BrokerDesktopGroup -RemotePCCatalog &lt;Catalog&gt;](./Add-BrokerDesktopGroup/)
+* [Remove-BrokerDesktopGroup \[-RemotePCCatalog &lt;Catalog&gt;\]](./Remove-BrokerDesktopGroup/)
+* [Get-BrokerDesktopGroup \[-RemotePCCatalogUid &lt;Int32&gt;\]](./Get-BrokerDesktopGroup/)
+* [New-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](./New-BrokerCatalog/)
+* [Set-BrokerCatalog \[-IsRemotePC &lt;Boolean&gt;\]](./Set-BrokerCatalog/)
+* [New-BrokerDesktopGroup \[-IsRemotePC &lt;Boolean&gt;\]](./New-BrokerDesktopGroup/)
+* [Set-BrokerDesktopGroup \[-IsRemotePC &lt;Boolean&gt;\]](./Set-BrokerDesktopGroup/)
 
 ## Desktop Groups, Assignment Policy Rules, And Users
 Assignment policy rules are used to define sets of users allowed to be assigned to machines by Remote PC automation, and to determine which desktop group the machine is placed in when the user assignment is made.
@@ -151,9 +151,9 @@ Only a single assignment policy rule is allowed for each RemotePC desktop group.
 
 ### Related Cmdlets
 
-* [New-BrokerUser](../New-BrokerUser/)
-* [New-BrokerAssignmentPolicyRule](../New-BrokerAssignmentPolicyRule/)
-* [Set-BrokerAssignmentPolicyRule](../Set-BrokerAssignmentPolicyRule/)
+* [New-BrokerUser](./New-BrokerUser/)
+* [New-BrokerAssignmentPolicyRule](./New-BrokerAssignmentPolicyRule/)
+* [Set-BrokerAssignmentPolicyRule](./Set-BrokerAssignmentPolicyRule/)
 
 ## Example
 The following example creates a simple configuration that allows any user and machine in the current AD domain to participate in RemotePC.

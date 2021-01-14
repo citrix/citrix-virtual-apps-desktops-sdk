@@ -3,7 +3,7 @@
 Gets the current state of the Broker Service on the controller.
 ## Syntax
 ```
-Get-BrokerServiceStatus [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerServiceStatus [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables the status of the Broker Service on the controller to be determined. If the service has multiple data stores it will return the overall state as an aggregate of all the data store states. For example, if the site data store status is OK and the secondary data store status is DBUnconfigured then it will return DBUnconfigured. Before using this command, you don't have to configure the database connection to the Service.
@@ -11,15 +11,16 @@ Enables the status of the Broker Service on the controller to be determined. If 
 
 ## Related Commands
 
-* [Set-BrokerDBConnection](../Set-BrokerDBConnection/)
-* [Test-BrokerDBConnection](../Test-BrokerDBConnection/)
-* [Get-BrokerDBConnection](../Get-BrokerDBConnection/)
-* [Get-BrokerDBSchema](../Get-BrokerDBSchema/)
+* [Set-BrokerDBConnection](./Set-BrokerDBConnection/)
+* [Test-BrokerDBConnection](./Test-BrokerDBConnection/)
+* [Get-BrokerDBConnection](./Get-BrokerDBConnection/)
+* [Get-BrokerDBSchema](./Get-BrokerDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

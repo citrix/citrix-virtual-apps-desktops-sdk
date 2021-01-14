@@ -3,7 +3,7 @@
 Gets resources that a user can broker connections to.
 ## Syntax
 ```
-Get-BrokerResource [-User] <String> [-Groups <String[]>] [-TenantId <Guid>] [-ClientName <String>] [-ClientIP <String>] [-ViaAG <Boolean>] [-SmartAccessTags <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerResource [-User] <String> [-Groups <String[]>] [-TenantId <Guid>] [-ClientName <String>] [-ClientIP <String>] [-ViaAG <Boolean>] [-SmartAccessTags <String[]>] [-AppProtectionCapable <Boolean>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieve a list of resources that a user has access to, taking into account the site access policy, configuration of desktop groups, assignments, entitlements, and applications.
@@ -45,8 +45,10 @@ Only resources accessible based on the specified parameters, and visible to the 
 | ClientIP | Get resources given the specified client IP address. | false | false |  |
 | ViaAG | Gets resources given the specified ViaAG setting. | false | false |  |
 | SmartAccessTags | Get resources given the specified SmartAccess tags. | false | false |  |
+| AppProtectionCapable | Get Resources given the specified app protection capability of the client. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

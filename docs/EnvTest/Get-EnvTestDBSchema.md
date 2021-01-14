@@ -3,7 +3,7 @@
 Gets SQL scripts to create or maintain the database schema for the Citrix EnvTest Service.
 ## Syntax
 ```
-Get-EnvTestDBSchema [-DatabaseName <String>] [-ServiceGroupName <String>] [-ScriptType <ScriptTypes>] [-LocalDatabase] [-Sid <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-EnvTestDBSchema [-DatabaseName <String>] [-ServiceGroupName <String>] [-ScriptType <ScriptTypes>] [-LocalDatabase] [-Sid <String>] [-DatabaseRights <String>] [-AzureDatabase] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets SQL scripts that can be used to create a new EnvTest Service database schema, add a new EnvTest Service to an existing site, remove a EnvTest Service from a site, or create a database server logon for a EnvTest Service. If no Sid parameter is provided, the scripts obtained relate to the currently selected EnvTest Service instance, otherwise the scripts relate to EnvTest Service instance running on the machine identified by the Sid provided. When obtaining the Evict script, a Sid parameter must be supplied. The current service instance is that on the local machine, or that explicitly specified by the last usage of the -AdminAddress parameter to a EnvTest SDK cmdlet. The service instance used to obtain the scripts does not need to be a member of a site or to have had its database connection configured. The database scripts support only Microsoft SQL Server, or SQL Server Express, and require Windows integrated authentication to be used. They can be run using SQL Server's SQLCMD utility, or by copying the script into an SQL Server Management Studio (SSMS) query window and executing the query. If using SSMS, the query must be executed in 'SMDCMD mode'. The ScriptType parameter determines which script is obtained. If ScriptType is not specified, or is FullDatabase or Database, the script contains:
@@ -43,8 +43,8 @@ If the service uses two data stores they can exist in the same database. You do 
 
 ## Related Commands
 
-* [Set-EnvTestDBConnection](../Set-EnvTestDBConnection/)
-* [Test-EnvTestDBConnection](../Test-EnvTestDBConnection/)
+* [Set-EnvTestDBConnection](./Set-EnvTestDBConnection/)
+* [Test-EnvTestDBConnection](./Test-EnvTestDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -53,7 +53,10 @@ If the service uses two data stores they can exist in the same database. You do 
 | ScriptType | Specifies the type of database script returned. Available script types are:<br>-- FullDatabase<br>Creates a database schema for the Citrix EnvTest Service in a database instance that does not already contain one. This is used when creating a new site. DatabaseName and ServiceGroupName are required parameters for this script type.<br>-- Database<br>Performs the same function as "FullDatabase".<br>-- Instance<br>Adds a EnvTest Service instance to a database and so to the associated site. Appropriate database server logons and users are created to allow the service instance access to the required service schemas.<br>-- Evict<br>Removes a EnvTest Service instance from the database and so from the site. All reference to the service instance is removed from the database. DatabaseName and Sid are required parameters for this script type.<br>-- Login<br>Adds a logon for the EnvTest Service instance to a database server. This is specifically for use when configuring SQL Server mirroring where the mirror server must have appropriate logons created for all service instances in the site. | false | false |  |
 | LocalDatabase | Specifies whether the database script is to be used in a database instance run on the same controller as other services in the service group. Including this parameter ensures the script creates only the required permissions for local services to access the database schema for EnvTest services. If this parameter is specified inappropriately, the service instance will not be able to connect to the database. | false | false |  |
 | Sid | Specifies the SID of the controller on which the EnvTest Service instance to remove from the database is running (only valid for a script type of Evict). | false | true (ByValue) | None |
+| DatabaseRights | Specifies the right the database script should expect to be run under.  Available rights are:<br>-- Mixed<br>Creates a database schema which uses all rights.<br>-- SysAdmin<br>Creates a database schema which does the minimum with the SysAdmin (sa) rights.<br>-- DbOwner<br>Creates a database schema which only needs Database Owner (dbo) rights. This script expects to be used after the SysAdmin script has been run. | false | false | Mixed |
+| AzureDatabase | Specifies that the generated schema must be compatible with Azure SQL limits, including not generating code for logins. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

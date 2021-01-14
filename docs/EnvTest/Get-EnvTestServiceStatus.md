@@ -3,7 +3,7 @@
 Gets the current status of the EnvTest Service on the controller.
 ## Syntax
 ```
-Get-EnvTestServiceStatus [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-EnvTestServiceStatus [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables the status of the EnvTest Service on the controller to be determined. The database connection to the service does not need to be configured before using this command.
@@ -11,15 +11,16 @@ Enables the status of the EnvTest Service on the controller to be determined. Th
 
 ## Related Commands
 
-* [Get-EnvTestDataStore](../Get-EnvTestDataStore/)
-* [Set-EnvTestDBConnection](../Set-EnvTestDBConnection/)
-* [Test-EnvTestDBConnection](../Test-EnvTestDBConnection/)
-* [Get-EnvTestDBConnection](../Get-EnvTestDBConnection/)
-* [Get-EnvTestDBSchema](../Get-EnvTestDBSchema/)
+* [Get-EnvTestDataStore](./Get-EnvTestDataStore/)
+* [Set-EnvTestDBConnection](./Set-EnvTestDBConnection/)
+* [Test-EnvTestDBConnection](./Test-EnvTestDBConnection/)
+* [Get-EnvTestDBConnection](./Get-EnvTestDBConnection/)
+* [Get-EnvTestDBSchema](./Get-EnvTestDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

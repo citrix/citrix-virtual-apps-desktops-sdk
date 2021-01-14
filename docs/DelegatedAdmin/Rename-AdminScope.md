@@ -3,11 +3,11 @@
 Rename a scope
 ## Syntax
 ```
-Rename-AdminScope [-InputObject] <Scope> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Rename-AdminScope [-InputObject] <Scope> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Rename-AdminScope [-Id] <Guid> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Rename-AdminScope [-Id] <Guid> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Rename-AdminScope [-Name] <String> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Rename-AdminScope [-Name] <String> [-NewName] <String> [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Rename-AdminScope cmdlet changes the name of a scope.
@@ -17,12 +17,12 @@ Scope names must be unique, and you cannot modify the name of the built-in 'All'
 
 ## Related Commands
 
-* [New-AdminScope](../New-AdminScope/)
-* [Get-AdminScope](../Get-AdminScope/)
-* [Set-AdminScope](../Set-AdminScope/)
-* [Remove-AdminScope](../Remove-AdminScope/)
-* [Set-AdminScopeMetadata](../Set-AdminScopeMetadata/)
-* [Remove-AdminScopeMetadata](../Remove-AdminScopeMetadata/)
+* [New-AdminScope](./New-AdminScope/)
+* [Get-AdminScope](./Get-AdminScope/)
+* [Set-AdminScope](./Set-AdminScope/)
+* [Remove-AdminScope](./Remove-AdminScope/)
+* [Set-AdminScopeMetadata](./Set-AdminScopeMetadata/)
+* [Remove-AdminScopeMetadata](./Remove-AdminScopeMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -33,6 +33,7 @@ Scope names must be unique, and you cannot modify the name of the built-in 'All'
 | PassThru | Returns the affected record. By default, this cmdlet does not generate any output. | false | false | False |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

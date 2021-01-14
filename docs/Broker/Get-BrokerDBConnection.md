@@ -3,7 +3,7 @@
 Gets the database connection string for the specified data store used by the Broker Service.
 ## Syntax
 ```
-Get-BrokerDBConnection [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDBConnection [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets the database connection string from the currently selected Broker Service instance.
@@ -15,14 +15,15 @@ The current service instance is the one on the local machine, or the one most re
 
 ## Related Commands
 
-* [Set-BrokerDBConnection](../Set-BrokerDBConnection/)
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Test-BrokerDBConnection](../Test-BrokerDBConnection/)
+* [Set-BrokerDBConnection](./Set-BrokerDBConnection/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Test-BrokerDBConnection](./Test-BrokerDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

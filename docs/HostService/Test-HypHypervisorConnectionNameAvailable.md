@@ -3,7 +3,7 @@
 Checks to ensure that the proposed name for a hypervisor connection is unused.
 ## Syntax
 ```
-Test-HypHypervisorConnectionNameAvailable -HypervisorConnectionName <String[]> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Test-HypHypervisorConnectionNameAvailable -HypervisorConnectionName <String[]> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this command to check that the proposed name for a hypervisor connection is unused. This check is done without regard for scoping of the existing hypervisor connection, so the names of inaccessible hypervisor connection are also checked.
@@ -11,13 +11,14 @@ Use this command to check that the proposed name for a hypervisor connection is 
 
 ## Related Commands
 
-* [New-Item](../New-Item/)
-* [Rename-Item](../Rename-Item/)
+* [New-Item](./New-Item/)
+* [Rename-Item](./Rename-Item/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | HypervisorConnectionName | The name or names of the hypervisor connection(s) to be tested. | true | true (ByValue, ByPropertyName) |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

@@ -3,11 +3,11 @@
 Starts a new test task.
 ## Syntax
 ```
-Start-EnvTestTask -TestId <String> [-TargetIdType <String>] [-TargetId <String>] [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-EnvTestTask -TestId <String> [-TargetIdType <String>] [-TargetId <String>] [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Start-EnvTestTask -TestSuiteId <String> [-TargetIdType <String>] [-TargetId <String>] [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-EnvTestTask -TestSuiteId <String> [-TargetIdType <String>] [-TargetId <String>] [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Start-EnvTestTask -InputObject <PSObject[]> [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-EnvTestTask -InputObject <PSObject[]> [-CultureName <String>] [-IgnoreRelatedObjects] [-RunAsynchronously] [-ExcludeNotRunTests] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Starts a new test task based on a set of criteria provided via parameters or piped input and either waits for the tests to run or returns immediately depending on how it is called.  When running a test suite and providing a target object for that suite, the service will discover related objects by default, but this behavior may be disabled if desired.
@@ -15,15 +15,15 @@ Starts a new test task based on a set of criteria provided via parameters or pip
 
 ## Related Commands
 
-* [Get-EnvTestDefinition](../Get-EnvTestDefinition/)
-* [Get-EnvTestSuiteDefinition](../Get-EnvTestSuiteDefinition/)
-* [Get-EnvTestTask](../Get-EnvTestTask/)
-* [New-EnvTestDiscoveryTargetDefinition](../New-EnvTestDiscoveryTargetDefinition/)
-* [Switch-EnvTestTask](../Switch-EnvTestTask/)
-* [Stop-EnvTestTask](../Stop-EnvTestTask/)
-* [Remove-EnvTestTask](../Remove-EnvTestTask/)
-* [Add-EnvTestTaskMetadata](../Add-EnvTestTaskMetadata/)
-* [Remove-EnvTestTaskMetadata](../Remove-EnvTestTaskMetadata/)
+* [Get-EnvTestDefinition](./Get-EnvTestDefinition/)
+* [Get-EnvTestSuiteDefinition](./Get-EnvTestSuiteDefinition/)
+* [Get-EnvTestTask](./Get-EnvTestTask/)
+* [New-EnvTestDiscoveryTargetDefinition](./New-EnvTestDiscoveryTargetDefinition/)
+* [Switch-EnvTestTask](./Switch-EnvTestTask/)
+* [Stop-EnvTestTask](./Stop-EnvTestTask/)
+* [Remove-EnvTestTask](./Remove-EnvTestTask/)
+* [Add-EnvTestTaskMetadata](./Add-EnvTestTaskMetadata/)
+* [Remove-EnvTestTaskMetadata](./Remove-EnvTestTaskMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -37,6 +37,7 @@ Starts a new test task based on a set of criteria provided via parameters or pip
 | RunAsynchronously | Do not wait for the test run to complete, return immediately. | false | false | False |
 | ExcludeNotRunTests | If set, tests that are not run because no object matching their requirements is found are NOT included in test counts and results. | false | false | False (include Not Run tests) |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

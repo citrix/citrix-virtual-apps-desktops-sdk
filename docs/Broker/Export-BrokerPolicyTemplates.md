@@ -3,7 +3,7 @@
 Gets the site wide Citrix Group Policy templates.
 ## Syntax
 ```
-Export-BrokerPolicyTemplates [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Export-BrokerPolicyTemplates [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Export-BrokerPolicyTemplates returns an array of bytes containing the site-wide Citrix Group Policy templates. These templates can be used to create new policies.
@@ -11,12 +11,13 @@ Export-BrokerPolicyTemplates returns an array of bytes containing the site-wide 
 
 ## Related Commands
 
-* [Import-BrokerPolicyTemplates](../Import-BrokerPolicyTemplates/)
+* [Import-BrokerPolicyTemplates](./Import-BrokerPolicyTemplates/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

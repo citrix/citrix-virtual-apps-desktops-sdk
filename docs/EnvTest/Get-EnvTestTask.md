@@ -3,7 +3,7 @@
 Gets one or more EnvTestTask(s)
 ## Syntax
 ```
-Get-EnvTestTask [-TaskId <Guid>] [-List] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-EnvTestTask [-TaskId <Guid>] [-List] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns either the current task, a specified task, or list of tasks that are currently known to the EnvTest Service.
@@ -11,20 +11,21 @@ Returns either the current task, a specified task, or list of tasks that are cur
 
 ## Related Commands
 
-* [Get-EnvTestDefinition](../Get-EnvTestDefinition/)
-* [Get-EnvTestSuiteDefinition](../Get-EnvTestSuiteDefinition/)
-* [Start-EnvTestTask](../Start-EnvTestTask/)
-* [Switch-EnvTestTask](../Switch-EnvTestTask/)
-* [Stop-EnvTestTask](../Stop-EnvTestTask/)
-* [Remove-EnvTestTask](../Remove-EnvTestTask/)
-* [Add-EnvTestTaskMetadata](../Add-EnvTestTaskMetadata/)
-* [Remove-EnvTestTaskMetadata](../Remove-EnvTestTaskMetadata/)
+* [Get-EnvTestDefinition](./Get-EnvTestDefinition/)
+* [Get-EnvTestSuiteDefinition](./Get-EnvTestSuiteDefinition/)
+* [Start-EnvTestTask](./Start-EnvTestTask/)
+* [Switch-EnvTestTask](./Switch-EnvTestTask/)
+* [Stop-EnvTestTask](./Stop-EnvTestTask/)
+* [Remove-EnvTestTask](./Remove-EnvTestTask/)
+* [Add-EnvTestTaskMetadata](./Add-EnvTestTaskMetadata/)
+* [Remove-EnvTestTaskMetadata](./Remove-EnvTestTaskMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | TaskId | Specifies the task identifier to be returned.  This value can be retrieved from an existing task's \$task.TaskId property. | false | false |  |
 | List | List all running tasks, including the current one. | false | false | false |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

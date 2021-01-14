@@ -3,11 +3,11 @@
 Set the properties of a role.
 ## Syntax
 ```
-Set-AdminRole [-InputObject] <Role[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-AdminRole [-InputObject] <Role[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Set-AdminRole [-Id] <Guid[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-AdminRole [-Id] <Guid[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Set-AdminRole [-Name] <String[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-AdminRole [-Name] <String[]> [-Description <String>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Set-AdminRole command allows the description of custom roles to be updated. You cannot modify built-in roles.
@@ -19,14 +19,14 @@ To update the metadata associated with a role, use the Set-AdminRoleMetadata and
 
 ## Related Commands
 
-* [New-AdminRole](../New-AdminRole/)
-* [Get-AdminRole](../Get-AdminRole/)
-* [Remove-AdminRole](../Remove-AdminRole/)
-* [Rename-AdminRole](../Rename-AdminRole/)
-* [Set-AdminRoleMetadata](../Set-AdminRoleMetadata/)
-* [Remove-AdminRoleMetadata](../Remove-AdminRoleMetadata/)
-* [Add-AdminPermission](../Add-AdminPermission/)
-* [Remove-AdminPermission](../Remove-AdminPermission/)
+* [New-AdminRole](./New-AdminRole/)
+* [Get-AdminRole](./Get-AdminRole/)
+* [Remove-AdminRole](./Remove-AdminRole/)
+* [Rename-AdminRole](./Rename-AdminRole/)
+* [Set-AdminRoleMetadata](./Set-AdminRoleMetadata/)
+* [Remove-AdminRoleMetadata](./Remove-AdminRoleMetadata/)
+* [Add-AdminPermission](./Add-AdminPermission/)
+* [Remove-AdminPermission](./Remove-AdminPermission/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -37,6 +37,7 @@ To update the metadata associated with a role, use the Set-AdminRoleMetadata and
 | PassThru | Returns the affected record. By default, this cmdlet does not generate any output. | false | false | False |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

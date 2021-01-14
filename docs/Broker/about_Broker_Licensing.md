@@ -65,11 +65,11 @@ The version of the product that is supported within the site is denoted by a lic
 
 ## See Also
 
-* [about\_Broker\_Site](../about_Broker_Site/)
-* [Test-BrokerLicenseServer](../Test-BrokerLicenseServer/)
-* [Reset-BrokerLicensingConnection](../Reset-BrokerLicensingConnection/)
-* [Get-BrokerController](../Get-BrokerController/)
-* [Set-ConfigSite](../Set-ConfigSite/)
-* [Get-ConfigSite](../Get-ConfigSite/)
-* [Get-BrokerSite](../Get-BrokerSite/)
+* [about\_Broker\_Site](./about_Broker_Site/)
+* [Test-BrokerLicenseServer](./Test-BrokerLicenseServer/)
+* [Reset-BrokerLicensingConnection](./Reset-BrokerLicensingConnection/)
+* [Get-BrokerController](./Get-BrokerController/)
+* [Set-ConfigSite](./Set-ConfigSite/)
+* [Get-ConfigSite](./Get-ConfigSite/)
+* [Get-BrokerSite](./Get-BrokerSite/)
 

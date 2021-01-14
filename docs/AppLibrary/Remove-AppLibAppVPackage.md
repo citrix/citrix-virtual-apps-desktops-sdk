@@ -3,7 +3,7 @@
 Removes an App-V package from the library that is holding it
 ## Syntax
 ```
-Remove-AppLibAppVPackage [-Uid] <Int32> [-Purge <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AppLibAppVPackage [-Uid] <Int32> [-ServerUid <Int32>] [-Purge <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Provides the ability to remove an App-V package from the application library.
@@ -17,9 +17,11 @@ Removing a package from the library optionally only marks it as not existing. In
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | Uid | The App Library's internal unique identifier of the App-V package. | true | true (ByValue, ByPropertyName) |  |
+| ServerUid | Unique Identifier for AppVServer. | false | true (ByValue, ByPropertyName) |  |
 | Purge | Indicates whether the package should be removed from the database. The default is true. Setting this parameter to false will leave the package and all of its associated applications and metadata in place but in a dormant state. This data will then be reactivated if the same package is ever re-added. | false | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

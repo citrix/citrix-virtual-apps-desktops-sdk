@@ -3,7 +3,7 @@
 Logs the start of a high level operation.
 ## Syntax
 ```
-Start-LogHighLevelOperation -Text <String> -Source <String> [-StartTime <DateTime>] [-OperationType <OperationType>] [-TargetTypes <String[]>] [-Parameters <Hashtable>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-LogHighLevelOperation -Text <String> -Source <String> [-StartTime <DateTime>] [-OperationType <OperationType>] [-TargetTypes <String[]>] [-Parameters <Hashtable>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Start-LogHighLevelOperation creates a log entry to record the start of a high level operation.
@@ -32,8 +32,8 @@ Rebooting a user's desktop. Once the change being logged has completed (whether 
 
 ## Related Commands
 
-* [Stop-LogHighLevelOperation](../Stop-LogHighLevelOperation/)
-* [Get-LogHighLevelOperation](../Get-LogHighLevelOperation/)
+* [Stop-LogHighLevelOperation](./Stop-LogHighLevelOperation/)
+* [Get-LogHighLevelOperation](./Get-LogHighLevelOperation/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -43,7 +43,8 @@ Rebooting a user's desktop. Once the change being logged has completed (whether 
 | OperationType | Specifies the type of operation being logged. Values can be:<br>o AdminActivity - If the operation being logged performs an administration activity.<br>o ConfigurationChange - If the operation being logged performs a configuration change. | false | false | ConfigurationChange |
 | TargetTypes | Specifies the names of the object types that will be affected by the operation being logged. | false | false |  |
 | Parameters | Specifies the names and values of parameters that are supplied to the operation being logged. | false | false |  |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

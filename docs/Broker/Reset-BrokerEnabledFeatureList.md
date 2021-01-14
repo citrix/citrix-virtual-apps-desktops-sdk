@@ -3,7 +3,7 @@
 Resets the broker's list of enabled features.
 ## Syntax
 ```
-Reset-BrokerEnabledFeatureList [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Reset-BrokerEnabledFeatureList [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Reset-BrokerLicensingConnection cmdlet resets the broker's list of enabled features.
@@ -22,6 +22,7 @@ Each broker service instance holds its list of enabled features. In order for th
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,9 +3,9 @@
 Gets machine configurations defined for this site.
 ## Syntax
 ```
-Get-BrokerMachineConfiguration [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerMachineConfiguration [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerMachineConfiguration [[-Name] <String>] [-ConfigurationSlotUid <Int32>] [-LeafName <String>] [-Metadata <String>] [-ApplicationUid <Int32>] [-DesktopGroupUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerMachineConfiguration [[-Name] <String>] [-ConfigurationSlotUid <Int32>] [-LeafName <String>] [-Metadata <String>] [-ApplicationUid <Int32>] [-DesktopGroupUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves machine configurations matching the specified criteria. If no parameters are specified this cmdlet enumerates all machine configurations.
@@ -40,11 +40,11 @@ The machine configuration object returned represents a named collection of relat
 
 ## Related Commands
 
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
-* [Rename-BrokerMachineConfiguration](../Rename-BrokerMachineConfiguration/)
-* [Remove-BrokerMachineConfiguration](../Remove-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
+* [Rename-BrokerMachineConfiguration](./Rename-BrokerMachineConfiguration/)
+* [Remove-BrokerMachineConfiguration](./Remove-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -63,6 +63,7 @@ The machine configuration object returned represents a named collection of relat
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,9 +3,9 @@
 Produces a usage report for one or more tags.
 ## Syntax
 ```
-Get-BrokerTagUsage [-TagUid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerTagUsage [-TagUid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerTagUsage [[-TagName] <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerTagUsage [[-TagName] <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns one BrokerTagUsage for each input tag. Each BrokerTagUsage object summarizes the tag's usage throughout the site.
@@ -19,6 +19,8 @@ Each BrokerTagUsage object summarizes on the usage of a single Tag.
 
   * TaggedApplications (System.Int32) The number of applications that are tagged with this tag and that are visible to the calling delegated administrator.
 
+  * TaggedCatalogs (System.Int32) The number of catalogs that are tagged with this tag and that are visible to the calling delegated administrator.
+
   * TaggedDesktopGroups (System.Int32) The number of desktop groups that are tagged with this tag and that are visible to the calling delegated administrator.
 
   * TaggedMachines (System.Int32) The number of machines that are tagged with this tag and that are visible to the calling delegated administrator.
@@ -26,6 +28,8 @@ Each BrokerTagUsage object summarizes on the usage of a single Tag.
   * TagName (System.String) The name of the Tag.
 
   * TagRestrictedApplicationGroups (System.Int32) The number of application groups that have this tag restriction and that are visible to the calling delegated administrator.
+
+  * TagRestrictedAutoscale (System.Int32) The number of desktop groups that have this tag restriction
 
   * TagRestrictedEntitlementPolicyRules (System.Int32) The number of desktop rules in the site's entitlement policy that have this tag restriction and that are visible to the calling delegated administrator.
 
@@ -46,7 +50,7 @@ Each BrokerTagUsage object summarizes on the usage of a single Tag.
 
 ## Related Commands
 
-* [Get-BrokerTag](../Get-BrokerTag/)
+* [Get-BrokerTag](./Get-BrokerTag/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -60,6 +64,7 @@ Each BrokerTagUsage object summarizes on the usage of a single Tag.
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

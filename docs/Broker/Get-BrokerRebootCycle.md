@@ -3,9 +3,9 @@
 Gets one or more reboot cycles.
 ## Syntax
 ```
-Get-BrokerRebootCycle -Uid <Int64> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerRebootCycle -Uid <Int64> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerRebootCycle [-CatalogName <String>] [-CatalogUid <Int32>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-EndTime <DateTime>] [-MachinesCompleted <Int32>] [-MachinesFailed <Int32>] [-MachinesInProgress <Int32>] [-MachinesPending <Int32>] [-MachinesSkipped <Int32>] [-Metadata <String>] [-RebootDuration <Int32>] [-RebootScheduleName <String>] [-RebootScheduleUid <Int32>] [-RestrictToTag <String>] [-StartTime <DateTime>] [-State <RebootCycleState>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerRebootCycle [-CatalogName <String>] [-CatalogUid <Int32>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-EndTime <DateTime>] [-IgnoreMaintenanceMode <Boolean>] [-MachinesCompleted <Int32>] [-MachinesFailed <Int32>] [-MachinesInProgress <Int32>] [-MachinesPending <Int32>] [-MachinesSkipped <Int32>] [-Metadata <String>] [-RebootDuration <Int32>] [-RebootScheduleName <String>] [-RebootScheduleUid <Int32>] [-RestrictToTag <String>] [-StartTime <DateTime>] [-State <RebootCycleState>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Get-BrokerRebootCycle cmdlet is used to enumerate reboot cycles that match all of the supplied criteria.
@@ -26,6 +26,8 @@ The reboot cycle object returned represents a single occurrence of the process o
   * DesktopGroupUid (System.Int32) Uid of the desktop group whose machines are rebooted by this cycle.
 
   * EndTime (System.DateTime?) Time at which this cycle was completed, canceled or abandoned.
+
+  * IgnoreMaintenanceMode (System.Boolean) Boolean value to optionally reboot machines in maintenance mode
 
   * MachinesCompleted (System.Int32) Number of machines successfully rebooted by this cycle.
 
@@ -64,9 +66,9 @@ The reboot cycle object returned represents a single occurrence of the process o
 
 ## Related Commands
 
-* [Start-BrokerRebootCycle](../Start-BrokerRebootCycle/)
-* [Start-DesktopGroupRebootCycle](../Start-DesktopGroupRebootCycle/)
-* [Stop-BrokerRebootCycle](../Stop-BrokerRebootCycle/)
+* [Start-BrokerRebootCycle](./Start-BrokerRebootCycle/)
+* [Start-DesktopGroupRebootCycle](./Start-DesktopGroupRebootCycle/)
+* [Stop-BrokerRebootCycle](./Stop-BrokerRebootCycle/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -76,6 +78,7 @@ The reboot cycle object returned represents a single occurrence of the process o
 | DesktopGroupName | Gets reboot cycles that relate to the named desktop group. | false | false |  |
 | DesktopGroupUid | Gets reboot cycles that relate to the desktop group with a particular Uid. | false | false |  |
 | EndTime | Gets reboot cycles that have the specified time at which the reboot cycle was completed, canceled or abandoned. | false | false |  |
+| IgnoreMaintenanceMode | Boolean value to optionally reboot machines in maintenance mode | false | false |  |
 | MachinesCompleted | Gets reboot cycles that have the specified count of machines successfully rebooted during the cycle. | false | false |  |
 | MachinesFailed | Gets reboot cycles that have the specified count of machines issued with reboot requests where either the request failed or the operation did not complete within the allowed time. | false | false |  |
 | MachinesInProgress | Gets reboot cycles that have the specified count of machines issued with reboot requests but which have not yet completed the operation. | false | false |  |
@@ -96,6 +99,7 @@ The reboot cycle object returned represents a single occurrence of the process o
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

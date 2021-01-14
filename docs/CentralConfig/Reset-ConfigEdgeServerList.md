@@ -3,7 +3,7 @@
 Requests a refresh of the list of Edge Servers.
 ## Syntax
 ```
-Reset-ConfigEdgeServerList [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Reset-ConfigEdgeServerList [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 This cmdlet can be used to request that the service refreshes its internal list of Edge Servers.
@@ -17,6 +17,7 @@ This will effectively synchronize the list of Edge Servers with the one of the C
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

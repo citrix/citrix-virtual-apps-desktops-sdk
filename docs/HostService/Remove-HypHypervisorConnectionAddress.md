@@ -3,7 +3,7 @@
 Removes addresses from the list of available connection addresses.
 ## Syntax
 ```
-Remove-HypHypervisorConnectionAddress [-LiteralPath] <String> [-HypervisorAddress] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-HypHypervisorConnectionAddress [-LiteralPath] <String> [-HypervisorAddress] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this command to remove addresses that can be used to connect to the hypervisor specified by the hypervisor connection.  If all addresses are removed, the connection cannot be used until a valid address is added to the hypervisor connection.
@@ -11,7 +11,7 @@ Use this command to remove addresses that can be used to connect to the hypervis
 
 ## Related Commands
 
-* [Add-HypHypervisorConnectionAddress](../Add-HypHypervisorConnectionAddress/)
+* [Add-HypHypervisorConnectionAddress](./Add-HypHypervisorConnectionAddress/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -19,6 +19,7 @@ Use this command to remove addresses that can be used to connect to the hypervis
 | HypervisorAddress | Specifies the address to be removed.  If this parameter is not provided, all addresses are removed from the hypervisor connection. | true | true (ByValue) |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller to which the PowerShell snap-in connects.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

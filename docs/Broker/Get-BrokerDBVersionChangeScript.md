@@ -3,7 +3,7 @@
 Gets an SQL service schema update script for the Citrix Broker Service.
 ## Syntax
 ```
-Get-BrokerDBVersionChangeScript -DatabaseName <String> -TargetVersion <Version> [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDBVersionChangeScript -DatabaseName <String> -TargetVersion <Version> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets an SQL script that can be used to update the current Citrix Broker Service database schema. An update can be an upgrade or downgrade.
@@ -25,9 +25,9 @@ Once an update has been applied to the service schema, any existing Citrix Broke
 
 ## Related Commands
 
-* [Get-BrokerInstalledDBVersion](../Get-BrokerInstalledDBVersion/)
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Get-BrokerDBSchema](../Get-BrokerDBSchema/)
+* [Get-BrokerInstalledDBVersion](./Get-BrokerInstalledDBVersion/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Get-BrokerDBSchema](./Get-BrokerDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -35,6 +35,7 @@ Once an update has been applied to the service schema, any existing Citrix Broke
 | TargetVersion | The required target service schema version of the update. This is the service schema version obtained after the update script is applied. | true | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

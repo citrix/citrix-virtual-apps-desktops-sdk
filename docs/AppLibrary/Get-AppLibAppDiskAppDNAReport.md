@@ -3,7 +3,7 @@
 Gets the AppDNA compatibility report an AppDisk.
 ## Syntax
 ```
-Get-AppLibAppDiskAppDNAReport [-AppDiskUid] <Guid> -FileName <String> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibAppDiskAppDNAReport [-AppDiskUid] <Guid> -FileName <String> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets the detailed AppDNA compatibility report for the specified AppDisk.
@@ -11,9 +11,9 @@ Gets the detailed AppDNA compatibility report for the specified AppDisk.
 
 ## Related Commands
 
-* [Get-AppLibDesktopGroupAppDNAReport](../Get-AppLibDesktopGroupAppDNAReport/)
-* [Get-AppLibDesktopGroupAppDiskAppDNAReport](../Get-AppLibDesktopGroupAppDiskAppDNAReport/)
-* [Get-AppLibAppDisk](../Get-AppLibAppDisk/)
+* [Get-AppLibDesktopGroupAppDNAReport](./Get-AppLibDesktopGroupAppDNAReport/)
+* [Get-AppLibDesktopGroupAppDiskAppDNAReport](./Get-AppLibDesktopGroupAppDiskAppDNAReport/)
+* [Get-AppLibAppDisk](./Get-AppLibAppDisk/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -21,6 +21,7 @@ Gets the detailed AppDNA compatibility report for the specified AppDisk.
 | FileName | The file name to which the report will be saved. | true | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

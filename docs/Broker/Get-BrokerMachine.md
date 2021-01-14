@@ -3,9 +3,9 @@
 Gets machines belonging to this site.
 ## Syntax
 ```
-Get-BrokerMachine [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerMachine [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerMachine [[-MachineName] <String>] [-AgentVersion <String>] [-AllocationType <AllocationType>] [-ApplicationInUse <String>] [-AssignedClientName <String>] [-AssignedIPAddress <String>] [-AssignedUserSID <String>] [-AssociatedTenantId <Guid>] [-AssociatedUserFullName <String>] [-AssociatedUserName <String>] [-AssociatedUserSID <String>] [-AssociatedUserUPN <String>] [-BrowserName <String>] [-CatalogName <String>] [-CatalogUid <Int32>] [-CatalogUUID <Guid>] [-CbpVersion <CBPVersion>] [-ColorDepth <ColorDepth>] [-ControllerDNSName <String>] [-DeliveryType <DeliveryType>] [-Description <String>] [-DesktopCondition <String>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-DesktopGroupUUID <Guid>] [-DesktopKind <DesktopKind>] [-DesktopUid <Int32>] [-DNSName <String>] [-FaultState <MachineFaultState>] [-FunctionalLevel <FunctionalLevel>] [-HostedMachineId <String>] [-HostedMachineName <String>] [-HostingServerName <String>] [-HypervisorConnectionName <String>] [-HypervisorConnectionUid <Int32>] [-HypHypervisorConnectionUid <Guid>] [-IconUid <Int32>] [-ImageOutOfDate <Boolean>] [-InMaintenanceMode <Boolean>] [-IPAddress <String>] [-IsAssigned <Boolean>] [-IsPhysical <Boolean>] [-IsReserved <Boolean>] [-LastConnectionFailure <ConnectionFailureReason>] [-LastConnectionTime <DateTime>] [-LastConnectionUser <String>] [-LastDeregistrationReason <DeregistrationReason>] [-LastDeregistrationTime <DateTime>] [-LastErrorReason <String>] [-LastErrorTime <DateTime>] [-LastHostingUpdateTime <DateTime>] [-LastPvdErrorReason <String>] [-LastPvdErrorTime <DateTime>] [-LoadIndex <Int32>] [-MachineInternalState <MachineInternalState>] [-Metadata <String>] [-OSType <String>] [-OSVersion <String>] [-PersistUserChanges <PersistUserChanges>] [-PowerActionPending <Boolean>] [-PowerState <PowerState>] [-ProvisioningType <ProvisioningType>] [-PublishedApplication <String>] [-PublishedName <String>] [-PvdEstimatedCompletionTime <DateTime>] [-PvdPercentDone <Int32>] [-PvdStage <PvdStage>] [-PvdUpdateStartTime <DateTime>] [-RegistrationState <RegistrationState>] [-ScheduledReboot <ScheduledReboot>] [-SecureIcaRequired <Boolean>] [-SessionAutonomouslyBrokered <Boolean>] [-SessionClientAddress <String>] [-SessionClientName <String>] [-SessionClientVersion <String>] [-SessionConnectedViaHostName <String>] [-SessionConnectedViaIP <String>] [-SessionCount <Int32>] [-SessionDeviceId <String>] [-SessionHardwareId <String>] [-SessionHidden <Boolean>] [-SessionKey <Guid>] [-SessionLaunchedViaHostName <String>] [-SessionLaunchedViaIP <String>] [-SessionProtocol <String>] [-SessionSecureIcaActive <Boolean>] [-SessionsEstablished <Int32>] [-SessionSmartAccessTag <String>] [-SessionsPending <Int32>] [-SessionStartTime <DateTime>] [-SessionState <SessionState>] [-SessionStateChangeTime <DateTime>] [-SessionSupport <SessionSupport>] [-SessionType <SessionType>] [-SessionUid <Int64>] [-SessionUserName <String>] [-SessionUserSID <String>] [-SID <String>] [-SummaryState <DesktopSummaryState>] [-SupportedPowerActions <String[]>] [-Tag <String>] [-UUID <Guid>] [-VMToolsState <VMToolsState>] [-WillShutdownAfterUse <Boolean>] [-WindowsConnectionSetting <WindowsConnectionSetting>] [-ZoneName <String>] [-ZoneUid <Guid>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerMachine [[-MachineName] <String>] [-AgentVersion <String>] [-AllocationType <AllocationType>] [-ApplicationInUse <String>] [-AssignedClientName <String>] [-AssignedIPAddress <String>] [-AssignedUserSID <String>] [-AssociatedTenantId <Guid>] [-AssociatedUserFullName <String>] [-AssociatedUserName <String>] [-AssociatedUserSID <String>] [-AssociatedUserUPN <String>] [-BrowserName <String>] [-CatalogName <String>] [-CatalogUid <Int32>] [-CatalogUUID <Guid>] [-CbpVersion <CBPVersion>] [-ColorDepth <ColorDepth>] [-ControllerDNSName <String>] [-DeliveryType <DeliveryType>] [-Description <String>] [-DesktopCondition <String>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-DesktopGroupUUID <Guid>] [-DesktopKind <DesktopKind>] [-DesktopUid <Int32>] [-DNSName <String>] [-DrainingUntilShutdown <Boolean>] [-FaultState <MachineFaultState>] [-FunctionalLevel <FunctionalLevel>] [-HostedMachineId <String>] [-HostedMachineName <String>] [-HostingServerName <String>] [-HypervisorConnectionName <String>] [-HypervisorConnectionUid <Int32>] [-HypHypervisorConnectionUid <Guid>] [-IconUid <Int32>] [-ImageOutOfDate <Boolean>] [-InMaintenanceMode <Boolean>] [-IPAddress <String>] [-IsAssigned <Boolean>] [-IsPhysical <Boolean>] [-IsReserved <Boolean>] [-LastConnectionFailure <ConnectionFailureReason>] [-LastConnectionTime <DateTime>] [-LastConnectionUser <String>] [-LastDeregistrationReason <DeregistrationReason>] [-LastDeregistrationTime <DateTime>] [-LastErrorReason <String>] [-LastErrorTime <DateTime>] [-LastHostingUpdateTime <DateTime>] [-LastPvdErrorReason <String>] [-LastPvdErrorTime <DateTime>] [-LastRegistrationTime <DateTime>] [-LoadIndex <Int32>] [-MacAddress <String>] [-MachineInternalState <MachineInternalState>] [-MaintenanceModeReason <MaintenanceModeReason>] [-Metadata <String>] [-OSType <String>] [-OSVersion <String>] [-PersistUserChanges <PersistUserChanges>] [-PowerActionPending <Boolean>] [-PowerState <PowerState>] [-ProvisioningType <ProvisioningType>] [-PublishedApplication <String>] [-PublishedName <String>] [-PvdEstimatedCompletionTime <DateTime>] [-PvdPercentDone <Int32>] [-PvdStage <PvdStage>] [-PvdUpdateStartTime <DateTime>] [-RegistrationState <RegistrationState>] [-ScheduledReboot <ScheduledReboot>] [-SecureIcaRequired <Boolean>] [-SessionAutonomouslyBrokered <Boolean>] [-SessionClientAddress <String>] [-SessionClientName <String>] [-SessionClientVersion <String>] [-SessionConnectedViaHostName <String>] [-SessionConnectedViaIP <String>] [-SessionCount <Int32>] [-SessionDeviceId <String>] [-SessionHardwareId <String>] [-SessionHidden <Boolean>] [-SessionKey <Guid>] [-SessionLaunchedViaHostName <String>] [-SessionLaunchedViaIP <String>] [-SessionProtocol <String>] [-SessionSecureIcaActive <Boolean>] [-SessionsEstablished <Int32>] [-SessionSmartAccessTag <String>] [-SessionsPending <Int32>] [-SessionStartTime <DateTime>] [-SessionState <SessionState>] [-SessionStateChangeTime <DateTime>] [-SessionSupport <SessionSupport>] [-SessionType <SessionType>] [-SessionUid <Int64>] [-SessionUserName <String>] [-SessionUserSID <String>] [-SID <String>] [-SummaryState <DesktopSummaryState>] [-SupportedPowerActions <String[]>] [-Tag <String>] [-UUID <Guid>] [-VMToolsState <VMToolsState>] [-WillShutdownAfterUse <Boolean>] [-WillShutdownAfterUseReason <WillShutdownAfterUseReason>] [-WindowsConnectionSetting <WindowsConnectionSetting>] [-ZoneName <String>] [-ZoneUid <Guid>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves machines matching the specified criteria. If no parameters are specified, this cmdlet enumerates all machines.
@@ -83,6 +83,8 @@ The machine object returned represents a physical or virtual machine, which has 
 
   * DNSName (System.String) The DNS host name of the machine.
 
+  * DrainingUntilShutdown (System.Boolean) Flag indicating if this machine is draining and will be shut down after all sessions on the machine have ended. This flag is only ever true on power-managed, multi-session machines. Note: The machine will not shut down if it is in maintenance mode; it will shut down only after it is taken out of maintenance mode.
+
   * FaultState (Citrix.Broker.Admin.SDK.MachineFaultState) Summary state of any current fault state of the machine. Can be one of the following:
     * None - No fault; machine is healthy.
     * FailedToStart - Last power-on operation for machine failed.
@@ -138,15 +140,23 @@ The machine object returned represents a physical or virtual machine, which has 
 
   * LastPvdErrorTime (System.DateTime?) The time of the most recent failure of the Personal vDisk preparation process for this machine (if any).
 
+  * LastRegistrationTime (System.DateTime?) Time of last registration of the machine with the controller.
+
   * LoadIndex (System.Int32?) Gives current effective load index for multi-session machines.
 
   * LoadIndexes (System.String\[\]) Gives the last reported individual load indexes that were used in the calculation of the LoadIndex value. Note that the LoadIndex value may have been subsequently adjusted due to session brokering operations. This value is only set for multi-session machines.
 
+  * MacAddress (System.String) A string representing the physical address of the network interface corresponding to the IP Address this machine uses to communicate with the Broker.
+
   * MachineInternalState (Citrix.Broker.Admin.SDK.MachineInternalState) The internal state of the machine; reported while the machine is registered to a controller, plus some private Citrix Broker Service states while the machine is not registered.
-  
-  * MaintenanceModeReason: Determines the reasons a machine is in maintenance mode.
 
   * MachineName (System.String) DNS host name of the machine.
+
+  * MaintenanceModeReason (Citrix.Broker.Admin.SDK.MaintenanceModeReason) The reason why the machine was placed in maintenance mode (if it is in maintenance mode). Possible values are:
+
+    * None - Machine is not in maintenance mode.
+    * Administrator - Machine was manually placed in maintenance mode by an administrator.
+    * MaxFailedRegistrations - Machine was automatically placed in maintenance mode due to reaching the maximum failed registration limit.
 
   * MetadataMap (System.Collections.Generic.Dictionary&lt;string, string&gt;) Any metadata that is associated with the machine.
 
@@ -260,6 +270,13 @@ The machine object returned represents a physical or virtual machine, which has 
 
   * WillShutdownAfterUse (System.Boolean) Flag indicating if this machine is tainted and will be shut down after all sessions on the machine have ended. This flag is only ever true on power-managed, single-session machines. Note: The machine will not shut down if it is in maintenance mode; it will shut down only after it is taken out of maintenance mode.
 
+  * WillShutdownAfterUseReason (Citrix.Broker.Admin.SDK.WillShutdownAfterUseReason) The reason why the machine will shutdown after use (if it will shutdown after use). Possible values are:
+
+    * None - Machine will not shutdown after use.
+    * ResetDiskImage - Machine will shutdown after use to reset its disk image.
+    * ScheduledNaturalReboot - Machine will shutdown after use as part of the scheduled natural reboot process.
+    * OnDemandNaturalReboot - Machine will shutdown after use as part of an on-demand natural reboot process.
+
   * WindowsConnectionSetting (Citrix.Broker.Admin.SDK.WindowsConnectionSetting?) The logon mode reported by Windows itself (multi-session machines only). For single-session machines the value is always hardwired to LogonEnabled. Possible values are: LogonEnabled, Draining, DrainingUntilRestart and LogonDisabled.
 
   * ZoneName (System.String) The name of the zone in which the machine is located.
@@ -269,7 +286,7 @@ The machine object returned represents a physical or virtual machine, which has 
 
 ## Related Commands
 
-* [Group-BrokerMachine](../Group-BrokerMachine/)
+* [Group-BrokerMachine](./Group-BrokerMachine/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -302,8 +319,9 @@ The machine object returned represents a physical or virtual machine, which has 
 | DesktopKind | Deprecated: Use AllocationType parameter.<br>Gets machines of a particular kind.<br>Valid values are Private, Shared. | false | false |  |
 | DesktopUid | Gets the machine that corresponds to the desktop with the specific UID. | false | false |  |
 | DNSName | Gets machines with the specific DNS name. | false | false |  |
+| DrainingUntilShutdown | Gets machines depending on whether they are draining until shutdown or not. | false | false |  |
 | FaultState | Gets machines currently in the specified fault state. | false | false |  |
-| FunctionalLevel | Gets machines with a specific FunctionalLevel.<br>Valid values are L5, L7, L7\_6 | false | false |  |
+| FunctionalLevel | Gets machines with a specific FunctionalLevel.<br>Valid values are L5, L7, L7\_6, L7\_7, L7\_8, L7\_9, L7\_20, L7\_25 | false | false |  |
 | HostedMachineId | Gets machines with the specific machine ID known to the hypervisor. | false | false |  |
 | HostedMachineName | Gets machines with the specific machine name known to the hypervisor. | false | false |  |
 | HostingServerName | Gets machines by the name of the hosting hypervisor server. | false | false |  |
@@ -327,9 +345,11 @@ The machine object returned represents a physical or virtual machine, which has 
 | LastHostingUpdateTime | Gets machines with a specific time that the hosting information was last updated. | false | false |  |
 | LastPvdErrorReason | Gets machines with the specified last Personal vDisk preparation error reason. | false | false |  |
 | LastPvdErrorTime | Gets machines with the specified last Personal vDisk preparation error time. | false | false |  |
+| LastRegistrationTime | Gets machines by the time that they last registered. | false | false |  |
 | LoadIndex | Gets machines by their current load index. | false | false |  |
+| MacAddress | Gets machines with a specific MAC address. | false | false |  |
 | MachineInternalState | Gets machines with the specified internal state. | false | false |  |
-| MaintenanceModeReason | Determines the reasons a machine is in maintenance mode. | false | false | |
+| MaintenanceModeReason | Gets machines by the maintenance mode reason. Valid values are:<br>o None - Machine is not in maintenance mode.<br>o Administrator - Machine was manually placed in maintenance mode by an administrator.<br>o MaxFailedRegistrations - Machine was automatically placed in maintenance mode due to reaching the maximum failed registration limit. | false | false |  |
 | Metadata | Gets records with matching metadata entries.<br>The value being compared with is a concatenation of the key name, a colon, and the value. For example: -Metadata "abc:x\*" matches records with a metadata entry having a key name of "abc" and a value starting with the letter "x". | false | false |  |
 | OSType | Gets machines by the type of operating system they are running. | false | false |  |
 | OSVersion | Gets machines by the version of the operating system they are running. | false | false |  |
@@ -379,6 +399,7 @@ The machine object returned represents a physical or virtual machine, which has 
 | UUID | Gets machines with the specified value of UUID. | false | false |  |
 | VMToolsState | Gets machines with a specific VM tools state.<br>Valid values are NotPresent, Unknown, NotStarted, and Running. | false | false |  |
 | WillShutdownAfterUse | Gets machines depending on whether they shut down after use or not. | false | false |  |
+| WillShutdownAfterUseReason | Gets machines by the will shutdown after use reason. Valid values are:<br>o None - Machine will not shutdown after use.<br>o ResetDiskImage - Machine will shutdown after use to reset its disk image.<br>o ScheduledNaturalReboot - Machine will shutdown after use as part of the scheduled natural reboot process.<br>o OnDemandNaturalReboot - Machine will shutdown after use as part of an on-demand natural reboot process. | false | false |  |
 | WindowsConnectionSetting | Gets machines according to their current Windows connection setting (logon mode). Valid values are:<br>o LogonEnabled - All logons are enabled.<br>o Draining - New logons are disabled, but reconnections to existing sessions are allowed.<br>o DrainingUntilRestart - Same as Draining, but setting reverts to LogonEnabled when machine next restarts.<br>o LogonDisabled - All logons and reconnections are disabled.<br>This is a Windows setting and is not controlled by XenDesktop. It applies only to multi-session machines; for single-session machines its value is always LogonEnabled. | false | false |  |
 | ZoneName | Gets machines located in the zone with the specified name. | false | false |  |
 | ZoneUid | Gets machines located in the zone with the specified UID. | false | false |  |
@@ -390,6 +411,7 @@ The machine object returned represents a physical or virtual machine, which has 
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

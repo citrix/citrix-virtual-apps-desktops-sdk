@@ -3,9 +3,9 @@
 Unlocks an AppDisk.
 ## Syntax
 ```
-Unlock-AppLibAppDisk [-AppDiskName] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Unlock-AppLibAppDisk [-AppDiskName] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Unlock-AppLibAppDisk -AppDiskUid <Guid> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Unlock-AppLibAppDisk -AppDiskUid <Guid> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Provides the ability to unlockan AppDisk that has the Id of a failed Task still associated with it. This allows another long-running task to operate on that scheme. The cmdlet will not unlock a scheme with a task still marked as being active.  Use Stop-AppLibTask to stop any active task first.
@@ -13,8 +13,8 @@ Provides the ability to unlockan AppDisk that has the Id of a failed Task still 
 
 ## Related Commands
 
-* [Get-AppLibAppDiske](../Get-AppLibAppDiske/)
-* [Stop-AppLibTask](../Stop-AppLibTask/)
+* [Get-AppLibAppDiske](./Get-AppLibAppDiske/)
+* [Stop-AppLibTask](./Stop-AppLibTask/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -22,6 +22,7 @@ Provides the ability to unlockan AppDisk that has the Id of a failed Task still 
 | AppDiskUid | The unique identifier of the AppDisk. | true | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

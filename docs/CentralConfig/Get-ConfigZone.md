@@ -3,7 +3,7 @@
 Gets zones configured for this site.
 ## Syntax
 ```
-Get-ConfigZone [[-Name] <String>] [-Uid <Guid>] [-ControllerName <String>] [-ControllerSid <String>] [-Description <String>] [-ExternalUid <Guid>] [-IsPrimary <Boolean>] [-Metadata <String>] [-TenantId <Guid>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-ConfigZone [[-Name] <String>] [-Uid <Guid>] [-ControllerName <String>] [-ControllerSid <String>] [-Description <String>] [-ExternalUid <Guid>] [-IsPrimary <Boolean>] [-Metadata <String>] [-TenantId <Guid>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves zones matching the specified criteria. If no parameters are specified all zones will be returned.
@@ -11,12 +11,12 @@ Retrieves zones matching the specified criteria. If no parameters are specified 
 
 ## Related Commands
 
-* [New-ConfigZone](../New-ConfigZone/)
-* [Set-ConfigZone](../Set-ConfigZone/)
-* [Rename-ConfigZone](../Rename-ConfigZone/)
-* [Remove-ConfigZone](../Remove-ConfigZone/)
-* [Set-ConfigSite](../Set-ConfigSite/)
-* [Set-ConfigService](../Set-ConfigService/)
+* [New-ConfigZone](./New-ConfigZone/)
+* [Set-ConfigZone](./Set-ConfigZone/)
+* [Rename-ConfigZone](./Rename-ConfigZone/)
+* [Remove-ConfigZone](./Remove-ConfigZone/)
+* [Set-ConfigSite](./Set-ConfigSite/)
+* [Set-ConfigService](./Set-ConfigService/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -36,6 +36,7 @@ Retrieves zones matching the specified criteria. If no parameters are specified 
 | SortBy | Sorts the results by the specified list of properties. The list is a set of property names separated by commas, semi-colons, or spaces. Optionally, prefix each name with a + or - to indicate ascending or descending order. Ascending order is assumed if no prefix is present. | false | false | The default sort order is by name or unique identifier. |
 | Filter | Gets records that match a PowerShell-style filter expression. See about\_Config\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

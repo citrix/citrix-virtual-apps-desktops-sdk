@@ -3,7 +3,7 @@
 Creates a new edge server object
 ## Syntax
 ```
-New-ConfigEdgeServer [-Name] <String> -MachineAddress <String> -Sid <String> -Uuid <Guid> [-Description <String>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+New-ConfigEdgeServer [-Name] <String> -MachineAddress <String> -Sid <String> -Uuid <Guid> [-Description <String>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 New-ConfigEdgeServer cmdlet creates a new edge server object.
@@ -13,10 +13,10 @@ An edge server is a machine which is running an agent service that performs a nu
 
 ## Related Commands
 
-* [Get-ConfigEdgeServer](../Get-ConfigEdgeServer/)
-* [Set-ConfigEdgeServer](../Set-ConfigEdgeServer/)
-* [Rename-ConfigEdgeServer](../Rename-ConfigEdgeServer/)
-* [Remove-ConfigEdgeServer](../Remove-ConfigEdgeServer/)
+* [Get-ConfigEdgeServer](./Get-ConfigEdgeServer/)
+* [Set-ConfigEdgeServer](./Set-ConfigEdgeServer/)
+* [Rename-ConfigEdgeServer](./Rename-ConfigEdgeServer/)
+* [Remove-ConfigEdgeServer](./Remove-ConfigEdgeServer/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ An edge server is a machine which is running an agent service that performs a nu
 | ZoneUid | Specifies the Zone affinity for the edge server | false | true (ByPropertyName) | If no value is provided the edge server is placed in the Primary zone |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

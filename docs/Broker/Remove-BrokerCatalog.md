@@ -3,9 +3,9 @@
 Removes catalogs from the site.
 ## Syntax
 ```
-Remove-BrokerCatalog [-InputObject] <Catalog[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerCatalog [-InputObject] <Catalog[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Remove-BrokerCatalog [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerCatalog [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Remove catalogs from the site.
@@ -15,12 +15,12 @@ In order to remove a catalog from a site, the catalog must not contain machines.
 
 ## Related Commands
 
-* [New-BrokerCatalog](../New-BrokerCatalog/)
-* [Get-BrokerCatalog](../Get-BrokerCatalog/)
-* [Rename-BrokerCatalog](../Rename-BrokerCatalog/)
-* [Set-BrokerCatalog](../Set-BrokerCatalog/)
-* [New-BrokerDesktopGroup](../New-BrokerDesktopGroup/)
-* [Remove-BrokerDesktopGroup](../Remove-BrokerDesktopGroup/)
+* [New-BrokerCatalog](./New-BrokerCatalog/)
+* [Get-BrokerCatalog](./Get-BrokerCatalog/)
+* [Rename-BrokerCatalog](./Rename-BrokerCatalog/)
+* [Set-BrokerCatalog](./Set-BrokerCatalog/)
+* [New-BrokerDesktopGroup](./New-BrokerDesktopGroup/)
+* [Remove-BrokerDesktopGroup](./Remove-BrokerDesktopGroup/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,7 @@ In order to remove a catalog from a site, the catalog must not contain machines.
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

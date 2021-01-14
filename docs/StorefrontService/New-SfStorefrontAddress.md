@@ -14,11 +14,11 @@ This command does not, by itself, have any persistent effects within XenDesktop.
 
 ## Related Commands
 
-* [Add-SfStorefrontAddress](../Add-SfStorefrontAddress/)
-* [Get-SfStorefrontAddress](../Get-SfStorefrontAddress/)
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
+* [Add-SfStorefrontAddress](./Add-SfStorefrontAddress/)
+* [Get-SfStorefrontAddress](./Get-SfStorefrontAddress/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |

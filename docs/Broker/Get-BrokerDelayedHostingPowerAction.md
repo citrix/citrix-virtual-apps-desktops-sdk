@@ -3,9 +3,9 @@
 Gets power actions that are executed after a delay.
 ## Syntax
 ```
-Get-BrokerDelayedHostingPowerAction [-Uid] <Int64> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDelayedHostingPowerAction [-Uid] <Int64> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerDelayedHostingPowerAction [[-MachineName] <String>] [-Action <PowerManagementAction>] [-ActionDueTime <DateTime>] [-DNSName <String>] [-HostedMachineName <String>] [-HypervisorConnectionName <String>] [-HypervisorConnectionUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDelayedHostingPowerAction [[-MachineName] <String>] [-Action <PowerManagementAction>] [-ActionDueTime <DateTime>] [-DNSName <String>] [-HostedMachineName <String>] [-HypervisorConnectionName <String>] [-HypervisorConnectionUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Finds all delayed power actions that match the specified search criteria.
@@ -32,9 +32,9 @@ The BrokerDelayedHostingPowerAction object represents an instance of a power act
 
 ## Related Commands
 
-* [New-BrokerDelayedHostingPowerAction](../New-BrokerDelayedHostingPowerAction/)
-* [Remove-BrokerDelayedHostingPowerAction](../Remove-BrokerDelayedHostingPowerAction/)
-* [Remove-BrokerHostingPowerAction](../Remove-BrokerHostingPowerAction/)
+* [New-BrokerDelayedHostingPowerAction](./New-BrokerDelayedHostingPowerAction/)
+* [Remove-BrokerDelayedHostingPowerAction](./Remove-BrokerDelayedHostingPowerAction/)
+* [Remove-BrokerHostingPowerAction](./Remove-BrokerHostingPowerAction/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -54,6 +54,7 @@ The BrokerDelayedHostingPowerAction object represents an instance of a power act
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

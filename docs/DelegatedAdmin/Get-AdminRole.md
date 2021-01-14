@@ -3,7 +3,7 @@
 Gets roles configured for this site.
 ## Syntax
 ```
-Get-AdminRole [[-Name] <String>] [-Id <Guid>] [-BuiltIn <Boolean>] [-Description <String>] [-Metadata <String>] [-Permission <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AdminRole [[-Name] <String>] [-Id <Guid>] [-BuiltIn <Boolean>] [-Description <String>] [-ExclusivePermission <String>] [-Metadata <String>] [-Permission <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves roles matching the specified criteria. If no parameters are specified, this cmdlet enumerates all roles.
@@ -13,12 +13,12 @@ See about\_Admin\_Filtering for information about advanced filtering options.
 
 ## Related Commands
 
-* [New-AdminRole](../New-AdminRole/)
-* [Set-AdminRole](../Set-AdminRole/)
-* [Rename-AdminRole](../Rename-AdminRole/)
-* [Remove-AdminRole](../Remove-AdminRole/)
-* [Set-AdminRoleMetadata](../Set-AdminRoleMetadata/)
-* [Remove-AdminRoleMetadata](../Remove-AdminRoleMetadata/)
+* [New-AdminRole](./New-AdminRole/)
+* [Set-AdminRole](./Set-AdminRole/)
+* [Rename-AdminRole](./Rename-AdminRole/)
+* [Remove-AdminRole](./Remove-AdminRole/)
+* [Set-AdminRoleMetadata](./Set-AdminRoleMetadata/)
+* [Remove-AdminRoleMetadata](./Remove-AdminRoleMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -26,6 +26,7 @@ See about\_Admin\_Filtering for information about advanced filtering options.
 | Id | Gets the role with the specified identifier. | false | true (ByPropertyName) |  |
 | BuiltIn | Gets roles with the specified value of the BuiltIn flag. | false | false |  |
 | Description | Gets roles with the specified description. | false | false |  |
+| ExclusivePermission | Gets roles that contain a specific exclusive permission. | false | false |  |
 | Metadata | Gets records with matching metadata entries.<br>The value being compared with is a concatenation of the key name, a colon, and the value. For example: -Metadata "abc:x\*" matches records with a metadata entry having a key name of "abc" and a value starting with the letter "x". | false | false |  |
 | Permission | Gets roles that contain a specific permission. | false | false |  |
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
@@ -35,6 +36,7 @@ See about\_Admin\_Filtering for information about advanced filtering options.
 | SortBy | Sorts the results by the specified list of properties. The list is a set of property names separated by commas, semi-colons, or spaces. Optionally, prefix each name with a + or - to indicate ascending or descending order. Ascending order is assumed if no prefix is present. | false | false | The default sort order is by name or unique identifier. |
 | Filter | Gets records that match a PowerShell-style filter expression. See about\_Admin\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

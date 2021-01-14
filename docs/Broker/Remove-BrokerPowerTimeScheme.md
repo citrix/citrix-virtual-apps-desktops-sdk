@@ -3,9 +3,9 @@
 Deletes an existing power time scheme.
 ## Syntax
 ```
-Remove-BrokerPowerTimeScheme [-InputObject] <PowerTimeScheme[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerPowerTimeScheme [-InputObject] <PowerTimeScheme[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Remove-BrokerPowerTimeScheme [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerPowerTimeScheme [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Remove-BrokerPowerTimeScheme cmdlet deletes a power time scheme from the system, and leaves the days that the time scheme used to cover for the associated desktop group as defaulting to all hours off-peak and all hours with pool size of -1.
@@ -17,10 +17,10 @@ For more information about the power policy mechanism and pool size management, 
 
 ## Related Commands
 
-* [Get-BrokerPowerTimeScheme](../Get-BrokerPowerTimeScheme/)
-* [Set-BrokerPowerTimeScheme](../Set-BrokerPowerTimeScheme/)
-* [New-BrokerPowerTimeScheme](../New-BrokerPowerTimeScheme/)
-* [Rename-BrokerPowerTimeScheme](../Rename-BrokerPowerTimeScheme/)
+* [Get-BrokerPowerTimeScheme](./Get-BrokerPowerTimeScheme/)
+* [Set-BrokerPowerTimeScheme](./Set-BrokerPowerTimeScheme/)
+* [New-BrokerPowerTimeScheme](./New-BrokerPowerTimeScheme/)
+* [Rename-BrokerPowerTimeScheme](./Rename-BrokerPowerTimeScheme/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,7 @@ For more information about the power policy mechanism and pool size management, 
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

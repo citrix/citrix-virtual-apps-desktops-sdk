@@ -3,7 +3,7 @@
 Gets a list of all available database schema versions for the Broker Service.
 ## Syntax
 ```
-Get-BrokerInstalledDbVersion [-Upgrade] [-Downgrade] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerInstalledDbVersion [-Upgrade] [-Downgrade] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets the current version number of the Citrix Broker Service database schema when called with no parameters.
@@ -19,8 +19,8 @@ Only one of the -Upgrade or -Downgrade parameters may be supplied at once.
 
 ## Related Commands
 
-* [Get-BrokerDBVersionChangeScript](../Get-BrokerDBVersionChangeScript/)
-* [Get-BrokerDBSchema](../Get-BrokerDBSchema/)
+* [Get-BrokerDBVersionChangeScript](./Get-BrokerDBVersionChangeScript/)
+* [Get-BrokerDBSchema](./Get-BrokerDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ Only one of the -Upgrade or -Downgrade parameters may be supplied at once.
 | Downgrade | Specifies that only schema versions to which the current database version can be reverted should be returned. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

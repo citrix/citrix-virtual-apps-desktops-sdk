@@ -3,9 +3,9 @@
 Creates a new broker user object
 ## Syntax
 ```
-New-BrokerUser [-SID] <SecurityIdentifier> [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerUser [-SID] <SecurityIdentifier> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-New-BrokerUser [-Name] <String> [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerUser [-Name] <String> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The New-BrokerUser cmdlet creates a new broker object to represent a user identity (or the identity of a group of users). The object is created local to the PowerShell environment in which the cmdlet is run; no new user object is created in the broker configuration, unless the object is added to another broker object, such as a machine or a desktop. For details, see Add-BrokerUser.
@@ -15,9 +15,9 @@ The identity of the user or group must be specified using either the Name or SID
 
 ## Related Commands
 
-* [Add-BrokerUser](../Add-BrokerUser/)
-* [Get-BrokerUser](../Get-BrokerUser/)
-* [Remove-BrokerUser](../Remove-BrokerUser/)
+* [Add-BrokerUser](./Add-BrokerUser/)
+* [Get-BrokerUser](./Get-BrokerUser/)
+* [Remove-BrokerUser](./Remove-BrokerUser/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -25,6 +25,7 @@ The identity of the user or group must be specified using either the Name or SID
 | Name | The name of the user or group | true | false | null |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

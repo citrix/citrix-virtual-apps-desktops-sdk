@@ -3,9 +3,9 @@
 Adds application groups to a desktop group.
 ## Syntax
 ```
-Add-BrokerApplicationGroup [-InputObject] <ApplicationGroup[]> [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerApplicationGroup [-InputObject] <ApplicationGroup[]> [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Add-BrokerApplicationGroup [-Name] <String> [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerApplicationGroup [-Name] <String> [-DesktopGroup <DesktopGroup>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Add-BrokerApplicationGroup cmdlet is used to associate one or more application groups with an existing desktop group.
@@ -19,11 +19,11 @@ See about\_Broker\_Applications for more information.
 
 ## Related Commands
 
-* [Get-BrokerApplicationGroup](../Get-BrokerApplicationGroup/)
-* [New-BrokerApplicationGroup](../New-BrokerApplicationGroup/)
-* [Remove-BrokerApplicationGroup](../Remove-BrokerApplicationGroup/)
-* [Rename-BrokerApplicationGroup](../Rename-BrokerApplicationGroup/)
-* [Set-BrokerApplicationGroup](../Set-BrokerApplicationGroup/)
+* [Get-BrokerApplicationGroup](./Get-BrokerApplicationGroup/)
+* [New-BrokerApplicationGroup](./New-BrokerApplicationGroup/)
+* [Remove-BrokerApplicationGroup](./Remove-BrokerApplicationGroup/)
+* [Rename-BrokerApplicationGroup](./Rename-BrokerApplicationGroup/)
+* [Set-BrokerApplicationGroup](./Set-BrokerApplicationGroup/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -34,6 +34,7 @@ See about\_Broker\_Applications for more information.
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

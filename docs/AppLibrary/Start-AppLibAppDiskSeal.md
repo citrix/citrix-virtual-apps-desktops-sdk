@@ -3,9 +3,9 @@
 Seals an AppDisk in the Application library service
 ## Syntax
 ```
-Start-AppLibAppDiskSeal [-AppDiskName] <String> [-SkipAppDnaAnalysis] [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-AppLibAppDiskSeal [-AppDiskName] <String> [-SkipAppDnaAnalysis] [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Start-AppLibAppDiskSeal -AppDiskUid <Guid> [-SkipAppDnaAnalysis] [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Start-AppLibAppDiskSeal -AppDiskUid <Guid> [-SkipAppDnaAnalysis] [-RunAsynchronously] [-PurgeJobOnSuccess] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Lets you mark an AppDisk with installed applications as ready for use.
@@ -13,11 +13,11 @@ Lets you mark an AppDisk with installed applications as ready for use.
 
 ## Related Commands
 
-* [Get-AppLibTask](../Get-AppLibTask/)
-* [New-AppLibAppDisk](../New-AppLibAppDisk/)
-* [Set-AppLibAppDisk](../Set-AppLibAppDisk/)
-* [Get-AppLibAppDisk](../Get-AppLibAppDisk/)
-* [Import-AppLibAppDisk](../Import-AppLibAppDisk/)
+* [Get-AppLibTask](./Get-AppLibTask/)
+* [New-AppLibAppDisk](./New-AppLibAppDisk/)
+* [Set-AppLibAppDisk](./Set-AppLibAppDisk/)
+* [Get-AppLibAppDisk](./Get-AppLibAppDisk/)
+* [Import-AppLibAppDisk](./Import-AppLibAppDisk/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ Lets you mark an AppDisk with installed applications as ready for use.
 | PurgeJobOnSuccess | Indicates that the task history is removed from the database when the task has finished. This can only be specified for tasks that are not run asynchronously. | false | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

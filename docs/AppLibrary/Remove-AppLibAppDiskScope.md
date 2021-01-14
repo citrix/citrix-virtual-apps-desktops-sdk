@@ -3,11 +3,11 @@
 Remove the specified AppDisk(s) from the given scope(s).
 ## Syntax
 ```
-Remove-AppLibAppDiskScope [-Scope] <String[]> -InputObject <AppDisk[]> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AppLibAppDiskScope [-Scope] <String[]> -InputObject <AppDisk[]> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Remove-AppLibAppDiskScope [-Scope] <String[]> -AppDiskUid <Guid[]> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AppLibAppDiskScope [-Scope] <String[]> -AppDiskUid <Guid[]> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Remove-AppLibAppDiskScope [-Scope] <String[]> -AppDiskName <String[]> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AppLibAppDiskScope [-Scope] <String[]> -AppDiskName <String[]> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Remove-AppLibAppDiskScope command is used to remove one or more AppDisk objects from the given scope(s).
@@ -21,8 +21,8 @@ If the AppDisk is not in a specified scope, that scope will be silently ignored.
 
 ## Related Commands
 
-* [Add-AppLibAppDiskScope](../Add-AppLibAppDiskScope/)
-* [Get-AppLibScopedObject](../Get-AppLibScopedObject/)
+* [Add-AppLibAppDiskScope](./Add-AppLibAppDiskScope/)
+* [Get-AppLibScopedObject](./Get-AppLibScopedObject/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -32,6 +32,7 @@ If the AppDisk is not in a specified scope, that scope will be silently ignored.
 | AppDiskName | Specifies the AppDisk objects to be removed by AppDiskName. | true | true (ByValue, ByPropertyName) |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

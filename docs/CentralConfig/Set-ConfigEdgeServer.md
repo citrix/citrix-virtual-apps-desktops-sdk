@@ -3,11 +3,11 @@
 Changes the properties of an edge server
 ## Syntax
 ```
-Set-ConfigEdgeServer [-InputObject] <EdgeServer[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-ConfigEdgeServer [-InputObject] <EdgeServer[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Set-ConfigEdgeServer [-Uid] <Guid[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-ConfigEdgeServer [-Uid] <Guid[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Set-ConfigEdgeServer [-Name] <String[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Set-ConfigEdgeServer [-Name] <String[]> [-Description <String>] [-MachineAddress <String>] [-Sid <String>] [-Uuid <Guid>] [-ZoneUid <Guid>] [-PassThru] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Set-ConfigEdgeServer cmdlet sets properties of an edge server or a set of edge servers. The edge server can be specified by name or by one or more edge server instances can be passed to the command either by piping or by using the -InputObject parameter
@@ -15,10 +15,10 @@ The Set-ConfigEdgeServer cmdlet sets properties of an edge server or a set of ed
 
 ## Related Commands
 
-* [New-ConfigEdgeServer](../New-ConfigEdgeServer/)
-* [Get-ConfigEdgeServer](../Get-ConfigEdgeServer/)
-* [Rename-ConfigEdgeServer](../Rename-ConfigEdgeServer/)
-* [Remove-ConfigEdgeServer](../Remove-ConfigEdgeServer/)
+* [New-ConfigEdgeServer](./New-ConfigEdgeServer/)
+* [Get-ConfigEdgeServer](./Get-ConfigEdgeServer/)
+* [Rename-ConfigEdgeServer](./Rename-ConfigEdgeServer/)
+* [Remove-ConfigEdgeServer](./Remove-ConfigEdgeServer/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -33,6 +33,7 @@ The Set-ConfigEdgeServer cmdlet sets properties of an edge server or a set of ed
 | PassThru | Returns the affected record. By default, this cmdlet does not generate any output. | false | false | False |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

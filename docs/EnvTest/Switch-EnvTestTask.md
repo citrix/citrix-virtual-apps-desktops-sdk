@@ -3,9 +3,9 @@
 Sets the current task that will be returned by a call to Get-EnvTestTask with no parameters.
 ## Syntax
 ```
-Switch-EnvTestTask [-TaskId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Switch-EnvTestTask [-TaskId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Switch-EnvTestTask [-Task <EnvTestTask>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Switch-EnvTestTask [-Task <EnvTestTask>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Sets the current task that will be returned by a call to Get-EnvTestTask with no parameters.
@@ -13,21 +13,22 @@ Sets the current task that will be returned by a call to Get-EnvTestTask with no
 
 ## Related Commands
 
-* [Get-EnvTestDefinition](../Get-EnvTestDefinition/)
-* [Get-EnvTestSuiteDefinition](../Get-EnvTestSuiteDefinition/)
-* [Get-EnvTestTask](../Get-EnvTestTask/)
-* [New-EnvTestTask](../New-EnvTestTask/)
-* [Start-EnvTestTask](../Start-EnvTestTask/)
-* [Stop-EnvTestTask](../Stop-EnvTestTask/)
-* [Remove-EnvTestTask](../Remove-EnvTestTask/)
-* [Add-EnvTestTaskMetadata](../Add-EnvTestTaskMetadata/)
-* [Remove-EnvTestTaskMetadata](../Remove-EnvTestTaskMetadata/)
+* [Get-EnvTestDefinition](./Get-EnvTestDefinition/)
+* [Get-EnvTestSuiteDefinition](./Get-EnvTestSuiteDefinition/)
+* [Get-EnvTestTask](./Get-EnvTestTask/)
+* [New-EnvTestTask](./New-EnvTestTask/)
+* [Start-EnvTestTask](./Start-EnvTestTask/)
+* [Stop-EnvTestTask](./Stop-EnvTestTask/)
+* [Remove-EnvTestTask](./Remove-EnvTestTask/)
+* [Add-EnvTestTaskMetadata](./Add-EnvTestTaskMetadata/)
+* [Remove-EnvTestTaskMetadata](./Remove-EnvTestTaskMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | TaskId | Specifies the identifier of the task to be made current. | false | false |  |
 | Task | The task object to be made current, retrieveable from the \$task.TaskId property. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

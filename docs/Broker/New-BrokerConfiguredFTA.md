@@ -3,9 +3,9 @@
 Creates a file type association with a published application.
 ## Syntax
 ```
-New-BrokerConfiguredFTA -ImportedFTA <ImportedFTA> -ApplicationUid <Int32> [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerConfiguredFTA -ImportedFTA <ImportedFTA> -ApplicationUid <Int32> [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-New-BrokerConfiguredFTA -ExtensionName <String> -HandlerName <String> -ApplicationUid <Int32> [-ContentType <String>] [-HandlerDescription <String>] [-HandlerOpenArguments <String>] [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerConfiguredFTA -ExtensionName <String> -HandlerName <String> -ApplicationUid <Int32> [-ContentType <String>] [-HandlerDescription <String>] [-HandlerOpenArguments <String>] [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Creates an association between a file type and a published application for the purposes of the content redirection.
@@ -23,9 +23,9 @@ The second use case is more complex and allows you to create your own file type 
 
 ## Related Commands
 
-* [Get-BrokerImportedFTA](../Get-BrokerImportedFTA/)
-* [Get-BrokerConfiguredFTA](../Get-BrokerConfiguredFTA/)
-* [Remove-BrokerConfiguredFTA](../Remove-BrokerConfiguredFTA/)
+* [Get-BrokerImportedFTA](./Get-BrokerImportedFTA/)
+* [Get-BrokerConfiguredFTA](./Get-BrokerConfiguredFTA/)
+* [Remove-BrokerConfiguredFTA](./Remove-BrokerConfiguredFTA/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -37,6 +37,7 @@ The second use case is more complex and allows you to create your own file type 
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | ContentType | Specifies the content type of the file type (as listed in the Registry). For example, content type would be "text/plain" or "application/msword". | false | true (ByPropertyName) | null |
 | HandlerDescription | Specifies the description of the handler for the file type association. | false | true (ByPropertyName) | null |
 | HandlerOpenArguments | Specifies the arguments for the open command that the handler should use. For example, "%1". | false | true (ByPropertyName) | null |

@@ -3,7 +3,7 @@
 Gets the current status of the AppLibrary Service on the controller.
 ## Syntax
 ```
-Get-AppLibServiceStatus [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibServiceStatus [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables the status of the AppLibrary Service on the controller to be determined. The database connection to the service does not need to be configured before using this command.
@@ -11,14 +11,15 @@ Enables the status of the AppLibrary Service on the controller to be determined.
 
 ## Related Commands
 
-* [Set-AppLibDBConnection](../Set-AppLibDBConnection/)
-* [Test-AppLibDBConnection](../Test-AppLibDBConnection/)
-* [Get-AppLibDBConnection](../Get-AppLibDBConnection/)
-* [Get-AppLibDBSchema](../Get-AppLibDBSchema/)
+* [Set-AppLibDBConnection](./Set-AppLibDBConnection/)
+* [Test-AppLibDBConnection](./Test-AppLibDBConnection/)
+* [Get-AppLibDBConnection](./Get-AppLibDBConnection/)
+* [Get-AppLibDBSchema](./Get-AppLibDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

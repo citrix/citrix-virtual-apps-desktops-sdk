@@ -3,7 +3,7 @@
 Gets the AppDisk start menu icons for the AppLibrary Service.
 ## Syntax
 ```
-Get-AppLibAppDiskStartMenuIcon [-AppDiskUid <Guid>] [-AppDiskName <String>] [-IconUid <Guid>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibAppDiskStartMenuIcon [-AppDiskUid <Guid>] [-AppDiskName <String>] [-IconUid <Guid>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns a list of AppDisk start menu icons known to the AppLibrary Service.
@@ -11,8 +11,8 @@ Returns a list of AppDisk start menu icons known to the AppLibrary Service.
 
 ## Related Commands
 
-* [Get-AppLibAppDisk](../Get-AppLibAppDisk/)
-* [Get-AppLibAppDiskStartMenuShortcut](../Get-AppLibAppDiskStartMenuShortcut/)
+* [Get-AppLibAppDisk](./Get-AppLibAppDisk/)
+* [Get-AppLibAppDiskStartMenuShortcut](./Get-AppLibAppDiskStartMenuShortcut/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -25,6 +25,7 @@ Returns a list of AppDisk start menu icons known to the AppLibrary Service.
 | SortBy | See about\_AppLib\_Filtering for details. | false | false |  |
 | Filter | See about\_AppLib\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

@@ -3,7 +3,7 @@
 Logs the completion of a previously started high level operation.
 ## Syntax
 ```
-Stop-LogHighLevelOperation -HighLevelOperationId <String> -IsSuccessful <Boolean> [-EndTime <DateTime>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Stop-LogHighLevelOperation -HighLevelOperationId <String> -IsSuccessful <Boolean> [-EndTime <DateTime>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Stop-LogHighLevelOperation logs the completion of a started high level operation.
@@ -11,15 +11,16 @@ Stop-LogHighLevelOperation logs the completion of a started high level operation
 
 ## Related Commands
 
-* [Start-LogHighLevelOperation](../Start-LogHighLevelOperation/)
-* [Get-LogHighLevelOperation](../Get-LogHighLevelOperation/)
+* [Start-LogHighLevelOperation](./Start-LogHighLevelOperation/)
+* [Get-LogHighLevelOperation](./Get-LogHighLevelOperation/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | HighLevelOperationId | Specifies the identifier of the high level operation being completed. | true | false |  |
 | IsSuccessful | Specifies if the started high level operation completed sucessfully. | true | false |  |
 | EndTime | Specifies the end time of the high level operation being completed. | false | false | DateTime.UtcNow. |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

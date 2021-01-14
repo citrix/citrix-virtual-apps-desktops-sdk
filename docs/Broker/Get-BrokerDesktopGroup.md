@@ -3,9 +3,9 @@
 Gets broker desktop groups configured for this site.
 ## Syntax
 ```
-Get-BrokerDesktopGroup [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDesktopGroup [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerDesktopGroup [[-Name] <String>] [-AppDisk <Guid>] [-AppDnaAnalysisState <AppDnaAnalysisState>] [-AppDnaCompatibility <AppDnaCompatibility>] [-AutomaticPowerOnForAssigned <Boolean>] [-AutomaticPowerOnForAssignedDuringPeak <Boolean>] [-ColorDepth <ColorDepth>] [-DeliveryType <DeliveryType>] [-Description <String>] [-DesktopKind <DesktopKind>] [-Enabled <Boolean>] [-InMaintenanceMode <Boolean>] [-IsRemotePC <Boolean>] [-LicenseModel <LicenseModel>] [-MachineLogOnType <MachineLogOnType>] [-Metadata <String>] [-MinimumFunctionalLevel <FunctionalLevel>] [-OffPeakBufferSizePercent <Int32>] [-OffPeakDisconnectAction <SessionChangeHostingAction>] [-OffPeakDisconnectTimeout <Int32>] [-OffPeakExtendedDisconnectAction <SessionChangeHostingAction>] [-OffPeakExtendedDisconnectTimeout <Int32>] [-OffPeakLogOffAction <SessionChangeHostingAction>] [-OffPeakLogOffTimeout <Int32>] [-PeakBufferSizePercent <Int32>] [-PeakDisconnectAction <SessionChangeHostingAction>] [-PeakDisconnectTimeout <Int32>] [-PeakExtendedDisconnectAction <SessionChangeHostingAction>] [-PeakExtendedDisconnectTimeout <Int32>] [-PeakLogOffAction <SessionChangeHostingAction>] [-PeakLogOffTimeout <Int32>] [-ProductCode <String>] [-PublishedName <String>] [-ReuseMachinesWithoutShutdownInOutage <Boolean>] [-ScopeId <Guid>] [-ScopeName <String>] [-SecureIcaRequired <Boolean>] [-SessionSupport <SessionSupport>] [-SettlementPeriodBeforeAutoShutdown <TimeSpan>] [-SettlementPeriodBeforeUse <TimeSpan>] [-ShutdownDesktopsAfterUse <Boolean>] [-Tag <String>] [-TenantId <Guid>] [-TimeZone <String>] [-TotalApplicationGroups <Int32>] [-TotalApplications <Int32>] [-TurnOnAddedMachine <Boolean>] [-UUID <Guid>] [-ZonePreference <ZonePreference>] [-ApplicationGroupUid <Int32>] [-ApplicationUid <Int32>] [-TagUid <Int32>] [-PowerTimeSchemeUid <Int32>] [-MachineConfigurationUid <Int32>] [-RemotePCCatalogUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerDesktopGroup [[-Name] <String>] [-AppDisk <Guid>] [-AppDnaAnalysisState <AppDnaAnalysisState>] [-AppDnaCompatibility <AppDnaCompatibility>] [-AppProtectionKeyLoggingRequired <Boolean>] [-AppProtectionScreenCaptureRequired <Boolean>] [-AutomaticPowerOnForAssigned <Boolean>] [-AutomaticPowerOnForAssignedDuringPeak <Boolean>] [-AutoscaleLogOffWarningMessage <String>] [-AutoscaleLogOffWarningTitle <String>] [-AutoscaleMaxSecondsBeforeForcedLogOffDuringOffPeak <Int32>] [-AutoscaleMaxSecondsBeforeForcedLogOffDuringPeak <Int32>] [-AutoscalingEnabled <Boolean>] [-ColorDepth <ColorDepth>] [-DeliveryType <DeliveryType>] [-Description <String>] [-DesktopKind <DesktopKind>] [-Enabled <Boolean>] [-InMaintenanceMode <Boolean>] [-IsRemotePC <Boolean>] [-IsUsedByGpo <Boolean>] [-LicenseModel <LicenseModel>] [-MachineCost <Decimal>] [-MachineLogOnType <MachineLogOnType>] [-Metadata <String>] [-MinimumFunctionalLevel <FunctionalLevel>] [-OffPeakBufferSizePercent <Int32>] [-OffPeakDisconnectAction <SessionChangeHostingAction>] [-OffPeakDisconnectTimeout <Int32>] [-OffPeakExtendedDisconnectAction <SessionChangeHostingAction>] [-OffPeakExtendedDisconnectTimeout <Int32>] [-OffPeakLogOffAction <SessionChangeHostingAction>] [-OffPeakLogOffTimeout <Int32>] [-PeakBufferSizePercent <Int32>] [-PeakDisconnectAction <SessionChangeHostingAction>] [-PeakDisconnectTimeout <Int32>] [-PeakExtendedDisconnectAction <SessionChangeHostingAction>] [-PeakExtendedDisconnectTimeout <Int32>] [-PeakLogOffAction <SessionChangeHostingAction>] [-PeakLogOffTimeout <Int32>] [-PowerOffDelay <Int32>] [-ProductCode <String>] [-PublishedName <String>] [-RestrictAutoscaleTagUid <Int32>] [-ReuseMachinesWithoutShutdownInOutage <Boolean>] [-ScopeId <Guid>] [-ScopeName <String>] [-SecureIcaRequired <Boolean>] [-SessionSupport <SessionSupport>] [-SettlementPeriodBeforeAutoShutdown <TimeSpan>] [-SettlementPeriodBeforeUse <TimeSpan>] [-ShutdownDesktopsAfterUse <Boolean>] [-Tag <String>] [-TenantId <Guid>] [-TimeZone <String>] [-TotalApplicationGroups <Int32>] [-TotalApplications <Int32>] [-TurnOnAddedMachine <Boolean>] [-UUID <Guid>] [-ZonePreference <ZonePreference>] [-ApplicationGroupUid <Int32>] [-ApplicationUid <Int32>] [-TagUid <Int32>] [-PowerTimeSchemeUid <Int32>] [-MachineConfigurationUid <Int32>] [-RemotePCCatalogUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieve desktop groups matching the specified criteria. If no parameters are specified this cmdlet enumerates all desktop groups.
@@ -23,9 +23,23 @@ A desktop group object represents a collection of machines that are fully config
 
   * AppDnaCompatibility (Citrix.Broker.Admin.SDK.AppDnaCompatibility?) The compatibility with the application disks attached to the desktop group
 
+  * AppProtectionKeyLoggingRequired (System.Boolean) Specifies whether key logging app protection is required.
+
+  * AppProtectionScreenCaptureRequired (System.Boolean) Specifies whether screen capture app protection is required.
+
   * AutomaticPowerOnForAssigned (System.Boolean) Specifies whether assigned desktops in the desktop group are automatically started at the start of peak time periods. Only relevant for groups whose DesktopKind is Private.
 
   * AutomaticPowerOnForAssignedDuringPeak (System.Boolean) Specifies whether assigned desktops in the desktop are automatically started throughout peak time periods. Only relevant for groups whose DesktopKind is Private and which have AutomaticPowerOnForAssigned set to true.
+
+  * AutoscaleLogOffWarningMessage (System.String) Warning message to display to users in active sessions prior to Autoscale issuing a logoff request.
+
+  * AutoscaleLogOffWarningTitle (System.String) Warning message dialog title displayed prior to Autoscale issuing a logoff request.
+
+  * AutoscaleMaxSecondsBeforeForcedLogOffDuringOffPeak (System.Int32) Minimum time that needs to elapse before Autoscale logs off active sessions on a draining machine in the delivery group during off-peak time.
+
+  * AutoscaleMaxSecondsBeforeForcedLogOffDuringPeak (System.Int32) Minimum time that needs to elapse before Autoscale logs off active sessions on a draining machine in the delivery group during peak time.
+
+  * AutoscalingEnabled (System.Boolean) Specifies whether machines in this desktop group can be Autoscaled.
 
   * ColorDepth (Citrix.Broker.Admin.SDK.ColorDepth) Default color depth of sessions started with machines in the desktop group. Possible values are: FourBit, EightBit, SixteenBit, TwentyFourBit.
 
@@ -59,11 +73,15 @@ A desktop group object represents a collection of machines that are fully config
 
   * IsRemotePC (System.Boolean) Specifies whether the desktop group is a Remote PC desktop group.
 
+  * IsUsedByGpo (System.Boolean?) Indicate if the desktop group is used by group policy.
+
   * LicenseModel (Citrix.Broker.Admin.SDK.LicenseModel?) Specifies the license model for this desktop group. If none is specified, then the site-wide license model is used.
 
   * MachineConfigurationNames (System.String\[\]) The MachineConfiguration names associated with the desktop group.
 
   * MachineConfigurationUids (System.Int32\[\]) The MachineConfiguration uids associated with the desktop group.
+
+  * MachineCost (System.Decimal) The per-hour instance cost of machines in this desktop group.
 
   * MachineLogOnType (Citrix.Broker.Admin.SDK.MachineLogOnType?) Specifies the login type (activedirectory/localmappedaccount) for machines in this desktop group.
 
@@ -73,7 +91,7 @@ A desktop group object represents a collection of machines that are fully config
 
   * Name (System.String) Name of the desktop group.
 
-  * OffPeakBufferSizePercent (System.Int32) The percentage of machines that are kept available in an idle state outside peak hours.
+  * OffPeakBufferSizePercent (System.Int32) The percentage of single-session machines that are kept available in an idle state, or for multi-session machines, the percentage of the total load capacity to be kept available outside peak hours.
 
   * OffPeakDisconnectAction (Citrix.Broker.Admin.SDK.SessionChangeHostingAction) The action that is performed after a configurable period of a user session disconnecting outside peak hours. Possible values are Nothing, Suspend or Shutdown.
 
@@ -87,7 +105,7 @@ A desktop group object represents a collection of machines that are fully config
 
   * OffPeakLogOffTimeout (System.Int32) The number of minutes before the configured action is performed after a user session ends outside peak hours.
 
-  * PeakBufferSizePercent (System.Int32) The percentage of machines in the desktop group that are kept available in an idle state in peak hours.
+  * PeakBufferSizePercent (System.Int32) The percentage of single-session machines that are kept available in an idle state, or for multi-session machines, the percentage of the total load capacity to be kept available in peak hours.
 
   * PeakDisconnectAction (Citrix.Broker.Admin.SDK.SessionChangeHostingAction) The action performed after a configurable period of a user session disconnecting in peak hours. Possible values are Nothing, Suspend, or Shutdown.
 
@@ -101,15 +119,19 @@ A desktop group object represents a collection of machines that are fully config
 
   * PeakLogOffTimeout (System.Int32) The number of minutes before the configured action is performed after a user session ends in peak hours.
 
+  * PowerOffDelay (System.Int32) The number of minutes following a power-on operation that Auto Scale will wait before attemping to power off that same machine. Possible values are in the range 0 - 60.
+
   * ProductCode (System.String) Specifies the licensing product code for this desktop group. If none is specified, then the site-wide product code is used.
 
   * ProtocolPriority (System.String\[\]) A list of protocol names in the order in which they are attempted for use during connection.
 
   * PublishedName (System.String) The name of the desktop group as it is to appear to the user in StoreFront.
 
+  * RestrictAutoscaleTagUid (System.Int32?) If set to a Tag UID, only machines that have this tag will be auto scaled.
+
   * ReuseMachinesWithoutShutdownInOutage (System.Boolean) Specifies whether desktops should not be shut down after being used during outage mode.
 
-  * Scopes (Citrix.Broker.Admin.SDK.ScopeReference\[\]) The list of the delegated admin scopes to which the desktop group belongs.
+  * Scopes (Citrix.Fma.Sdk.DelegatedAdminInterfaces.ScopeReference\[\]) The list of the delegated admin scopes to which the desktop group belongs.
 
   * SecureIcaRequired (System.Boolean) Flag that specifies if the SecureICA encryption of the HDX protocol is required for sessions of desktops in the desktop group.
 
@@ -146,12 +168,12 @@ A desktop group object represents a collection of machines that are fully config
 
 ## Related Commands
 
-* [New-BrokerDesktopGroup](../New-BrokerDesktopGroup/)
-* [Set-BrokerDesktopGroup](../Set-BrokerDesktopGroup/)
-* [Rename-BrokerDesktopGroup](../Rename-BrokerDesktopGroup/)
-* [Remove-BrokerDesktopGroup](../Remove-BrokerDesktopGroup/)
-* [Add-BrokerUser](../Add-BrokerUser/)
-* [Add-BrokerTag](../Add-BrokerTag/)
+* [New-BrokerDesktopGroup](./New-BrokerDesktopGroup/)
+* [Set-BrokerDesktopGroup](./Set-BrokerDesktopGroup/)
+* [Rename-BrokerDesktopGroup](./Rename-BrokerDesktopGroup/)
+* [Remove-BrokerDesktopGroup](./Remove-BrokerDesktopGroup/)
+* [Add-BrokerUser](./Add-BrokerUser/)
+* [Add-BrokerTag](./Add-BrokerTag/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -160,8 +182,15 @@ A desktop group object represents a collection of machines that are fully config
 | AppDisk | Gets only desktop groups using the specified application disk. | false | false |  |
 | AppDnaAnalysisState | Gets only desktop groups with specified value of AppDnaAnalysisState | false | false |  |
 | AppDnaCompatibility | Gets only desktop groups with specified value of AppDnaCompatibility | false | false |  |
+| AppProtectionKeyLoggingRequired | Specifies whether key logging app protection is required. | false | false |  |
+| AppProtectionScreenCaptureRequired | Specifies whether screen capture app protection is required. | false | false |  |
 | AutomaticPowerOnForAssigned | Gets only desktop groups with the specified value of AutomaticPowerOnForAssigned. | false | false |  |
 | AutomaticPowerOnForAssignedDuringPeak | Gets only desktop groups with the specified value of AutomaticPowerOnForAssignedDuringPeak. | false | false |  |
+| AutoscaleLogOffWarningMessage | Gets the warning message to display to users in active sessions prior to Autoscale issuing a logoff request. | false | false |  |
+| AutoscaleLogOffWarningTitle | Gets the warning message dialog title displayed prior to Autoscale issuing a logoff request. | false | false |  |
+| AutoscaleMaxSecondsBeforeForcedLogOffDuringOffPeak | Gets the minimum seconds that need to elapse before Autoscale logs off the active sessions on the draining machines belonging to the delivery group during off-peak time. | false | false |  |
+| AutoscaleMaxSecondsBeforeForcedLogOffDuringPeak | Gets the minimum seconds that need to elapse before Autoscale logs off the active sessions on the draining machines belonging to the delivery group during peak time. | false | false |  |
+| AutoscalingEnabled | Specifies whether machines in this desktop group can be Autoscaled. | false | false |  |
 | ColorDepth | Gets only desktop groups with the specified color depth.<br>Valid values are FourBit, EightBit, SixteenBit, and TwentyFourBit. | false | false |  |
 | DeliveryType | Gets desktop groups according to their delivery type.<br>Valid values are DesktopsOnly, AppsOnly and DesktopsAndApps. | false | false |  |
 | Description | Gets desktop groups whose description matches the supplied pattern. | false | false |  |
@@ -169,10 +198,12 @@ A desktop group object represents a collection of machines that are fully config
 | Enabled | Gets desktop groups with the specified value of Enabled. | false | false |  |
 | InMaintenanceMode | Gets desktop groups with the specified value of InMaintenanceMode. | false | false |  |
 | IsRemotePC | Gets desktop groups with the specified IsRemotePC value. | false | false |  |
+| IsUsedByGpo | Gets desktop groups that are used by group policy. | false | false |  |
 | LicenseModel | Gets desktop groups with the specified license model. | false | false |  |
+| MachineCost | The per-hour instance cost of machines in this desktop group. | false | false |  |
 | MachineLogOnType | Gets desktop groups that have the specified login type. Values can be:<br>o ActiveDirectory - Perform Active Directory login on the machine.<br>o LocalMappedAccount  - Perform local mapped account login on the machine. | false | false |  |
 | Metadata | Gets records with matching metadata entries.<br>The value being compared with is a concatenation of the key name, a colon, and the value. For example: -Metadata "abc:x\*" matches records with a metadata entry having a key name of "abc" and a value starting with the letter "x". | false | false |  |
-| MinimumFunctionalLevel | Gets desktop groups with a specific MinimumFunctionalLevel.<br>Valid values are L5, L7, L7\_6 | false | false |  |
+| MinimumFunctionalLevel | Gets desktop groups with a specific MinimumFunctionalLevel.<br>Valid values are L5, L7, L7\_6, L7\_7, L7\_8, L7\_9, L7\_20, L7\_25 | false | false |  |
 | OffPeakBufferSizePercent | Gets desktop groups with the specified value of OffPeakBufferSizePercent. | false | false |  |
 | OffPeakDisconnectAction | Gets desktop groups with the specified value of OffPeakDisconnectAction. | false | false |  |
 | OffPeakDisconnectTimeout | Gets desktop groups with the specified value of OffPeakDisconnectTimeout. | false | false |  |
@@ -187,8 +218,10 @@ A desktop group object represents a collection of machines that are fully config
 | PeakExtendedDisconnectTimeout | Gets desktop groups with the specified value of PeakExtendedDisconnectTimeout. | false | false |  |
 | PeakLogOffAction | Gets desktop groups with the specified value of PeakLogOffAction. | false | false |  |
 | PeakLogOffTimeout | Gets desktop groups with the specified value of PeakLogOffTimeout. | false | false |  |
+| PowerOffDelay | The number of minutes following a power-on operation that Auto Scale will wait before attemping to power off that same machine. Possible values are in the range 0 - 60. | false | false |  |
 | ProductCode | Gets desktop groups with the specified licensing product code. | false | false |  |
 | PublishedName | Gets desktop groups whose published name matches the supplied pattern. | false | false |  |
+| RestrictAutoscaleTagUid | If set to a Tag UID, only machines that have this tag will be auto scaled. | false | false |  |
 | ReuseMachinesWithoutShutdownInOutage | Gets only desktop groups that won't shut down machines after they been used during outage. | false | false |  |
 | ScopeId | Gets desktop groups that are associated with the given scope identifier. | false | false |  |
 | ScopeName | Gets desktop groups that are associated with the given scope name. | false | false |  |
@@ -219,6 +252,7 @@ A desktop group object represents a collection of machines that are fully config
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 
