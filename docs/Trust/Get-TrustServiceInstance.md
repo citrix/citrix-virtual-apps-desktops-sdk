@@ -3,7 +3,7 @@
 Gets the service instance entries for the Trust Service.
 ## Syntax
 ```
-Get-TrustServiceInstance [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-TrustServiceInstance [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns service interfaces published by instances of the Trust Service. Each instance of a service publishes multiple interfaces with distinct interface types, and each of these interfaces is represented as a ServiceInstance object. Service instances can be used to register the service with a central configuration service so that other services can use the functionality.
@@ -13,12 +13,13 @@ You do not need to configure a database connection to use this command.
 
 ## Related Commands
 
-* [Get-TrustServiceStatus](../Get-TrustServiceStatus/)
-* [Reset-TrustServiceGroupMembership](../Reset-TrustServiceGroupMembership/)
+* [Get-TrustServiceStatus](./Get-TrustServiceStatus/)
+* [Reset-TrustServiceGroupMembership](./Reset-TrustServiceGroupMembership/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

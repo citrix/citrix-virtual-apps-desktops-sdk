@@ -3,9 +3,9 @@
 Associate Remote PC desktop groups with the specified Remote PC catalog.
 ## Syntax
 ```
-Add-BrokerDesktopGroup [-InputObject] <DesktopGroup[]> [-RemotePCCatalog <Catalog>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerDesktopGroup [-InputObject] <DesktopGroup[]> [-RemotePCCatalog <Catalog>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Add-BrokerDesktopGroup [-Name] <String> [-RemotePCCatalog <Catalog>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerDesktopGroup [-Name] <String> [-RemotePCCatalog <Catalog>] [-Priority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 This cmdlet forms relationships between Remote PC desktop groups and catalogs.
@@ -15,9 +15,9 @@ The Remote PC relationships are used by Remote PC automation to determine which 
 
 ## Related Commands
 
-* [Remove-BrokerDesktopGroup](../Remove-BrokerDesktopGroup/)
-* [Add-BrokerCatalog](../Add-BrokerCatalog/)
-* [Remove-BrokerCatalog](../Remove-BrokerCatalog/)
+* [Remove-BrokerDesktopGroup](./Remove-BrokerDesktopGroup/)
+* [Add-BrokerCatalog](./Add-BrokerCatalog/)
+* [Remove-BrokerCatalog](./Remove-BrokerCatalog/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ The Remote PC relationships are used by Remote PC automation to determine which 
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

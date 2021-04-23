@@ -3,9 +3,9 @@
 Gets one or more reboot schedules.
 ## Syntax
 ```
-Get-BrokerRebootScheduleV2 [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerRebootScheduleV2 [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerRebootScheduleV2 [[-Name] <String>] [-Active <Boolean>] [-Day <RebootScheduleDays>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-MetadataKey <String>] [-Metadata <String>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-WarningRepeatInterval <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerRebootScheduleV2 [[-Name] <String>] [-Active <Boolean>] [-Day <RebootScheduleDays>] [-DesktopGroupName <String>] [-DesktopGroupUid <Int32>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-IgnoreMaintenanceMode <Boolean>] [-MaxOvertimeStartMins <Int32>] [-MetadataKey <String>] [-Metadata <String>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-UseNaturalReboot <Boolean>] [-WarningRepeatInterval <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Get-BrokerRebootScheduleV2 cmdlet is used to enumerate desktop group reboot schedules that match all of the supplied criteria.
@@ -33,6 +33,10 @@ The reboot schedule object returned represents a regularly scheduled reboot of m
 
   * Frequency (Citrix.Broker.Admin.SDK.RebootScheduleFrequency) Whether the schedule runs daily or weekly.
 
+  * IgnoreMaintenanceMode (System.Boolean) Boolean value to reboot machines in maintenance mode
+
+  * MaxOvertimeStartMins (System.Int32) Maximum delay in minutes after which the scheduled reboot will not take place
+
   * MetadataKeys (System.String\[\]) All key names of metadata items associated with this application.
 
   * MetadataMap (System.Collections.Generic.Dictionary&lt;string, string&gt;) Metadata for this application.
@@ -47,6 +51,8 @@ The reboot schedule object returned represents a regularly scheduled reboot of m
 
   * Uid (System.Int32) Uid of the reboot schedule.
 
+  * UseNaturalReboot (System.Boolean) Boolean value indicating whether the machines should reboot whenever they happen to have no sessions, rather than at equally spaced times within the cycle duration.
+
   * WarningDuration (System.Int32) Number of minutes to display the warning message for.
 
   * WarningMessage (System.String) Warning message to display to users in active sessions prior to rebooting the machine.
@@ -58,11 +64,11 @@ The reboot schedule object returned represents a regularly scheduled reboot of m
 
 ## Related Commands
 
-* [Set-BrokerRebootScheduleV2](../Set-BrokerRebootScheduleV2/)
-* [New-BrokerRebootScheduleV2](../New-BrokerRebootScheduleV2/)
-* [Remove-BrokerRebootScheduleV2](../Remove-BrokerRebootScheduleV2/)
-* [Rename-BrokerRebootScheduleV2](../Rename-BrokerRebootScheduleV2/)
-* [Get-BrokerRebootCycle](../Get-BrokerRebootCycle/)
+* [Set-BrokerRebootScheduleV2](./Set-BrokerRebootScheduleV2/)
+* [New-BrokerRebootScheduleV2](./New-BrokerRebootScheduleV2/)
+* [Remove-BrokerRebootScheduleV2](./Remove-BrokerRebootScheduleV2/)
+* [Rename-BrokerRebootScheduleV2](./Rename-BrokerRebootScheduleV2/)
+* [Get-BrokerRebootCycle](./Get-BrokerRebootCycle/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -74,11 +80,14 @@ The reboot schedule object returned represents a regularly scheduled reboot of m
 | DesktopGroupUid | Gets the reboot schedules for the desktop group having this Uid. | false | false |  |
 | Enabled | Gets the reboot schedules with the specified Enabled value. | false | false |  |
 | Frequency | Gets the reboot schedules with the specified frequency (either Weekly or Daily). | false | false |  |
+| IgnoreMaintenanceMode | Boolean value to reboot machines in maintenance mode | false | false |  |
+| MaxOvertimeStartMins | Maximum delay in minutes after which the scheduled reboot will not take place | false | false |  |
 | MetadataKey | All key names of metadata items associated with this application. | false | false |  |
 | Metadata | Gets records with matching metadata entries.<br>The value being compared with is a concatenation of the key name, a colon, and the value. For example: -Metadata "abc:x\*" matches records with a metadata entry having a key name of "abc" and a value starting with the letter "x". | false | false |  |
 | RebootDuration | Gets the reboot schedules with the specified duration. | false | false |  |
 | RestrictToTag | Gets the reboot schedules with the specified tag. | false | false |  |
 | StartTime | Gets the reboot schedules with the specified start time (HH:MM). | false | false |  |
+| UseNaturalReboot | Gets the reboot schedules with the specified UseNaturalReboot value. | false | false |  |
 | WarningRepeatInterval | Gets the reboot schedules with the specified warning repeat interval. | false | false |  |
 | ReturnTotalRecordCount | When specified, this causes the cmdlet to output an error record containing the number of records available. This error record is additional information and does not affect the objects written to the output pipeline. See about\_Broker\_Filtering for details. | false | false | False |
 | MaxRecordCount | Specifies the maximum number of records to return. | false | false | 250 |
@@ -88,6 +97,7 @@ The reboot schedule object returned represents a regularly scheduled reboot of m
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,9 +3,9 @@
 Adds a new administrator to the site.
 ## Syntax
 ```
-New-AdminAdministrator [-Name] <String> [-Enabled <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+New-AdminAdministrator [-Name] <String> [-Enabled <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-New-AdminAdministrator -Sid <String> [-Enabled <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+New-AdminAdministrator -Sid <String> [-Enabled <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 New-AdminAdministrator creates a new administrator object in the site. Once a new administrator has been created you can assign rights (role and scope pairs) to the administrator.
@@ -17,11 +17,11 @@ When the Enabled flag of an administrator is set to false, any rights of the adm
 
 ## Related Commands
 
-* [Get-AdminAdministrator](../Get-AdminAdministrator/)
-* [Set-AdminAdministrator](../Set-AdminAdministrator/)
-* [Remove-AdminAdministrator](../Remove-AdminAdministrator/)
-* [Set-AdminAdministratorMetadata](../Set-AdminAdministratorMetadata/)
-* [Remove-AdminAdministratorMetadata](../Remove-AdminAdministratorMetadata/)
+* [Get-AdminAdministrator](./Get-AdminAdministrator/)
+* [Set-AdminAdministrator](./Set-AdminAdministrator/)
+* [Remove-AdminAdministrator](./Remove-AdminAdministrator/)
+* [Set-AdminAdministratorMetadata](./Set-AdminAdministratorMetadata/)
+* [Remove-AdminAdministratorMetadata](./Remove-AdminAdministratorMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -30,6 +30,7 @@ When the Enabled flag of an administrator is set to false, any rights of the adm
 | Enabled | Specifies whether the new administrator starts off enabled or not. | false | true (ByPropertyName) | True |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

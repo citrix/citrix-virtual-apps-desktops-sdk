@@ -3,7 +3,7 @@
 Gets a list of all available database schema versions for the ConfigurationLogging Service.
 ## Syntax
 ```
-Get-LogInstalledDBVersion [-DataStore <String>] [-Upgrade] [-Downgrade] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-LogInstalledDBVersion [-DataStore <String>] [-Upgrade] [-Downgrade] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets the current version number of the Citrix ConfigurationLogging Service database schema when called with no parameters.
@@ -19,15 +19,16 @@ Only one of the -Upgrade or -Downgrade parameters may be supplied at once.
 
 ## Related Commands
 
-* [Get-LogDBVersionChangeScript](../Get-LogDBVersionChangeScript/)
-* [Get-LogDBSchema](../Get-LogDBSchema/)
+* [Get-LogDBVersionChangeScript](./Get-LogDBVersionChangeScript/)
+* [Get-LogDBSchema](./Get-LogDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | DataStore | Specifies the database connection logical name the schema script should be returned for. The parameter is optional. | false | false |  |
 | Upgrade | Specifies that only schema versions to which the current database version can be updated should be returned. | false | false |  |
 | Downgrade | Specifies that only schema versions to which the current database version can be reverted should be returned. | false | false |  |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

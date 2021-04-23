@@ -3,7 +3,7 @@
 Gets existing identity pools.
 ## Syntax
 ```
-Get-AcctIdentityPool [[-IdentityPoolName] <String>] [-IdentityPoolUid <Guid>] [-Lock <Boolean>] [-ScopeId <Guid>] [-ScopeName <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AcctIdentityPool [[-IdentityPoolName] <String>] [-IdentityPoolUid <Guid>] [-Lock <Boolean>] [-ScopeId <Guid>] [-ScopeName <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Provides the ability to locate existing identity pools.
@@ -11,10 +11,10 @@ Provides the ability to locate existing identity pools.
 
 ## Related Commands
 
-* [New-AcctIdentityPool](../New-AcctIdentityPool/)
-* [Remove-AcctIdentityPool](../Remove-AcctIdentityPool/)
-* [Rename-AcctIdentityPool](../Rename-AcctIdentityPool/)
-* [Set-AcctIdentityPool](../Set-AcctIdentityPool/)
+* [New-AcctIdentityPool](./New-AcctIdentityPool/)
+* [Remove-AcctIdentityPool](./Remove-AcctIdentityPool/)
+* [Rename-AcctIdentityPool](./Rename-AcctIdentityPool/)
+* [Set-AcctIdentityPool](./Set-AcctIdentityPool/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,7 @@ Provides the ability to locate existing identity pools.
 | SortBy | See about\_Acct\_Filtering for details. | false | false |  |
 | Filter | See about\_Acct\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value will become the default. |
 
 ## Input Type
@@ -37,8 +38,8 @@ Provides the ability to locate existing identity pools.
 
 ## Return Values
 
-### Citrix.Adidentity.Sdk.Identitypool<br>    This Object Provides Details Of The Identity Pool And Contains The Following Information:<br>Identitypoolname &lt;String&gt;<br>    The Name Of The Identity Pool.<br>Identitypooluid &lt;Guid&gt;<br>    The Unique Identifier For The Identity Pool.<br>Namingscheme &lt;String&gt;<br>    The Naming Scheme For The Identity Pool.<br>Namingschemetype &lt;Citrix.Xdinterservicetypes.Adidentitynamingscheme&gt;<br>    The Naming Scheme Type For The Identity Pool. This Can Be One Of The Following:<br>        Numeric - Naming Scheme Uses Numeric Indexes<br>        Alphabetic - Naming Scheme Uses Alphabetic Indexes<br>Startcount &lt;Int&gt;<br>    The Next Index To Be Used When Creating An Identity From The Identity Pool.<br>Ou &lt;String&gt;<br>    The Active Directory Distinguished Name For The Ou In Which Accounts Created From This Identity Pool Will Be Created.<br>Domain &lt;String&gt;<br>    The Active Directory Domain That Accounts In The Pool Belong To.<br>Lock &lt;Boolean&gt;<br>    Indicates If The Identity Pool Is Locked.
-
+### Citrix.Adidentity.Sdk.Identitypool
+This object provides details of the identity pool and contains the following information:<br>IdentityPoolName &lt;string&gt;<br>    The name of the identity pool.<br>IdentityPoolUid &lt;Guid&gt;<br>    The unique identifier for the identity pool.<br>NamingScheme &lt;string&gt;<br>    The naming scheme for the identity pool.<br>NamingSchemeType &lt;Citrix.XDInterServiceTypes.ADIdentityNamingScheme&gt;<br>    The naming scheme type for the identity pool. This can be one of the following:<br>        Numeric - naming scheme uses numeric indexes<br>        Alphabetic - naming scheme uses alphabetic indexes<br>StartCount &lt;int&gt;<br>    The next index to be used when creating an identity from the identity pool.<br>OU &lt;string&gt;<br>    The Active Directory distinguished name for the OU in which accounts created from this identity pool will be created.<br>Domain &lt;string&gt;<br>    The Active Directory domain that accounts in the pool belong to.<br>Lock &lt;Boolean&gt;<br>    Indicates if the identity pool is locked.
 ## Notes
 In the case of failure, the following errors can result.<br>    Error Codes<br>    -----------<br>    PartialData<br>    Only a subset of the available data was returned.<br>    CouldNotQueryDatabase<br>    The query required to get the database was not defined.<br>    PermissionDenied<br>    The user does not have administrative rights to perform this operation.<br>    ConfigurationLoggingError<br>    The operation could not be performed because of a configuration logging error<br>    CommunicationError<br>    An error occurred while communicating with the service.<br>    DatabaseNotConfigured<br>    The operation could not be completed because the database for the service is not configured.<br>    InvalidFilter<br>    A filtering expression was supplied that could not be interpreted for this cmdlet.<br>    ExceptionThrown<br>    An unexpected error occurred.  To locate more details, see the Windows event logs on the controller being used or examine the XenDesktop logs.
 ## Examples

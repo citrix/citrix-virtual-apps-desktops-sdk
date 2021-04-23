@@ -3,7 +3,7 @@
 Configures a database connection for the ConfigurationLogging Service.
 ## Syntax
 ```
-Set-LogDBConnection [-DBConnection] <String> [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [[-DataStore] <String>] [<CommonParameters>]
+Set-LogDBConnection [-DBConnection] <String> [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [[-DataStore] <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Specifies the database connection string for use by the currently selected Citrix ConfigurationLogging Service instance.
@@ -23,16 +23,17 @@ The current service instance is that on the local machine, or that explicitly sp
 
 ## Related Commands
 
-* [Get-LogServiceStatus](../Get-LogServiceStatus/)
-* [Get-LogDBConnection](../Get-LogDBConnection/)
-* [Test-LogDBConnection](../Test-LogDBConnection/)
+* [Get-LogServiceStatus](./Get-LogServiceStatus/)
+* [Get-LogDBConnection](./Get-LogDBConnection/)
+* [Test-LogDBConnection](./Test-LogDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | DBConnection | Specifies the database connection string to be used by the ConfigurationLogging Service.  Passing in \$null will clear any existing database connection configured. | true | false |  |
 | Force | If present, allows the local administrator to set the connection string to null when there are problems contacting the database or other services. | false | false | false |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 | DataStore | Specifies the logical name of the data store for the ConfigurationLogging Service. Can be either be 'Site' or the logical name of the secondary data store. | false | false | Site |
 

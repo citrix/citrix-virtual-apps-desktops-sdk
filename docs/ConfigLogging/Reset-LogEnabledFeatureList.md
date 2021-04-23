@@ -3,7 +3,7 @@
 Requests a refresh of the list of enabled features.
 ## Syntax
 ```
-Reset-LogEnabledFeatureList [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Reset-LogEnabledFeatureList [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 This cmdlet can be used to request that the service refreshes its internal list of enabled Site features.
@@ -16,7 +16,8 @@ This will effectively synchronize the list of enabled Site features with the one
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

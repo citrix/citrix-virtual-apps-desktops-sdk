@@ -3,9 +3,9 @@
 Performs administrative operations on the user/group and machine name cache.
 ## Syntax
 ```
-Update-BrokerNameCache [-Machines] [-Users] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Update-BrokerNameCache [-Machines] [-Users] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Update-BrokerNameCache -Purge [-Machines] [-Users] [-UnusedFor <TimeSpan>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Update-BrokerNameCache -Purge [-Machines] [-Users] [-UnusedFor <TimeSpan>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Triggers an immediate asynchronous refresh of the name cache, or when used with the -Purge parameter removes cache entries that are unreferenced and have been unused for a period of time.
@@ -32,6 +32,7 @@ For machines, the following name information is cached: Windows name (DOMAIN\\ma
 | UnusedFor | Specifies the minimum period over which user or machine cache entries must have been unused before they can be be removed with the -Purge option. | false | false | 90 days |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

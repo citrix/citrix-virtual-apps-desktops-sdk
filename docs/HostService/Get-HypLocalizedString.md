@@ -3,7 +3,7 @@
 Obtains human-readable and locale-aware status messages from a hosting connection.
 ## Syntax
 ```
-Get-HypLocalizedString [-LiteralPath] <String> [-Locale] <String> [-Category] <String> [-BearerToken <String>] [-AdminAddress <String>] [[-LookupKey] <String>] [<CommonParameters>]
+Get-HypLocalizedString [-LiteralPath] <String> [-Locale] <String> [-Category] <String> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [[-LookupKey] <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 TODO
@@ -18,6 +18,7 @@ TODO
 | Locale | The requested locale for the message, such as "en-US". | true | false |  |
 | Category | The category of the localized string. | true | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller to which the PowerShell snap-in connects. You can provide a host name or an IP address. | false | false | LocalHost. When a value is provided by any cmdlet, this value becomes the default. |
 | LookupKey | The lookup key or message ID. | false | false |  |
 

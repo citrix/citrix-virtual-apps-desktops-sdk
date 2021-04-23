@@ -3,7 +3,7 @@
 Gets any added capabilities for the Broker Service on the controller.
 ## Syntax
 ```
-Get-BrokerServiceAddedCapability [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerServiceAddedCapability [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables updates to the Broker Service on the controller to be detected.
@@ -18,6 +18,7 @@ There is no requirement for a database connection to be configured in order for 
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

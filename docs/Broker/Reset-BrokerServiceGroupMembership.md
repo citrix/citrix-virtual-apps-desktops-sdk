@@ -3,7 +3,7 @@
 Reloads the access permissions and configuration service locations for the Broker Service.
 ## Syntax
 ```
-Reset-BrokerServiceGroupMembership [-ConfigServiceInstance] <PSObject[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Reset-BrokerServiceGroupMembership [-ConfigServiceInstance] <PSObject[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables you to reload Broker Service access permissions and configuration service locations. The Reset-BrokerServiceGroupMembership command must be run on at least one instance of the service type (Broker) after installation and registration with the configuration service. Without this operation, the Broker services will be unable to communicate with other services in the XenDesktop deployment. When the command is run, the services are updated when additional services are added to the deployment, provided that the configuration service is not stopped. The Reset-BrokerServiceGroupMembership command can be run again to refresh this information if automatic updates do not occur when new services are added to the deployment. If more than one configuration service instance is passed to the command, the first instance that meets the expected service type requirements is used.
@@ -11,8 +11,8 @@ Enables you to reload Broker Service access permissions and configuration servic
 
 ## Related Commands
 
-* [Get-BrokerServiceInstance](../Get-BrokerServiceInstance/)
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
+* [Get-BrokerServiceInstance](./Get-BrokerServiceInstance/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -20,6 +20,7 @@ Enables you to reload Broker Service access permissions and configuration servic
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

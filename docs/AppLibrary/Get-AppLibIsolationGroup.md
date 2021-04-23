@@ -3,9 +3,9 @@
 Gets the details of an isolation group held in the application library.
 ## Syntax
 ```
-Get-AppLibIsolationGroup [[-IsolationGroupUid] <Int32>] [-IncludePolicy <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibIsolationGroup [[-IsolationGroupUid] <Int32>] [-IncludePolicy <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Get-AppLibIsolationGroup [[-Name] <String>] [-IncludePolicy <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibIsolationGroup [[-Name] <String>] [-IncludePolicy <Boolean>] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The application library holds the information about isolation groups, their location on the network and the packages they contain.
@@ -21,6 +21,7 @@ The application library holds the information about isolation groups, their loca
 | IncludePolicy | The option to retrieve the Isolation Group policy. | false | true (ByPropertyName) |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

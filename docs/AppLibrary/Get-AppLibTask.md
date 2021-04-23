@@ -3,7 +3,7 @@
 Gets the task history for the AppLibrary Service.
 ## Syntax
 ```
-Get-AppLibTask [[-TaskId] <Guid>] [-Type <JobType>] [-Active <Boolean>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-AppLibTask [[-TaskId] <Guid>] [-Type <JobType>] [-Active <Boolean>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns a list of tasks that have run or are currently running within the AppLibrary Service.
@@ -11,11 +11,11 @@ Returns a list of tasks that have run or are currently running within the AppLib
 
 ## Related Commands
 
-* [Remove-AppLibTask](../Remove-AppLibTask/)
-* [Stop-AppLibTask](../Stop-AppLibTask/)
-* [Switch-AppLibTask](../Switch-AppLibTask/)
-* [Add-AppLibTaskMetadata](../Add-AppLibTaskMetadata/)
-* [Remove-AppLibTaskMetadata](../Remove-AppLibTaskMetadata/)
+* [Remove-AppLibTask](./Remove-AppLibTask/)
+* [Stop-AppLibTask](./Stop-AppLibTask/)
+* [Switch-AppLibTask](./Switch-AppLibTask/)
+* [Add-AppLibTaskMetadata](./Add-AppLibTaskMetadata/)
+* [Remove-AppLibTaskMetadata](./Remove-AppLibTaskMetadata/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -30,6 +30,7 @@ Returns a list of tasks that have run or are currently running within the AppLib
 | SortBy | See about\_AppLib\_Filtering for details. | false | false |  |
 | Filter | See about\_AppLib\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

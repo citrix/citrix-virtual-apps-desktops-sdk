@@ -3,9 +3,9 @@
 Adds a machine configuration to a desktop group.
 ## Syntax
 ```
-Add-BrokerMachineConfiguration [-InputObject] <MachineConfiguration[]> [-Application <Application>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerMachineConfiguration [-InputObject] <MachineConfiguration[]> [-Application <Application>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Add-BrokerMachineConfiguration [-Name] <String> [-Application <Application>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Add-BrokerMachineConfiguration [-Name] <String> [-Application <Application>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Associates a machine configuration with a desktop group. The settings in the machine configuration are then applied to the machines in the desktop group.
@@ -13,10 +13,10 @@ Associates a machine configuration with a desktop group. The settings in the mac
 
 ## Related Commands
 
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
-* [Rename-BrokerMachineConfiguration](../Rename-BrokerMachineConfiguration/)
-* [Remove-BrokerMachineConfiguration](../Remove-BrokerMachineConfiguration/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
+* [Rename-BrokerMachineConfiguration](./Rename-BrokerMachineConfiguration/)
+* [Remove-BrokerMachineConfiguration](./Remove-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -27,6 +27,7 @@ Associates a machine configuration with a desktop group. The settings in the mac
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,7 +3,7 @@
 Gets an SQL service schema update script for the Citrix Host Service.
 ## Syntax
 ```
-Get-HypDBVersionChangeScript -DatabaseName <String> -TargetVersion <Version> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-HypDBVersionChangeScript -DatabaseName <String> -TargetVersion <Version> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets an SQL script that can be used to update the current Citrix Host Service database schema. An update can be an upgrade or downgrade.
@@ -25,15 +25,16 @@ Once an update has been applied to the service schema, any existing Citrix Host 
 
 ## Related Commands
 
-* [Get-HypInstalledDBVersion](../Get-HypInstalledDBVersion/)
-* [Get-HypServiceStatus](../Get-HypServiceStatus/)
-* [Get-HypDBSchema](../Get-HypDBSchema/)
+* [Get-HypInstalledDBVersion](./Get-HypInstalledDBVersion/)
+* [Get-HypServiceStatus](./Get-HypServiceStatus/)
+* [Get-HypDBSchema](./Get-HypDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | DatabaseName | The name of the database containing the Citrix Host Service schema to be updated. | true | false |  |
 | TargetVersion | The required target service schema version of the update. This is the service schema version obtained after the update script is applied. | true | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

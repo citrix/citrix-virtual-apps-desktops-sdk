@@ -3,9 +3,9 @@
 Gets catalogs configured for this site.
 ## Syntax
 ```
-Get-BrokerCatalog [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerCatalog [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerCatalog [[-Name] <String>] [-AllocationType <AllocationType>] [-AppDnaAnalysisState <AppDnaAnalysisState>] [-AssignedCount <Int32>] [-AvailableAssignedCount <Int32>] [-AvailableCount <Int32>] [-AvailableUnassignedCount <Int32>] [-Description <String>] [-HypervisorConnectionUid <Int32>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-Metadata <String>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PersistUserChanges <PersistUserChanges>] [-ProvisioningSchemeId <Guid>] [-ProvisioningType <ProvisioningType>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCDesktopGroupPriority <Int32>] [-RemotePCDesktopGroupUid <Int32>] [-RemotePCHypervisorConnectionUid <Int32>] [-ScopeId <Guid>] [-ScopeName <String>] [-SessionSupport <SessionSupport>] [-TenantId <Guid>] [-UnassignedCount <Int32>] [-UsedCount <Int32>] [-UUID <Guid>] [-ZoneName <String>] [-ZoneUid <Guid>] [-MachineUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerCatalog [[-Name] <String>] [-AllocationType <AllocationType>] [-AppDnaAnalysisState <AppDnaAnalysisState>] [-AssignedCount <Int32>] [-AvailableAssignedCount <Int32>] [-AvailableCount <Int32>] [-AvailableUnassignedCount <Int32>] [-Description <String>] [-HypervisorConnectionUid <Int32>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-Metadata <String>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PersistUserChanges <PersistUserChanges>] [-ProvisioningSchemeId <Guid>] [-ProvisioningType <ProvisioningType>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCDesktopGroupPriority <Int32>] [-RemotePCDesktopGroupUid <Int32>] [-RemotePCHypervisorConnectionUid <Int32>] [-ScopeId <Guid>] [-ScopeName <String>] [-SessionSupport <SessionSupport>] [-Tag <String>] [-TenantId <Guid>] [-UnassignedCount <Int32>] [-UsedCount <Int32>] [-UUID <Guid>] [-ZoneName <String>] [-ZoneUid <Guid>] [-MachineUid <Int32>] [-TagUid <Int32>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves catalogs matching the specified criteria. If no parameters are specified this cmdlet enumerates all catalogs.
@@ -69,9 +69,11 @@ See about\_Broker\_Machines for more information.
 
   * RemotePCHypervisorConnectionUid (System.Int32?) UID of the hypervisor connection used for powering on RemotePC machines in this catalog (only for catalogs with IsRemotePC set to true).
 
-  * Scopes (Citrix.Broker.Admin.SDK.ScopeReference\[\]) The list of the delegated admin scopes to which the catalog belongs.
+  * Scopes (Citrix.Fma.Sdk.DelegatedAdminInterfaces.ScopeReference\[\]) The list of the delegated admin scopes to which the catalog belongs.
 
   * SessionSupport (Citrix.Broker.Admin.SDK.SessionSupport) Specifies the session support of the machines in the catalog. Valid values are: SingleSession, MultiSession.
+
+  * Tags (System.String\[\]) Tags associated with the catalog.
 
   * TenantId (System.Guid?) Identity of tenant associated with catalog. Not applicable (always blank) in non-multitenant sites.
 
@@ -90,10 +92,11 @@ See about\_Broker\_Machines for more information.
 
 ## Related Commands
 
-* [New-BrokerCatalog](../New-BrokerCatalog/)
-* [Remove-BrokerCatalog](../Remove-BrokerCatalog/)
-* [Rename-BrokerCatalog](../Rename-BrokerCatalog/)
-* [Set-BrokerCatalog](../Set-BrokerCatalog/)
+* [New-BrokerCatalog](./New-BrokerCatalog/)
+* [Remove-BrokerCatalog](./Remove-BrokerCatalog/)
+* [Rename-BrokerCatalog](./Rename-BrokerCatalog/)
+* [Set-BrokerCatalog](./Set-BrokerCatalog/)
+* [Add-BrokerTag](./Add-BrokerTag/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -110,7 +113,7 @@ See about\_Broker\_Machines for more information.
 | IsRemotePC | Gets catalogs with the specified IsRemotePC value. | false | false |  |
 | MachinesArePhysical | Specifies whether machines in the catalog can be power-managed by the Citrix Broker Service. Where the Citrix Broker Service cannot control the power state of the machine specify \$true, otherwise \$false. Can only be specified together with a provisioning type of Pvs or Manual, or if used with the legacy CatalogKind parameter only with Pvs or PvsPvd catalog kinds. | false | false |  |
 | Metadata | Gets records with matching metadata entries.<br>The value being compared with is a concatenation of the key name, a colon, and the value. For example: -Metadata "abc:x\*" matches records with a metadata entry having a key name of "abc" and a value starting with the letter "x". | false | false |  |
-| MinimumFunctionalLevel | Gets catalogs with a specific MinimumFunctionalLevel.<br>Valid values are L5, L7, L7\_6 | false | false |  |
+| MinimumFunctionalLevel | Gets catalogs with a specific MinimumFunctionalLevel.<br>Valid values are L5, L7, L7\_6, L7\_7, L7\_8, L7\_9, L7\_20, L7\_25 | false | false |  |
 | PersistUserChanges | Gets catalogs with the specified behavior when persisting changes made by the end user. Possible values are:<br>o OnLocal - User changes are stored on the machine's local storage.<br>o Discard - User changes are discarded.<br>o OnPvd - User changes are stored on the user's personal vDisk. | false | false |  |
 | ProvisioningSchemeId | Gets catalogs associated with the specified provisioning scheme. | false | false |  |
 | ProvisioningType | Specifies the provisioning type for the catalog. Values can be:<br>o Manual - No provisioning.<br>o PVS -  Machine provisioned by PVS (machine may be physical, blade, VM,...).<br>o MCS - Machine provisioned by MCS (machine must be VM). | false | false |  |
@@ -122,6 +125,7 @@ See about\_Broker\_Machines for more information.
 | ScopeId | Gets catalogs that are associated with the given scope identifier. | false | false |  |
 | ScopeName | Gets catalogs that are associated with the given scope name. | false | false |  |
 | SessionSupport | Gets catalogs that have the specified session capability. Values can be:<br>o SingleSession - Single-session only machine.<br>o MultiSession  - Multi-session capable machine. | false | false |  |
+| Tag | Gets catalogs tagged with the specified tag. | false | false |  |
 | TenantId | Gets catalogs associated with the specified tenant identity. | false | false |  |
 | UnassignedCount | Gets catalogs containing a specified number of unassigned machines (machines not assigned to users).<br>This property is typically used with advanced filtering; see about\_Broker\_Filtering. | false | false |  |
 | UsedCount | Gets catalogs containing a specified number of machines used in a desktop group.<br>This property is typically used with advanced filtering; see about\_Broker\_Filtering. | false | false |  |
@@ -129,6 +133,7 @@ See about\_Broker\_Machines for more information.
 | ZoneName | Gets catalogs located in the zone with the specified name. | false | false |  |
 | ZoneUid | Gets machines located in the zone with the specified UID. | false | false |  |
 | MachineUid | Gets the catalog containing the machine referenced by the specified unique identifier (UID). | false | false |  |
+| TagUid | Gets catalogs to which the specified tag (identified by its Uid) has been added to help identify it - see Add-BrokerTag for more information. | false | false |  |
 | ReturnTotalRecordCount | When specified, this causes the cmdlet to output an error record containing the number of records available. This error record is additional information and does not affect the objects written to the output pipeline. See about\_Broker\_Filtering for details. | false | false | False |
 | MaxRecordCount | Specifies the maximum number of records to return. | false | false | 250 |
 | Skip | Skips the specified number of records before returning results. Also reduces the count returned by -ReturnTotalRecordCount. | false | false | 0 |
@@ -137,6 +142,7 @@ See about\_Broker\_Machines for more information.
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -29,8 +29,8 @@ For detailed information about defining and assigning machine configurations, se
 
 ## See Also
 
-* [New-BrokerConfigurationSlot](../New-BrokerConfigurationSlot/)
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
-* [Import-BrokerDesktopPolicy](../Import-BrokerDesktopPolicy/)
+* [New-BrokerConfigurationSlot](./New-BrokerConfigurationSlot/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
+* [Import-BrokerDesktopPolicy](./Import-BrokerDesktopPolicy/)
 

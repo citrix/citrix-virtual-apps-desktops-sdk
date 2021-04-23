@@ -3,7 +3,7 @@
 Gets a list of all available database schema versions for the Host Service.
 ## Syntax
 ```
-Get-HypInstalledDBVersion [-Upgrade] [-Downgrade] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-HypInstalledDBVersion [-Upgrade] [-Downgrade] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Gets the current version number of the Citrix Host Service database schema when called with no parameters.
@@ -19,14 +19,15 @@ Only one of the -Upgrade or -Downgrade parameters may be supplied at once.
 
 ## Related Commands
 
-* [Get-HypDBVersionChangeScript](../Get-HypDBVersionChangeScript/)
-* [Get-HypDBSchema](../Get-HypDBSchema/)
+* [Get-HypDBVersionChangeScript](./Get-HypDBVersionChangeScript/)
+* [Get-HypDBSchema](./Get-HypDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | Upgrade | Specifies that only schema versions to which the current database version can be updated should be returned. | false | false |  |
 | Downgrade | Specifies that only schema versions to which the current database version can be reverted should be returned. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

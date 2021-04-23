@@ -3,13 +3,13 @@
 Removes AD computer accounts from an identity pool.
 ## Syntax
 ```
-Remove-AcctADAccount [-IdentityPoolName] <String> -ADAccountName <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AcctADAccount [-IdentityPoolName] <String> -ADAccountName <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Remove-AcctADAccount [-IdentityPoolName] <String> -ADAccountSid <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AcctADAccount [-IdentityPoolName] <String> -ADAccountSid <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Remove-AcctADAccount -IdentityPoolUid <Guid> -ADAccountName <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AcctADAccount -IdentityPoolUid <Guid> -ADAccountName <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Remove-AcctADAccount -IdentityPoolUid <Guid> -ADAccountSid <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-AcctADAccount -IdentityPoolUid <Guid> -ADAccountSid <String[]> [-ADUserName <String>] [-ADPassword <SecureString>] [-RemovalOption <ADIdentityRemoveAccountOption>] [-Force] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Provides the ability to remove AD accounts from an identity pool.  This removes the AD account from the Citrix service management scope.  This process provides the options for removing the account in AD (or disabling it) if required.
@@ -21,12 +21,12 @@ If the option to remove the account from AD or to disable it in AD is specified,
 
 ## Related Commands
 
-* [New-AcctADAccount](../New-AcctADAccount/)
-* [Add-AcctADAccount](../Add-AcctADAccount/)
-* [Repair-AcctADAccount](../Repair-AcctADAccount/)
-* [Unlock-AcctADAccount](../Unlock-AcctADAccount/)
-* [Update-AcctADAccount](../Update-AcctADAccount/)
-* [Get-AcctADAccount](../Get-AcctADAccount/)
+* [New-AcctADAccount](./New-AcctADAccount/)
+* [Add-AcctADAccount](./Add-AcctADAccount/)
+* [Repair-AcctADAccount](./Repair-AcctADAccount/)
+* [Unlock-AcctADAccount](./Unlock-AcctADAccount/)
+* [Update-AcctADAccount](./Update-AcctADAccount/)
+* [Get-AcctADAccount](./Get-AcctADAccount/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -40,6 +40,7 @@ If the option to remove the account from AD or to disable it in AD is specified,
 | Force | Indicates if accounts that are marked as 'in-use' can be removed. | false | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type
@@ -48,8 +49,8 @@ If the option to remove the account from AD or to disable it in AD is specified,
 
 ## Return Values
 
-### Citrix.Adidentity.Sdk.Accountoperationsummary<br>    The Remove-Acctadaccout Command Returns An Object With The Following Parameters;<br>    Successfulaccountscount &lt;Int&gt;<br>        The Number Of Accounts That Were Removed Successfully.<br>    Failedaccountscount &lt;Int&gt;<br>        The Number Of Accounts That Were Not Removed.<br>    Failedaccounts &lt;Citrix.Adidentity.Sdk.Accounterror\[\]&gt;<br>        The List Of Accounts That Failed To Be Removed.  Each One Has The Following Parameters:<br>            Adaccountname &lt;String&gt;<br>            Adaccountsid &lt;String&gt;<br>            Errorreason &lt;Adidentitystatus&gt;<br>               This Can Be One Of The Following<br>                   Unabletoconvertdomain<br>                   Identitynotlocatedindomain<br>                   Identitynotinidentitypool<br>                   Identityobjectinuse<br>                   Identityobjectlocked<br>                   Adservicedatabaseerror<br>                   Adservicedatabasenotconfigured<br>                   Adservicestatusinvaliddb<br>                   Failedtoconnecttodomaincontroller<br>                   Failedtodisableaccountinad<br>                   Failedtodeleteaccountinad<br>                   Failedtoexecutesearchinad<br>                   Failedtoaccesscomputeraccountinad<br>            Diagnosticinformtion &lt;Exception&gt;<br>              Any Other Error Information
-
+### Citrix.Adidentity.Sdk.Accountoperationsummary
+The remove-AcctADAccout command returns an object with the following parameters;<br>    SuccessfulAccountsCount &lt;int&gt;<br>        The number of accounts that were removed successfully.<br>    FailedAccountsCount &lt;int&gt;<br>        The number of accounts that were not removed.<br>    FailedAccounts &lt;Citrix.ADIdentity.Sdk.AccountError\[\]&gt;<br>        The list of accounts that failed to be removed.  Each one has the following parameters:<br>            ADAccountName &lt;string&gt;<br>            ADAccountSid &lt;String&gt;<br>            ErrorReason &lt;ADIdentityStatus&gt;<br>               This can be one of the following<br>                   UnableToConvertDomain<br>                   IdentityNotLocatedInDomain<br>                   IdentityNotInIdentityPool<br>                   IdentityObjectInUse<br>                   IdentityObjectLocked<br>                   ADServiceDatabaseError<br>                   ADServiceDatabaseNotConfigured<br>                   ADServiceStatusInvalidDb<br>                   FailedToConnectToDomainController<br>                   FailedToDisableAccountInAD<br>                   FailedToDeleteAccountInAD<br>                   FailedToExecuteSearchInAD<br>                   FailedToAccessComputerAccountInAD<br>            DiagnosticInformtion &lt;Exception&gt;<br>              Any other error information
 ## Notes
 In the case of failure, the following errors can result.<br>    Error Codes<br>    -----------<br>    IdentityPoolNotFound<br>    The specified identity pool was not found.<br>    IdentityPoolAlreadyLocked<br>    The specified identity pool was locked by another operation.<br>    PermissionDenied<br>    The user does not have administrative rights to perform this operation.<br>    ConfigurationLoggingError<br>    The operation could not be performed because of a configuration logging error<br>    DatabaseError<br>    An error occurred in the service while attempting a database operation.<br>    DatabaseNotConfigured<br>    The operation could not be completed because the database for the service is not configured.<br>    ServiceStatusInvalidDb<br>    An error occurred in the service while attempting a database operation - communication with the database failed for<br>    for various reasons.<br>    CommunicationError<br>    An error occurred while communicating with the service.<br>    ExceptionThrown<br>    An unexpected error occurred.  To locate more details, see the Windows event logs on the controller being used or examine the XenDesktop logs.
 ## Examples

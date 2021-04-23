@@ -3,9 +3,9 @@
 Deletes one or more applications, or an association of an application.
 ## Syntax
 ```
-Remove-BrokerApplication [-InputObject] <Application[]> [-Force] [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerApplication [-InputObject] <Application[]> [-Force] [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Remove-BrokerApplication [-Name] <String> [-Force] [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerApplication [-Name] <String> [-Force] [-ApplicationGroup <ApplicationGroup>] [-DesktopGroup <DesktopGroup>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Remove-BrokerApplication cmdlet deletes one or more applications, or you can use it to delete just the association of an application to a desktop group or application group.
@@ -28,12 +28,12 @@ If more than just the application is supplied as a parameter to the cmdlet (for 
 
 ## Related Commands
 
-* [New-BrokerApplication](../New-BrokerApplication/)
-* [Add-BrokerApplication](../Add-BrokerApplication/)
-* [Get-BrokerApplication](../Get-BrokerApplication/)
-* [Rename-BrokerApplication](../Rename-BrokerApplication/)
-* [Move-BrokerApplication](../Move-BrokerApplication/)
-* [Set-BrokerApplication](../Set-BrokerApplication/)
+* [New-BrokerApplication](./New-BrokerApplication/)
+* [Add-BrokerApplication](./Add-BrokerApplication/)
+* [Get-BrokerApplication](./Get-BrokerApplication/)
+* [Rename-BrokerApplication](./Rename-BrokerApplication/)
+* [Move-BrokerApplication](./Move-BrokerApplication/)
+* [Set-BrokerApplication](./Set-BrokerApplication/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -45,6 +45,7 @@ If more than just the application is supplied as a parameter to the cmdlet (for 
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

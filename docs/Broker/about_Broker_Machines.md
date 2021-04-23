@@ -64,12 +64,12 @@ Machines in maintenance mode are also excluded from automatic power management, 
 
 ## See Also
 
-* [about\_Broker\_PowerManagement](../about_Broker_PowerManagement/)
-* [about\_Broker\_Desktops](../about_Broker_Desktops/)
-* [New-BrokerMachine](../New-BrokerMachine/)
-* [Add-BrokerMachine](../Add-BrokerMachine/)
-* [Add-BrokerMachinesToDesktopGroup](../Add-BrokerMachinesToDesktopGroup/)
-* [Remove-BrokerMachine](../Remove-BrokerMachine/)
-* [Get-BrokerMachine](../Get-BrokerMachine/)
-* [Set-BrokerMachine](../Set-BrokerMachine/)
+* [about\_Broker\_PowerManagement](./about_Broker_PowerManagement/)
+* [about\_Broker\_Desktops](./about_Broker_Desktops/)
+* [New-BrokerMachine](./New-BrokerMachine/)
+* [Add-BrokerMachine](./Add-BrokerMachine/)
+* [Add-BrokerMachinesToDesktopGroup](./Add-BrokerMachinesToDesktopGroup/)
+* [Remove-BrokerMachine](./Remove-BrokerMachine/)
+* [Get-BrokerMachine](./Get-BrokerMachine/)
+* [Set-BrokerMachine](./Set-BrokerMachine/)
 

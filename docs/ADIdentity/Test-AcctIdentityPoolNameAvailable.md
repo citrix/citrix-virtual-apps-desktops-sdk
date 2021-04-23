@@ -3,7 +3,7 @@
 Checks to ensure that the proposed name for an identity pool is unused.
 ## Syntax
 ```
-Test-AcctIdentityPoolNameAvailable [-IdentityPoolName] <String[]> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Test-AcctIdentityPoolNameAvailable [-IdentityPoolName] <String[]> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Checks to ensure that the proposed name for an identity pool is unused. This check is done without regard for scoping of existing identity pools, so the names of inaccessible pools are also checked.
@@ -11,13 +11,14 @@ Checks to ensure that the proposed name for an identity pool is unused. This che
 
 ## Related Commands
 
-* [New-AcctIdentityPool](../New-AcctIdentityPool/)
-* [Rename-AcctIdentityPool](../Rename-AcctIdentityPool/)
+* [New-AcctIdentityPool](./New-AcctIdentityPool/)
+* [Rename-AcctIdentityPool](./Rename-AcctIdentityPool/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | IdentityPoolName | The name or names of the identity pool(s) to be tested. | true | true (ByValue, ByPropertyName) |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

@@ -3,9 +3,9 @@
 Gets hypervisor connections matching the specified criteria.
 ## Syntax
 ```
-Get-BrokerHypervisorConnection [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerHypervisorConnection [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerHypervisorConnection [[-Name] <String>] [-ExplicitPreferredController <Boolean>] [-ExtraSpinUpTimeSecs <Int32>] [-HypHypervisorConnectionUid <Guid>] [-IsReady <Boolean>] [-MachineCount <Int32>] [-MaxAbsoluteActiveActions <Int32>] [-MaxAbsoluteNewActionsPerMinute <Int32>] [-MaxAbsolutePvdPowerActions <Int32>] [-MaxPercentageActiveActions <Int32>] [-MaxPvdPowerActionsPercentageOfDesktops <Int32>] [-Metadata <String>] [-PreferredController <String>] [-State <HypervisorConnectionState>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerHypervisorConnection [[-Name] <String>] [-ExplicitPreferredController <Boolean>] [-ExtraSpinUpTimeSecs <Int32>] [-HypHypervisorConnectionUid <Guid>] [-HypHypervisorType <String>] [-IsReady <Boolean>] [-MachineCount <Int32>] [-MaxAbsoluteActiveActions <Int32>] [-MaxAbsoluteNewActionsPerMinute <Int32>] [-MaxAbsolutePvdPowerActions <Int32>] [-MaxPercentageActiveActions <Int32>] [-MaxPvdPowerActionsPercentageOfDesktops <Int32>] [-Metadata <String>] [-PreferredController <String>] [-State <HypervisorConnectionState>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Get-BrokerHypervisorConnection cmdlet gets hypervisor connections matching the specified criteria. If no parameters are specified this cmdlet enumerates all hypervisor connections.
@@ -22,6 +22,8 @@ The BrokerHypervisorConnection represents hypervisor connection object. It conta
   * ExtraSpinUpTimeSecs (System.Int32?) The extra time a VM is allowed to start before it is marked as failed on session launch
 
   * HypHypervisorConnectionUid (System.Guid) The Guid that identifies the hypervisor connection.
+
+  * HypHypervisorType (System.String) The type of hypervisor connected to.
 
   * IsReady (System.Boolean) Indicates that the connection is ready to be used in the configuration of managed machines.
 
@@ -50,9 +52,9 @@ The BrokerHypervisorConnection represents hypervisor connection object. It conta
 
 ## Related Commands
 
-* [New-BrokerHypervisorConnection](../New-BrokerHypervisorConnection/)
-* [Remove-BrokerHypervisorConnection](../Remove-BrokerHypervisorConnection/)
-* [Set-BrokerHypervisorConnection](../Set-BrokerHypervisorConnection/)
+* [New-BrokerHypervisorConnection](./New-BrokerHypervisorConnection/)
+* [Remove-BrokerHypervisorConnection](./Remove-BrokerHypervisorConnection/)
+* [Set-BrokerHypervisorConnection](./Set-BrokerHypervisorConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -61,6 +63,7 @@ The BrokerHypervisorConnection represents hypervisor connection object. It conta
 | ExplicitPreferredController | Gets hypervisor connections based on whether their preferred controller was explicitly specified or not | false | false |  |
 | ExtraSpinUpTimeSecs | Gets the extra time a VM is allowed to start before it is marked as failed on session launch | false | false |  |
 | HypHypervisorConnectionUid | Gets hypervisor connections with the specified Guid. | false | false |  |
+| HypHypervisorType | Gets hypervisor connections with the specified value of the hypervisor type. | false | false |  |
 | IsReady | Gets hypervisor connections with the specified value of the IsReady flag. | false | false |  |
 | MachineCount | Gets hypervisor connections with the specified machine count. | false | false |  |
 | MaxAbsoluteActiveActions | Gets hypervisor connections with the specified MaxAbsoluteActiveActions value. | false | false |  |
@@ -79,6 +82,7 @@ The BrokerHypervisorConnection represents hypervisor connection object. It conta
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,9 +3,9 @@
 Gets machines that have registered but are not yet configured in this site.
 ## Syntax
 ```
-Get-BrokerUnconfiguredMachine -SID <String> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerUnconfiguredMachine -SID <String> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerUnconfiguredMachine [[-MachineName] <String>] [-AgentVersion <String>] [-ControllerDNSName <String>] [-CurrentlyRegistered <Boolean>] [-DNSName <String>] [-FunctionalLevel <FunctionalLevel>] [-LastDeregistrationTime <DateTime>] [-OSType <String>] [-OSVersion <String>] [-SessionSupport <SessionSupport>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerUnconfiguredMachine [[-MachineName] <String>] [-AgentVersion <String>] [-ControllerDNSName <String>] [-CurrentlyRegistered <Boolean>] [-DNSName <String>] [-FunctionalLevel <FunctionalLevel>] [-LastDeregistrationTime <DateTime>] [-OSType <String>] [-OSVersion <String>] [-SessionSupport <SessionSupport>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieve machines matching the specified criteria, where the machine has or was previously registered with a controller in the site, but the machine has not yet been configured to be part of the site. If no parameters are specified, this cmdlet enumerates all such machines that are currently registered.
@@ -42,7 +42,7 @@ An unconfigured machine is a machine that has registered with the site but is no
 
 ## Related Commands
 
-* [Get-BrokerMachine](../Get-BrokerMachine/)
+* [Get-BrokerMachine](./Get-BrokerMachine/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ An unconfigured machine is a machine that has registered with the site but is no
 | ControllerDNSName | Gets machines by the DNS name of the controller they are registered with. | false | false |  |
 | CurrentlyRegistered | Gets machines by whether they are currently registered with the site. If there is no CurrentlyRegistered filter, then the default is to return unconfigured machines that are currently registered. | false | false |  |
 | DNSName | Gets machines by their DNS name. | false | false |  |
-| FunctionalLevel | Gets machines with a specific FunctionalLevel.<br>Valid values are L5, L7, L7\_6 | false | false |  |
+| FunctionalLevel | Gets machines with a specific FunctionalLevel.<br>Valid values are L5, L7, L7\_6, L7\_7, L7\_8, L7\_9, L7\_20, L7\_25 | false | false |  |
 | LastDeregistrationTime | Gets machines by the time that they were last deregistered. | false | false |  |
 | OSType | Gets machines by the type of operating system they are running. | false | false |  |
 | OSVersion | Gets machines by the version of the operating system they are running. | false | false |  |
@@ -65,6 +65,7 @@ An unconfigured machine is a machine that has registered with the site but is no
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

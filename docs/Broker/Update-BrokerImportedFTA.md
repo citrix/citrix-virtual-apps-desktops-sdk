@@ -3,7 +3,7 @@
 Imports or updates all of the file type associations for the specified worker.
 ## Syntax
 ```
-Update-BrokerImportedFTA -DesktopUids <Int32[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Update-BrokerImportedFTA -DesktopUids <Int32[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Imports or updates the file type associations from a specified worker machine.
@@ -26,8 +26,8 @@ If file type associations are imported more than once for a desktop group, for e
 
 ## Related Commands
 
-* [Get-BrokerImportedFTA](../Get-BrokerImportedFTA/)
-* [Remove-BrokerImportedFTA](../Remove-BrokerImportedFTA/)
+* [Get-BrokerImportedFTA](./Get-BrokerImportedFTA/)
+* [Remove-BrokerImportedFTA](./Remove-BrokerImportedFTA/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -35,6 +35,7 @@ If file type associations are imported more than once for a desktop group, for e
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

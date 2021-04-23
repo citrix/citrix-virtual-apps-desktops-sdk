@@ -3,7 +3,7 @@
 Gets the current status of the ConfigurationLogging Service on the controller.
 ## Syntax
 ```
-Get-LogServiceStatus [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-LogServiceStatus [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Enables the status of the ConfigurationLogging Service on the controller to be determined. If the service has multiple data stores it will return the overall state as an aggregate of all the data store states. For example, if the site data store status is OK and the secondary data store status is DBUnconfigured then it will return DBUnconfigured. The database connection to the service does not need to be configured before using this command.
@@ -11,15 +11,16 @@ Enables the status of the ConfigurationLogging Service on the controller to be d
 
 ## Related Commands
 
-* [Get-LogDataStore](../Get-LogDataStore/)
-* [Set-LogDBConnection](../Set-LogDBConnection/)
-* [Test-LogDBConnection](../Test-LogDBConnection/)
-* [Get-LogDBConnection](../Get-LogDBConnection/)
-* [Get-LogDBSchema](../Get-LogDBSchema/)
+* [Get-LogDataStore](./Get-LogDataStore/)
+* [Set-LogDBConnection](./Set-LogDBConnection/)
+* [Test-LogDBConnection](./Test-LogDBConnection/)
+* [Get-LogDBConnection](./Get-LogDBConnection/)
+* [Get-LogDBSchema](./Get-LogDBSchema/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
-| BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| BearerToken | Specifies the bearer token assigned to the calling user. | false | false |  |
+| VirtualSiteId | Specifies the virtual site id the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

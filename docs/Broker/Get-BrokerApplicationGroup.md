@@ -3,9 +3,9 @@
 Gets details of configured application groups.
 ## Syntax
 ```
-Get-BrokerApplicationGroup [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerApplicationGroup [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerApplicationGroup [[-Name] <String>] [-AssociatedDesktopGroupPriority <Int32>] [-AssociatedDesktopGroupUid <Int32>] [-AssociatedDesktopGroupUUID <Guid>] [-AssociatedUserFullName <String>] [-AssociatedUserName <String>] [-AssociatedUserSID <String>] [-AssociatedUserUPN <String>] [-Description <String>] [-Enabled <Boolean>] [-Metadata <String>] [-RestrictToTag <String>] [-ScopeId <Guid>] [-ScopeName <String>] [-SessionSharingEnabled <Boolean>] [-SingleAppPerSession <Boolean>] [-Tag <String>] [-TenantId <Guid>] [-TotalApplications <Int32>] [-TotalMachines <Int32>] [-TotalMachinesWithTagRestriction <Int32>] [-UserFilterEnabled <Boolean>] [-UUID <Guid>] [-ApplicationUid <Int32>] [-DesktopGroupUid <Int32>] [-TagUid <Int32>] [-UserSID <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerApplicationGroup [[-Name] <String>] [-AssociatedDesktopGroupPriority <Int32>] [-AssociatedDesktopGroupUid <Int32>] [-AssociatedDesktopGroupUUID <Guid>] [-AssociatedUserFullName <String>] [-AssociatedUserName <String>] [-AssociatedUserSID <String>] [-AssociatedUserUPN <String>] [-Description <String>] [-Enabled <Boolean>] [-Metadata <String>] [-RestrictToTag <String>] [-ScopeId <Guid>] [-ScopeName <String>] [-SessionSharingEnabled <Boolean>] [-SingleAppPerSession <Boolean>] [-Tag <String>] [-TenantId <Guid>] [-TotalApplications <Int32>] [-TotalMachines <Int32>] [-TotalMachinesWithTagRestriction <Int32>] [-UserFilterEnabled <Boolean>] [-UUID <Guid>] [-ApplicationUid <Int32>] [-DesktopGroupUid <Int32>] [-TagUid <Int32>] [-UserSID <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Get-BrokerApplicationGroup cmdlet returns application groups that have been configured as part of the site.
@@ -44,7 +44,7 @@ A BrokerApplicationGroup object represents a single application group that has b
 
   * RestrictToTag (System.String) Optional tag that may be used further to restrict which machines may be used for launching the application group's applications. A machine may be used by an application group if either the application group has no tag restriction or the application group does have a tag restriction and the machine is tagged with the same tag.
 
-  * Scopes (Citrix.Broker.Admin.SDK.ScopeReference\[\]) The list of the delegated admin scopes to which the application group belongs.
+  * Scopes (Citrix.Fma.Sdk.DelegatedAdminInterfaces.ScopeReference\[\]) The list of the delegated admin scopes to which the application group belongs.
 
   * SessionSharingEnabled (System.Boolean) Whether applications in this application group can share sessions with applications in other application groups (or with applications that are not a member of an application group).
     Applications in the same application group can always share sessions with each other, unless session sharing has been disabled by other means.
@@ -71,11 +71,11 @@ A BrokerApplicationGroup object represents a single application group that has b
 
 ## Related Commands
 
-* [Add-BrokerApplicationGroup](../Add-BrokerApplicationGroup/)
-* [New-BrokerApplicationGroup](../New-BrokerApplicationGroup/)
-* [Remove-BrokerApplicationGroup](../Remove-BrokerApplicationGroup/)
-* [Rename-BrokerApplicationGroup](../Rename-BrokerApplicationGroup/)
-* [Set-BrokerApplicationGroup](../Set-BrokerApplicationGroup/)
+* [Add-BrokerApplicationGroup](./Add-BrokerApplicationGroup/)
+* [New-BrokerApplicationGroup](./New-BrokerApplicationGroup/)
+* [Remove-BrokerApplicationGroup](./Remove-BrokerApplicationGroup/)
+* [Rename-BrokerApplicationGroup](./Rename-BrokerApplicationGroup/)
+* [Set-BrokerApplicationGroup](./Set-BrokerApplicationGroup/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -115,6 +115,7 @@ A BrokerApplicationGroup object represents a single application group that has b
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,7 +3,7 @@
 Gets the site wide Citrix Group Policy settings.
 ## Syntax
 ```
-Export-BrokerDesktopPolicy [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Export-BrokerDesktopPolicy [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Export-BrokerDesktopPolicy returns an array of bytes containing the site-wide Citrix Group Policy settings. These policy settings are applied to every machine in the site.
@@ -11,14 +11,15 @@ Export-BrokerDesktopPolicy returns an array of bytes containing the site-wide Ci
 
 ## Related Commands
 
-* [Import-BrokerDesktopPolicy](../Import-BrokerDesktopPolicy/)
-* [New-BrokerConfigurationSlot](../New-BrokerConfigurationSlot/)
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
+* [Import-BrokerDesktopPolicy](./Import-BrokerDesktopPolicy/)
+* [New-BrokerConfigurationSlot](./New-BrokerConfigurationSlot/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

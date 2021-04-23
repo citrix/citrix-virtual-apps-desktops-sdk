@@ -3,7 +3,7 @@
 Tests whether or not a license server can be used by the broker.
 ## Syntax
 ```
-Test-BrokerLicenseServer [-ComputerName] <String> [-AdminAddress <String>] [-BearerToken <String>] [[-Port] <Int32>] [<CommonParameters>]
+Test-BrokerLicenseServer [-ComputerName] <String> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [[-Port] <Int32>] [<CommonParameters>]
 ```
 ## Detailed Description
 Tests whether or not a given license server can be used by the broker.
@@ -11,14 +11,15 @@ Tests whether or not a given license server can be used by the broker.
 
 ## Related Commands
 
-* [Get-BrokerSite](../Get-BrokerSite/)
-* [Set-BrokerSite](../Set-BrokerSite/)
+* [Get-BrokerSite](./Get-BrokerSite/)
+* [Set-BrokerSite](./Set-BrokerSite/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | ComputerName | The name of the license server to test (machine.domain). | true | false | None |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | Port | The port number to use on the server. | false | false | 27000 |
 
 ## Input Type

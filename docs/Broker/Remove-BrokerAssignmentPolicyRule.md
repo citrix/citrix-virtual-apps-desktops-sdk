@@ -3,9 +3,9 @@
 Deletes a desktop rule from the site's assignment policy.
 ## Syntax
 ```
-Remove-BrokerAssignmentPolicyRule [-InputObject] <AssignmentPolicyRule[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerAssignmentPolicyRule [-InputObject] <AssignmentPolicyRule[]> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Remove-BrokerAssignmentPolicyRule [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerAssignmentPolicyRule [-Name] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Remove-BrokerAssignmentPolicyRule cmdlet deletes a desktop rule from the site's assignment policy.
@@ -17,10 +17,10 @@ Deleting a desktop rule does not remove machine assignments that have already be
 
 ## Related Commands
 
-* [New-BrokerAssignmentPolicyRule](../New-BrokerAssignmentPolicyRule/)
-* [Get-BrokerAssignmentPolicyRule](../Get-BrokerAssignmentPolicyRule/)
-* [Set-BrokerAssignmentPolicyRule](../Set-BrokerAssignmentPolicyRule/)
-* [Rename-BrokerAssignmentPolicyRule](../Rename-BrokerAssignmentPolicyRule/)
+* [New-BrokerAssignmentPolicyRule](./New-BrokerAssignmentPolicyRule/)
+* [Get-BrokerAssignmentPolicyRule](./Get-BrokerAssignmentPolicyRule/)
+* [Set-BrokerAssignmentPolicyRule](./Set-BrokerAssignmentPolicyRule/)
+* [Rename-BrokerAssignmentPolicyRule](./Rename-BrokerAssignmentPolicyRule/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,7 @@ Deleting a desktop rule does not remove machine assignments that have already be
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

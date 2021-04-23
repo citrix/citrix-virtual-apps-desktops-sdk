@@ -3,9 +3,9 @@
 Adds a new catalog to the site.
 ## Syntax
 ```
-New-BrokerCatalog [-Name] <String> [-AllocationType] <AllocationType> [-CatalogKind] <CatalogKind> [-PvsForVM <String[]>] [-Description <String>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCHypervisorConnectionUid <Int32>] [-Scope <String[]>] [-TenantId <Guid>] [-UUID <Guid>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerCatalog [-Name] <String> [-AllocationType] <AllocationType> [-CatalogKind] <CatalogKind> [-PvsForVM <String[]>] [-Description <String>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCHypervisorConnectionUid <Int32>] [-Scope <String[]>] [-TenantId <Guid>] [-UUID <Guid>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-New-BrokerCatalog [-Name] <String> [-AllocationType] <AllocationType> [-ProvisioningType] <ProvisioningType> [-SessionSupport] <SessionSupport> [-PersistUserChanges] <PersistUserChanges> [-ProvisioningSchemeId <Guid>] [-Description <String>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCHypervisorConnectionUid <Int32>] [-Scope <String[]>] [-TenantId <Guid>] [-UUID <Guid>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerCatalog [-Name] <String> [-AllocationType] <AllocationType> [-ProvisioningType] <ProvisioningType> [-SessionSupport] <SessionSupport> [-PersistUserChanges] <PersistUserChanges> [-ProvisioningSchemeId <Guid>] [-Description <String>] [-IsRemotePC <Boolean>] [-MachinesArePhysical <Boolean>] [-MinimumFunctionalLevel <FunctionalLevel>] [-PvsAddress <String>] [-PvsDomain <String>] [-RemotePCHypervisorConnectionUid <Int32>] [-Scope <String[]>] [-TenantId <Guid>] [-UUID <Guid>] [-ZoneUid <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 New-BrokerCatalog adds a catalog through which machines can be provided to the site.
@@ -20,10 +20,10 @@ In order for a machine to register in a site, the machine must belong to a catal
 
 ## Related Commands
 
-* [Get-BrokerCatalog](../Get-BrokerCatalog/)
-* [Rename-BrokerCatalog](../Rename-BrokerCatalog/)
-* [Remove-BrokerCatalog](../Remove-BrokerCatalog/)
-* [Set-BrokerCatalog](../Set-BrokerCatalog/)
+* [Get-BrokerCatalog](./Get-BrokerCatalog/)
+* [Rename-BrokerCatalog](./Rename-BrokerCatalog/)
+* [Remove-BrokerCatalog](./Remove-BrokerCatalog/)
+* [Set-BrokerCatalog](./Set-BrokerCatalog/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ In order for a machine to register in a site, the machine must belong to a catal
 | Description | A description for the catalog. | false | true (ByPropertyName) |  |
 | IsRemotePC | Specifies whether this is to be a Remote PC catalog.<br>IsRemotePC can only be enabled when:<br>o SessionSupport is SingleSession<br>o MachinesArePhysical is true. | false | true (ByPropertyName) | false |
 | MachinesArePhysical | Specifies whether machines in the catalog can be power-managed by the Citrix Broker Service. Where the Citrix Broker Service cannot control the power state of themachine specify \$true, otherwise \$false. Can only be specified together with a provisioning type of Pvs or Manual, or if used with the legacy CatalogKind parameter only with Pvs or PvsPvd catalog kinds. | false | true (ByPropertyName) |  |
-| MinimumFunctionalLevel | The minimum FunctionalLevel required for machines to register in the site.<br>Valid values are L5, L7, L7\_6 | false | true (ByPropertyName) | The FunctionalLevel of the current release (L7\_6); by default no machines with less than the most current FunctionalLevel will be functional. |
+| MinimumFunctionalLevel | The minimum FunctionalLevel required for machines to register in the site.<br>Valid values are L5, L7, L7\_6, L7\_7, L7\_8, L7\_9, L7\_20, L7\_25 | false | true (ByPropertyName) | The FunctionalLevel of the current release (L7\_6); by default no machines with less than the most current FunctionalLevel will be functional. |
 | PvsAddress | Specifies the URL of the Provisioning Services server. Only applicable to Provisioning Services or Provisioning Services-personal vDisk catalogs. | false | true (ByPropertyName) |  |
 | PvsDomain | Specifies the Active Directory domain of the Provisioning Services server. Only applicable to Provisioning Services or Provisioning Services-personal vDisk catalogs. | false | true (ByPropertyName) |  |
 | RemotePCHypervisorConnectionUid | Specifies the hypervisor connection to use for powering on remote PCs in this catalog (only allowed when IsRemotePC is true). | false | true (ByPropertyName) |  |
@@ -48,6 +48,7 @@ In order for a machine to register in a site, the machine must belong to a catal
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | ProvisioningSchemeId | Specifies the identity of the MCS provisioning scheme the new catalog is associated with (can only be specified for new catalogs with a ProvisioningType of MCS). | false | true (ByPropertyName) | \$null |
 
 ## Input Type

@@ -3,9 +3,9 @@
 Remove desktop groups from the system or remove them from a Remote PC catalog.
 ## Syntax
 ```
-Remove-BrokerDesktopGroup [-InputObject] <DesktopGroup[]> [-Force] [-RemotePCCatalog <Catalog>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerDesktopGroup [-InputObject] <DesktopGroup[]> [-Force] [-RemotePCCatalog <Catalog>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Remove-BrokerDesktopGroup [-Name] <String> [-Force] [-RemotePCCatalog <Catalog>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Remove-BrokerDesktopGroup [-Name] <String> [-Force] [-RemotePCCatalog <Catalog>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 This cmdlet has 2 functions:
@@ -19,13 +19,13 @@ The Remote PC relationships are used by Remote PC automation to determine which 
 
 ## Related Commands
 
-* [Get-BrokerDesktopGroup](../Get-BrokerDesktopGroup/)
-* [New-BrokerDesktopGroup](../New-BrokerDesktopGroup/)
-* [Set-BrokerDesktopGroup](../Set-BrokerDesktopGroup/)
-* [Add-BrokerDesktopGroup](../Add-BrokerDesktopGroup/)
-* [Rename-BrokerDesktopGroup](../Rename-BrokerDesktopGroup/)
-* [New-BrokerCatalog](../New-BrokerCatalog/)
-* [Remove-BrokerCatalog](../Remove-BrokerCatalog/)
+* [Get-BrokerDesktopGroup](./Get-BrokerDesktopGroup/)
+* [New-BrokerDesktopGroup](./New-BrokerDesktopGroup/)
+* [Set-BrokerDesktopGroup](./Set-BrokerDesktopGroup/)
+* [Add-BrokerDesktopGroup](./Add-BrokerDesktopGroup/)
+* [Rename-BrokerDesktopGroup](./Rename-BrokerDesktopGroup/)
+* [New-BrokerCatalog](./New-BrokerCatalog/)
+* [Remove-BrokerCatalog](./Remove-BrokerCatalog/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -36,6 +36,7 @@ The Remote PC relationships are used by Remote PC automation to determine which 
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

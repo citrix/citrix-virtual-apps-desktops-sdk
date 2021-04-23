@@ -3,7 +3,7 @@
 Checks to ensure that the proposed name for an AppDisk is unused.
 ## Syntax
 ```
-Test-AppLibAppDiskNameAvailable -AppDiskName <String[]> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Test-AppLibAppDiskNameAvailable -AppDiskName <String[]> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Checks to ensure that the proposed name for an AppDisk is unused. This check is done without regard for scoping of existing AppDisks, so the names of inaccessible AppDisks are also checked.
@@ -11,13 +11,14 @@ Checks to ensure that the proposed name for an AppDisk is unused. This check is 
 
 ## Related Commands
 
-* [New-AppLibAppDisk](../New-AppLibAppDisk/)
-* [Rename-AppLibAppDisk](../Rename-AppLibAppDisk/)
+* [New-AppLibAppDisk](./New-AppLibAppDisk/)
+* [Rename-AppLibAppDisk](./Rename-AppLibAppDisk/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AppDiskName | The name or names of the provisioning scheme(s) to be tested. | true | true (ByValue, ByPropertyName) |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

@@ -3,7 +3,7 @@
 Checks to ensure that the proposed name for a hosting unit is unused.
 ## Syntax
 ```
-Test-HypHostingUnitNameAvailable -HostingUnitName <String[]> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Test-HypHostingUnitNameAvailable -HostingUnitName <String[]> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this command to check that the proposed name for a hosting unit is unused. This check is done without regard for scoping of the existing hosting unit, so the names of inaccessible hosting units are also checked.
@@ -11,13 +11,14 @@ Use this command to check that the proposed name for a hosting unit is unused. T
 
 ## Related Commands
 
-* [New-Item](../New-Item/)
-* [Rename-Item](../Rename-Item/)
+* [New-Item](./New-Item/)
+* [Rename-Item](./Rename-Item/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | HostingUnitName | The name or names of the hosting units(s) to be tested. | true | true (ByValue, ByPropertyName) |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

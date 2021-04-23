@@ -3,9 +3,9 @@
 Updates the values of one or more desktop group reboot schedules.
 ## Syntax
 ```
-Set-BrokerRebootScheduleV2 [-InputObject] <RebootScheduleV2[]> [-PassThru] [-Day <RebootScheduleDays>] [-Description <String>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-WarningDuration <Int32>] [-WarningMessage <String>] [-WarningRepeatInterval <Int32>] [-WarningTitle <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Set-BrokerRebootScheduleV2 [-InputObject] <RebootScheduleV2[]> [-PassThru] [-Day <RebootScheduleDays>] [-Description <String>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-IgnoreMaintenanceMode <Boolean>] [-MaxOvertimeStartMins <Int32>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-UseNaturalReboot <Boolean>] [-WarningDuration <Int32>] [-WarningMessage <String>] [-WarningRepeatInterval <Int32>] [-WarningTitle <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Set-BrokerRebootScheduleV2 [-Name] <String> [-PassThru] [-Day <RebootScheduleDays>] [-Description <String>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-WarningDuration <Int32>] [-WarningMessage <String>] [-WarningRepeatInterval <Int32>] [-WarningTitle <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Set-BrokerRebootScheduleV2 [-Name] <String> [-PassThru] [-Day <RebootScheduleDays>] [-Description <String>] [-Enabled <Boolean>] [-Frequency <RebootScheduleFrequency>] [-IgnoreMaintenanceMode <Boolean>] [-MaxOvertimeStartMins <Int32>] [-RebootDuration <Int32>] [-RestrictToTag <String>] [-StartTime <TimeSpan>] [-UseNaturalReboot <Boolean>] [-WarningDuration <Int32>] [-WarningMessage <String>] [-WarningRepeatInterval <Int32>] [-WarningTitle <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Set-BrokerRebootScheduleV2 cmdlet is used to alter the settings of an existing desktop group reboot schedule.
@@ -13,10 +13,10 @@ The Set-BrokerRebootScheduleV2 cmdlet is used to alter the settings of an existi
 
 ## Related Commands
 
-* [Get-BrokerRebootScheduleV2](../Get-BrokerRebootScheduleV2/)
-* [New-BrokerRebootScheduleV2](../New-BrokerRebootScheduleV2/)
-* [Remove-BrokerRebootScheduleV2](../Remove-BrokerRebootScheduleV2/)
-* [Rename-BrokerRebootScheduleV2](../Rename-BrokerRebootScheduleV2/)
+* [Get-BrokerRebootScheduleV2](./Get-BrokerRebootScheduleV2/)
+* [New-BrokerRebootScheduleV2](./New-BrokerRebootScheduleV2/)
+* [Remove-BrokerRebootScheduleV2](./Remove-BrokerRebootScheduleV2/)
+* [Rename-BrokerRebootScheduleV2](./Rename-BrokerRebootScheduleV2/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -27,9 +27,12 @@ The Set-BrokerRebootScheduleV2 cmdlet is used to alter the settings of an existi
 | Description | An optional description for the reboot schedule. | false | false |  |
 | Enabled | Boolean that indicates if the reboot schedule is to be enabled or disabled. | false | false |  |
 | Frequency | Frequency with which this schedule runs (either Weekly or Daily). | false | false |  |
+| IgnoreMaintenanceMode | Boolean value to reboot machines in maintenance mode | false | false |  |
+| MaxOvertimeStartMins | Maximum delay in minutes after which the scheduled reboot will not take place | false | false |  |
 | RebootDuration | Approximate maximum number of minutes over which the scheduled reboot cycle runs. | false | false |  |
 | RestrictToTag | If specified, restricts the reboot schedule to only those machines in the desktop group with the specified tag. Specify \$null to remove any tag restriction. | false | false |  |
 | StartTime | Time of day at which the scheduled reboot cycle starts (HH:MM). | false | false |  |
+| UseNaturalReboot | Boolean value indicating whether the machines should reboot whenever they happen to have no sessions, rather than at equally spaced times within the cycle duration. | false | false |  |
 | WarningDuration | Time prior to the initiation of a machine reboot at which warning message is displayed in all user sessions on that machine. If the warning duration is zero then no message is displayed. In some cases the time required to process a reboot schedule may exceed the RebootDuration time by up to the WarningDuration value; Citrix recommends that the WarningDuration is kept small relative to the RebootDuration value. | false | false |  |
 | WarningMessage | Warning message displayed in user sessions on a machine scheduled for reboot. If the message is blank then no message is displayed. The optional pattern '%m%' is replaced by the number of minutes until the reboot. | false | false |  |
 | WarningRepeatInterval | Time to wait after the previous reboot warning before displaying the warning message in all user sessions on that machine again. If the warning repeat interval is zero then the warning message is not displayed after the initial warning. | false | false |  |
@@ -37,8 +40,7 @@ The Set-BrokerRebootScheduleV2 cmdlet is used to alter the settings of an existi
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
-| MaxOvertimeStartMins | Specifies the maximum number of minutes beyond the scheduled start time that a restart schedule can begin | false | | |
-| IgnoreMaintenanceMode	| Option to ignore the maintenance mode of a machine and reboot	| No | true (ByPropertyName) | false |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

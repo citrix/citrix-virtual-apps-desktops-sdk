@@ -3,7 +3,7 @@
 Retrieves the configuration data for an item in the Host Service provider path.  Note: For this release, only VM items are supported for this operation.
 ## Syntax
 ```
-Get-HypConfigurationDataForItem [-LiteralPath] <String> [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-HypConfigurationDataForItem [-LiteralPath] <String> [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 This command provides a mechanism for retrieving extra data about an entry in the hosting unit service provider.  The referenced item must be contained within the connections directory in the provider (i.e. XDHyp:\\Connections).
@@ -13,12 +13,13 @@ This mechanism is used for obtaining data that is not required frequently and/or
 
 ## Related Commands
 
-* [Get-Item](../Get-Item/)
+* [Get-Item](./Get-Item/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | LiteralPath | Specifies the path within a hosting unit provider to the item for which configuration data is to be retrieved. The path specified must be in one of the following formats; &lt;drive&gt;:\\Connections\\&lt;Connection Name&gt;\\&lt;Item Path of VM object&gt; or  &lt;drive&gt;:\\Connections\\{&lt;connection Uid&gt;\\&lt;Item Path of VM object&gt;} or &lt;drive&gt;:\\HostingUnits\\&lt;HostingUnit Name&gt;\\&lt;Item Path of VM object&gt; or  &lt;drive&gt;:\\HostingUnits\\{&lt;hostingUnit Uid&gt;\\&lt;Item Path of VM object&gt;} | true | true (ByValue) |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type
@@ -27,8 +28,8 @@ This mechanism is used for obtaining data that is not required frequently and/or
 
 ## Return Values
 
-### Psobject<br>    Get-Hypconfigurationdataforitem Returns A Psobject Containing The Properties That Are Appropriate For The Item Specified By The Path.<br>    Properties For Vm Item<br>    ----------------------<br>    Cpucount &lt;Int&gt;<br>        Specifies The Number Of Cpus Assigned To The Vm.<br>    Memorymb &lt;Int&gt;<br>        The Amount Of Memory Allocated To The Vm.<br>    Harddisksizegb &lt;Int&gt;<br>        The Capacity Of The Primary Hard Drive Assigned To The Vm.
-
+### Psobject
+Get-HypConfigurationDataForItem returns a PSObject containing the properties that are appropriate for the item specified by the path.<br>    Properties for VM Item<br>    ----------------------<br>    CPUCount &lt;int&gt;<br>        Specifies the number of CPUs assigned to the VM.<br>    MemoryMB &lt;int&gt;<br>        The amount of memory allocated to the VM.<br>    HardDiskSizeGB &lt;int&gt;<br>        The capacity of the primary hard drive assigned to the VM.
 ## Notes
 For this release, this cmdlet provides only configuration data for VM objects in the provider.  Using a path to an item that is not a VM results in a error.<br>    In the case of failure the following errors can result.<br>    Error Codes<br>    -----------<br>    InputHypervisorItemPathInvalid<br>    The path provided is not to an item in a sub-directory of a connection item or a hosting unit item.<br>    InvalidHypervisorItemPath<br>    No item exists with the specified path.<br>    InvalidHypervisorItem<br>    The item specified by the path exists, but is not a VM Item.<br>    DatabaseError<br>    An error occurred in the service while attempting a database operation.<br>    DatabaseNotConfigured<br>    The operation could not be completed because the database for the service is not configured.<br>    DataStoreException<br>    An error occurred in the service while attempting a database operation - communication with the database failed for<br>    various reasons.<br>    CommunicationError<br>    An error occurred while communicating with the service.<br>    InvalidFilter<br>    A filtering expression was supplied that could not be interpreted for this cmdlet.<br>    HypervisorPermissionDenied<br>    The hypervisor login used does not provide authorization to access the data for this item.<br>    ExceptionThrown<br>    An unexpected error occurred.  For more details, see the Windows event logs on the controller being used or examine the XenDesktop logs.
 ## Examples

@@ -38,12 +38,12 @@ Provisioning configuration involves the following SDK objects:
 
     For more information, see: 
 
-* [about\_Broker\_Machines](../about_Broker_Machines/)
-* [about\_Broker\_RemotePC](../about_Broker_RemotePC/)
-* [Get-BrokerHypervisorConnection](../Get-BrokerHypervisorConnection/)
-* [Get-BrokerCatalog](../Get-BrokerCatalog/)
-* [Get-BrokerMachine](../Get-BrokerMachine/)
-* [Get-BrokerUser](../Get-BrokerUser/)
+* [about\_Broker\_Machines](./about_Broker_Machines/)
+* [about\_Broker\_RemotePC](./about_Broker_RemotePC/)
+* [Get-BrokerHypervisorConnection](./Get-BrokerHypervisorConnection/)
+* [Get-BrokerCatalog](./Get-BrokerCatalog/)
+* [Get-BrokerMachine](./Get-BrokerMachine/)
+* [Get-BrokerUser](./Get-BrokerUser/)
 
 ### Brokering Configuration
 
@@ -79,18 +79,18 @@ Configuration of Brokering involves the following SDK objects:
 
     For more information, see: 
 
-* [about\_Broker\_Desktops](../about_Broker_Desktops/)
-* [about\_Broker\_Policies](../about_Broker_Policies/)
-* [about\_Broker\_Applications](../about_Broker_Applications/)
-* [about\_Broker\_RemotePC](../about_Broker_RemotePC/)
-* [Get-BrokerPrivateDesktop](../Get-BrokerPrivateDesktop/)
-* [Get-BrokerSharedDesktop](../Get-BrokerSharedDesktop/)
-* [Get-BrokerPowerTimeScheme](../Get-BrokerPowerTimeScheme/)
-* [Get-BrokerUser](../Get-BrokerUser/)
-* [Get-BrokerTag](../Get-BrokerTag/)
-* [Get-BrokerAccessPolicyRule](../Get-BrokerAccessPolicyRule/)
-* [Get-BrokerAssignmentPolicyRule](../Get-BrokerAssignmentPolicyRule/)
-* [Get-BrokerEntitlementPolicyRule](../Get-BrokerEntitlementPolicyRule/)
+* [about\_Broker\_Desktops](./about_Broker_Desktops/)
+* [about\_Broker\_Policies](./about_Broker_Policies/)
+* [about\_Broker\_Applications](./about_Broker_Applications/)
+* [about\_Broker\_RemotePC](./about_Broker_RemotePC/)
+* [Get-BrokerPrivateDesktop](./Get-BrokerPrivateDesktop/)
+* [Get-BrokerSharedDesktop](./Get-BrokerSharedDesktop/)
+* [Get-BrokerPowerTimeScheme](./Get-BrokerPowerTimeScheme/)
+* [Get-BrokerUser](./Get-BrokerUser/)
+* [Get-BrokerTag](./Get-BrokerTag/)
+* [Get-BrokerAccessPolicyRule](./Get-BrokerAccessPolicyRule/)
+* [Get-BrokerAssignmentPolicyRule](./Get-BrokerAssignmentPolicyRule/)
+* [Get-BrokerEntitlementPolicyRule](./Get-BrokerEntitlementPolicyRule/)
 
 ### Monitoring And Administration
 
@@ -108,14 +108,14 @@ Monitoring and administration involve the following SDK objects:
 
     For more information, see: 
 
-* [about\_Broker\_Desktops](../about_Broker_Desktops/)
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Get-BrokerHypervisorAlert](../Get-BrokerHypervisorAlert/)
-* [Get-BrokerDesktop](../Get-BrokerDesktop/)
-* [Get-BrokerDesktopUsage](../Get-BrokerDesktopUsage/)
-* [Get-BrokerHostingPowerAction](../Get-BrokerHostingPowerAction/)
-* [Get-BrokerSession](../Get-BrokerSession/)
-* [Send-BrokerSessionMessage](../Send-BrokerSessionMessage/)
+* [about\_Broker\_Desktops](./about_Broker_Desktops/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Get-BrokerHypervisorAlert](./Get-BrokerHypervisorAlert/)
+* [Get-BrokerDesktop](./Get-BrokerDesktop/)
+* [Get-BrokerDesktopUsage](./Get-BrokerDesktopUsage/)
+* [Get-BrokerHostingPowerAction](./Get-BrokerHostingPowerAction/)
+* [Get-BrokerSession](./Get-BrokerSession/)
+* [Send-BrokerSessionMessage](./Send-BrokerSessionMessage/)
 
 ### Site Management
 
@@ -139,15 +139,15 @@ Managing XenDesktop sites involves the following SDK objects:
 
     For more information, see: 
 
-* [about\_Broker\_PostInstallPreConfiguration](../about_Broker_PostInstallPreConfiguration/)
-* [about\_Broker\_ControllerDiscovery](../about_Broker_ControllerDiscovery/)
-* [Get-BrokerSite](../Get-BrokerSite/)
-* [Get-BrokerController](../Get-BrokerController/)
-* [Get-BrokerDBConnection](../Get-BrokerDBConnection/)
-* [Get-BrokerDBSchema](../Get-BrokerDBSchema/)
-* [Get-BrokerDBVersionChangeScript](../Get-BrokerDBVersionChangeScript/)
-* [Get-BrokerInstalledDbVersion](../Get-BrokerInstalledDbVersion/)
-* [Get-BrokerServiceInstance](../Get-BrokerServiceInstance/)
-* [Reset-BrokerServiceGroupMembership](../Reset-BrokerServiceGroupMembership/)
-* [Update-BrokerNameCache](../Update-BrokerNameCache/)
+* [about\_Broker\_PostInstallPreConfiguration](./about_Broker_PostInstallPreConfiguration/)
+* [about\_Broker\_ControllerDiscovery](./about_Broker_ControllerDiscovery/)
+* [Get-BrokerSite](./Get-BrokerSite/)
+* [Get-BrokerController](./Get-BrokerController/)
+* [Get-BrokerDBConnection](./Get-BrokerDBConnection/)
+* [Get-BrokerDBSchema](./Get-BrokerDBSchema/)
+* [Get-BrokerDBVersionChangeScript](./Get-BrokerDBVersionChangeScript/)
+* [Get-BrokerInstalledDbVersion](./Get-BrokerInstalledDbVersion/)
+* [Get-BrokerServiceInstance](./Get-BrokerServiceInstance/)
+* [Reset-BrokerServiceGroupMembership](./Reset-BrokerServiceGroupMembership/)
+* [Update-BrokerNameCache](./Update-BrokerNameCache/)
 

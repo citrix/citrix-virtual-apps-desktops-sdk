@@ -3,9 +3,9 @@
 Gets user/group accounts with zone preferences configured for this site
 ## Syntax
 ```
-Get-BrokerUserZonePreference -SID <String> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerUserZonePreference -SID <String> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerUserZonePreference [[-Name] <String>] [-DirectoryContext <String>] [-FullName <String>] [-HomeZoneName <String>] [-HomeZoneUid <Guid>] [-IdentityClaims <String>] [-PrimaryClaim <String>] [-UPN <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerUserZonePreference [[-Name] <String>] [-DirectoryContext <String>] [-FullName <String>] [-HomeZoneName <String>] [-HomeZoneUid <Guid>] [-IdentityClaims <String>] [-PrimaryClaim <String>] [-UPN <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieve user/group account details with a home zone preference specified and matching the specified criteria. If no parameters are specified this cmdlet enumerates all account details with associated home zones preferences.
@@ -38,10 +38,10 @@ The BrokerUserZonePreference object represents a user/group account having an as
 
 ## Related Commands
 
-* [New-BrokerUserZonePreference](../New-BrokerUserZonePreference/)
-* [Set-BrokerUserZonePreference](../Set-BrokerUserZonePreference/)
-* [Remove-BrokerUserZonePreference](../Remove-BrokerUserZonePreference/)
-* [Get-BrokerUser](../Get-BrokerUser/)
+* [New-BrokerUserZonePreference](./New-BrokerUserZonePreference/)
+* [Set-BrokerUserZonePreference](./Set-BrokerUserZonePreference/)
+* [Remove-BrokerUserZonePreference](./Remove-BrokerUserZonePreference/)
+* [Get-BrokerUser](./Get-BrokerUser/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -62,6 +62,7 @@ The BrokerUserZonePreference object represents a user/group account having an as
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

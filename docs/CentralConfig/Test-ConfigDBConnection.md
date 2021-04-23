@@ -3,7 +3,7 @@
 Tests whether a database is suitable for use by the Citrix Configuration Service.
 ## Syntax
 ```
-Test-ConfigDBConnection [-DBConnection] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Test-ConfigDBConnection [-DBConnection] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Tests whether the database specified in the given connection string is suitable for use by the currently selected Citrix Configuration Service instance.
@@ -17,15 +17,16 @@ The current service instance is that on the local machine, or that explicitly sp
 
 ## Related Commands
 
-* [Get-ConfigServiceStatus](../Get-ConfigServiceStatus/)
-* [Get-ConfigDBConnection](../Get-ConfigDBConnection/)
-* [Set-ConfigDBConnection](../Set-ConfigDBConnection/)
+* [Get-ConfigServiceStatus](./Get-ConfigServiceStatus/)
+* [Get-ConfigDBConnection](./Get-ConfigDBConnection/)
+* [Set-ConfigDBConnection](./Set-ConfigDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | DBConnection | Specifies the database connection string to be tested by the currently selected Citrix Configuration Service instance. | true | false |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

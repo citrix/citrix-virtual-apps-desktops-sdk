@@ -3,7 +3,7 @@
 Creates a new machine configuration associated with an existing configuration slot.
 ## Syntax
 ```
-New-BrokerMachineConfiguration -ConfigurationSlotUid <Int32> -LeafName <String> -Policy <Byte[]> [-Description <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerMachineConfiguration -ConfigurationSlotUid <Int32> -LeafName <String> -Policy <Byte[]> [-Description <String>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Creates a new machine configuration containing settings that match the SettingsGroup of the associated configuration slot. This machine configuration can then be applied to a desktop group to have the settings applied to machines in that group.
@@ -13,11 +13,11 @@ The SettingsGroup of the configuration slot restricts the permitted settings. Us
 
 ## Related Commands
 
-* [Get-BrokerMachineConfiguration](../Get-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
-* [Rename-BrokerMachineConfiguration](../Rename-BrokerMachineConfiguration/)
-* [Remove-BrokerMachineConfiguration](../Remove-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
+* [Get-BrokerMachineConfiguration](./Get-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
+* [Rename-BrokerMachineConfiguration](./Rename-BrokerMachineConfiguration/)
+* [Remove-BrokerMachineConfiguration](./Remove-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ The SettingsGroup of the configuration slot restricts the permitted settings. Us
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

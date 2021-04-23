@@ -3,7 +3,7 @@
 Removes networks from a hosting unit.
 ## Syntax
 ```
-Remove-HypHostingUnitNetwork [-LiteralPath] <String> [-NetworkPath] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Remove-HypHostingUnitNetwork [-LiteralPath] <String> [-NetworkPath] <String> [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this command to remove networks from a hosting unit. This does not remove the network from the hypervisor, only the reference to the network for the Host Service. After it is removed, the network is no longer available for associating with virtual NICs (when creating new virtual machines with the Machine Creation Service). Any virtual machines that have been created already continue to use the network until they are removed from the deployment. This command cannot be used if the connection for the hosting unit is in maintenance mode. If the network to be removed no longer exists on the hypervisor for the hosting unit, you must supply a fully qualified path to the network location.
@@ -11,7 +11,7 @@ Use this command to remove networks from a hosting unit. This does not remove th
 
 ## Related Commands
 
-* [Add-HypHostingUnitNetwork](../Add-HypHostingUnitNetwork/)
+* [Add-HypHostingUnitNetwork](./Add-HypHostingUnitNetwork/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -19,6 +19,7 @@ Use this command to remove networks from a hosting unit. This does not remove th
 | NetworkPath | Specifies the path in the hosting unit provider of the network to remove. The path specified must be in one of the following formats: &lt;drive&gt;:\\Connections\\&lt;HostingUnitName&gt;\\MyNetwork.network or  &lt;drive&gt;:\\Connections\\{&lt;hostingUnit Uid&gt;}\\MyNetwork.network | true | true (ByValue) |  |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to. This can be a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

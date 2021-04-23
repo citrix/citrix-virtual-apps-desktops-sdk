@@ -3,7 +3,7 @@
 Gets the service instance entries for the Broker Service.
 ## Syntax
 ```
-Get-BrokerServiceInstance [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerServiceInstance [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Returns service interfaces published by instances of the Broker Service. Each instance of a service publishes multiple interfaces with distinct interface types, and each of these interfaces is represented as a ServiceInstance object. Service instances can be used to register the service with a central configuration service so that other services can use the functionality.
@@ -13,13 +13,14 @@ You do not need to configure a database connection to use this command.
 
 ## Related Commands
 
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Reset-BrokerServiceGroupMembership](../Reset-BrokerServiceGroupMembership/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Reset-BrokerServiceGroupMembership](./Reset-BrokerServiceGroupMembership/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

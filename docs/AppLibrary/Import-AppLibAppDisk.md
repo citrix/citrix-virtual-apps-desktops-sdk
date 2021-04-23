@@ -3,9 +3,9 @@
 Imports an AppDisk into the Application library service
 ## Syntax
 ```
-Import-AppLibAppDisk -HostingUnitName <String> -HypervisorDiskId <String> -AppDiskName <String> -PreparationMachine <String> [-Scope <String[]>] [-RunAsynchronously] [-PurgeJobOnSuccess] [-AppDiskDescription <String>] [-SkipAppDnaAnalysis] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Import-AppLibAppDisk -HostingUnitName <String> -HypervisorDiskId <String> -AppDiskName <String> -PreparationMachine <String> [-Scope <String[]>] [-RunAsynchronously] [-PurgeJobOnSuccess] [-AppDiskDescription <String>] [-SkipAppDnaAnalysis] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 
-Import-AppLibAppDisk -HostingUnitUid <Guid> -HypervisorDiskId <String> -AppDiskName <String> -PreparationMachine <String> [-Scope <String[]>] [-RunAsynchronously] [-PurgeJobOnSuccess] [-AppDiskDescription <String>] [-SkipAppDnaAnalysis] [-LoggingId <Guid>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Import-AppLibAppDisk -HostingUnitUid <Guid> -HypervisorDiskId <String> -AppDiskName <String> -PreparationMachine <String> [-Scope <String[]>] [-RunAsynchronously] [-PurgeJobOnSuccess] [-AppDiskDescription <String>] [-SkipAppDnaAnalysis] [-LoggingId <Guid>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Lets you import a separately created AppDisk to the Application library service.
@@ -13,10 +13,10 @@ Lets you import a separately created AppDisk to the Application library service.
 
 ## Related Commands
 
-* [Get-AppLibTask](../Get-AppLibTask/)
-* [Get-AppLibAppDisk](../Get-AppLibAppDisk/)
-* [New-AppLibAppDisk](../New-AppLibAppDisk/)
-* [Test-AppLibAppDiskNameAvailable](../Test-AppLibAppDiskNameAvailable/)
+* [Get-AppLibTask](./Get-AppLibTask/)
+* [Get-AppLibAppDisk](./Get-AppLibAppDisk/)
+* [New-AppLibAppDisk](./New-AppLibAppDisk/)
+* [Test-AppLibAppDiskNameAvailable](./Test-AppLibAppDiskNameAvailable/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -32,6 +32,7 @@ Lets you import a separately created AppDisk to the Application library service.
 | SkipAppDnaAnalysis | Indicates that AppDNA analysis of the AppDisk should be skipped. | false | false | false |
 | LoggingId | Specifies the identifier of the high-level operation this cmdlet call forms a part of. Citrix Studio and Director typically create high-level operations. PowerShell scripts can also wrap a series of cmdlet calls in a high-level operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller the PowerShell snap-in will connect to. You can provide this as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type

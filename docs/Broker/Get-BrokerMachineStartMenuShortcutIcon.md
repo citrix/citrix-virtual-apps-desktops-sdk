@@ -3,7 +3,7 @@
 Retrieves a Start Menu Shortcut icon from the specified machine.
 ## Syntax
 ```
-Get-BrokerMachineStartMenuShortcutIcon [-MachineName] <String> [-Path] <String> [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerMachineStartMenuShortcutIcon [-MachineName] <String> [-Path] <String> [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Retrieves the icon associated with a particular shortcut on a particular machine. This icon is usually used to help create a published application to access the shortcut.
@@ -11,8 +11,8 @@ Retrieves the icon associated with a particular shortcut on a particular machine
 
 ## Related Commands
 
-* [Get-BrokerMachine](../Get-BrokerMachine/)
-* [New-BrokerIcon](../New-BrokerIcon/)
+* [Get-BrokerMachine](./Get-BrokerMachine/)
+* [New-BrokerIcon](./New-BrokerIcon/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -20,6 +20,7 @@ Retrieves the icon associated with a particular shortcut on a particular machine
 | Path | The location of the shortcut in the specified machine whose icon is being fetched. | true | true (ByValue) |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

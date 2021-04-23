@@ -11,11 +11,11 @@ Use this command to convert a configuration byte array into a set of named prope
 
 ## Related Commands
 
-* [New-SfStorefrontAddress](../New-SfStorefrontAddress/)
-* [Add-SfStorefrontAddress](../Add-SfStorefrontAddress/)
-* [New-BrokerMachineConfiguration](../New-BrokerMachineConfiguration/)
-* [Add-BrokerMachineConfiguration](../Add-BrokerMachineConfiguration/)
-* [Set-BrokerMachineConfiguration](../Set-BrokerMachineConfiguration/)
+* [New-SfStorefrontAddress](./New-SfStorefrontAddress/)
+* [Add-SfStorefrontAddress](./Add-SfStorefrontAddress/)
+* [New-BrokerMachineConfiguration](./New-BrokerMachineConfiguration/)
+* [Add-BrokerMachineConfiguration](./Add-BrokerMachineConfiguration/)
+* [Set-BrokerMachineConfiguration](./Set-BrokerMachineConfiguration/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |

@@ -79,14 +79,14 @@ For more detailed information about configuring the Remote PC feature, see: help
 
 ## See Also
 
-* [about\_Broker\_AccessPolicy](../about_Broker_AccessPolicy/)
-* [about\_Broker\_EntitlementPolicy](../about_Broker_EntitlementPolicy/)
-* [about\_Broker\_AssignmentPolicy](../about_Broker_AssignmentPolicy/)
-* [about\_Broker\_RemotePC](../about_Broker_RemotePC/)
-* [New-BrokerAccessPolicyRule](../New-BrokerAccessPolicyRule/)
-* [New-BrokerEntitlementPolicyRule](../New-BrokerEntitlementPolicyRule/)
-* [New-BrokerAssignmentPolicyRule](../New-BrokerAssignmentPolicyRule/)
-* [New-BrokerAppEntitlementPolicyRule](../New-BrokerAppEntitlementPolicyRule/)
-* [New-BrokerAppAssignmentPolicyRule](../New-BrokerAppAssignmentPolicyRule/)
-* [Add-BrokerUser](../Add-BrokerUser/)
+* [about\_Broker\_AccessPolicy](./about_Broker_AccessPolicy/)
+* [about\_Broker\_EntitlementPolicy](./about_Broker_EntitlementPolicy/)
+* [about\_Broker\_AssignmentPolicy](./about_Broker_AssignmentPolicy/)
+* [about\_Broker\_RemotePC](./about_Broker_RemotePC/)
+* [New-BrokerAccessPolicyRule](./New-BrokerAccessPolicyRule/)
+* [New-BrokerEntitlementPolicyRule](./New-BrokerEntitlementPolicyRule/)
+* [New-BrokerAssignmentPolicyRule](./New-BrokerAssignmentPolicyRule/)
+* [New-BrokerAppEntitlementPolicyRule](./New-BrokerAppEntitlementPolicyRule/)
+* [New-BrokerAppAssignmentPolicyRule](./New-BrokerAppAssignmentPolicyRule/)
+* [Add-BrokerUser](./Add-BrokerUser/)
 

@@ -3,7 +3,7 @@
 Create a new application group to which applications can be added.
 ## Syntax
 ```
-New-BrokerApplicationGroup [-Name] <String> [-Description <String>] [-Enabled <Boolean>] [-RestrictToTag <String>] [-Scope <String[]>] [-SessionSharingEnabled <Boolean>] [-SingleAppPerSession <Boolean>] [-TenantId <Guid>] [-UserFilterEnabled <Boolean>] [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerApplicationGroup [-Name] <String> [-Description <String>] [-Enabled <Boolean>] [-RestrictToTag <String>] [-Scope <String[]>] [-SessionSharingEnabled <Boolean>] [-SingleAppPerSession <Boolean>] [-TenantId <Guid>] [-UserFilterEnabled <Boolean>] [-UUID <Guid>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The New-BrokerApplicationGroup cmdlet creates a new application group. Applications that are added to the application group can then be managed centrally by setting properties on the application group rather than on each application individually.
@@ -23,17 +23,17 @@ See about\_Broker\_Applications for more information.
 
 ## Related Commands
 
-* [Add-BrokerApplicationGroup](../Add-BrokerApplicationGroup/)
-* [Get-BrokerApplicationGroup](../Get-BrokerApplicationGroup/)
-* [Remove-BrokerApplicationGroup](../Remove-BrokerApplicationGroup/)
-* [Rename-BrokerApplicationGroup](../Rename-BrokerApplicationGroup/)
-* [Set-BrokerApplicationGroup](../Set-BrokerApplicationGroup/)
-* [Add-BrokerApplication](../Add-BrokerApplication/)
-* [Remove-BrokerApplication](../Remove-BrokerApplication/)
-* [Add-BrokerUser](../Add-BrokerUser/)
-* [Remove-BrokerUser](../Remove-BrokerUser/)
-* [Add-BrokerTag](../Add-BrokerTag/)
-* [Remove-BrokerTag](../Remove-BrokerTag/)
+* [Add-BrokerApplicationGroup](./Add-BrokerApplicationGroup/)
+* [Get-BrokerApplicationGroup](./Get-BrokerApplicationGroup/)
+* [Remove-BrokerApplicationGroup](./Remove-BrokerApplicationGroup/)
+* [Rename-BrokerApplicationGroup](./Rename-BrokerApplicationGroup/)
+* [Set-BrokerApplicationGroup](./Set-BrokerApplicationGroup/)
+* [Add-BrokerApplication](./Add-BrokerApplication/)
+* [Remove-BrokerApplication](./Remove-BrokerApplication/)
+* [Add-BrokerUser](./Add-BrokerUser/)
+* [Remove-BrokerUser](./Remove-BrokerUser/)
+* [Add-BrokerTag](./Add-BrokerTag/)
+* [Remove-BrokerTag](./Remove-BrokerTag/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -50,6 +50,7 @@ See about\_Broker\_Applications for more information.
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

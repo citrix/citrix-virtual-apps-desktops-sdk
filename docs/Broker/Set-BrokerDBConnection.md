@@ -3,7 +3,7 @@
 Configures a database connection for the Broker Service.
 ## Syntax
 ```
-Set-BrokerDBConnection [-DBConnection] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [[-Force]] [<CommonParameters>]
+Set-BrokerDBConnection [-DBConnection] <String> [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [[-Force]] [<CommonParameters>]
 ```
 ## Detailed Description
 Specifies the database connection string for use by the currently selected Citrix Broker Service instance.
@@ -23,9 +23,9 @@ The current service instance is the one on the local machine, or the one most re
 
 ## Related Commands
 
-* [Get-BrokerServiceStatus](../Get-BrokerServiceStatus/)
-* [Get-BrokerDBConnection](../Get-BrokerDBConnection/)
-* [Test-BrokerDBConnection](../Test-BrokerDBConnection/)
+* [Get-BrokerServiceStatus](./Get-BrokerServiceStatus/)
+* [Get-BrokerDBConnection](./Get-BrokerDBConnection/)
+* [Test-BrokerDBConnection](./Test-BrokerDBConnection/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -33,6 +33,7 @@ The current service instance is the one on the local machine, or the one most re
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | Force | If present, allows the local administrator to set the connection string to null when there are problems contacting the database or other services. | false | false | false |
 
 ## Input Type

@@ -3,9 +3,9 @@
 Gets power management time schemes for desktop groups.
 ## Syntax
 ```
-Get-BrokerPowerTimeScheme [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerPowerTimeScheme [-Uid] <Int32> [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 
-Get-BrokerPowerTimeScheme [[-Name] <String>] [-DesktopGroupUid <Int32>] [-Metadata <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Get-BrokerPowerTimeScheme [[-Name] <String>] [-DesktopGroupUid <Int32>] [-Metadata <String>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-Property <String[]>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Finds power time schemes matching the specified search criteria. Each desktop group in the site can have a number of power time schemes associated with it, and these time schemes control how the power states of machines in the group are managed.
@@ -15,6 +15,10 @@ If no search criteria are specified all power time schemes for all desktop group
 Each power time scheme covers one or more days of the week, and defines which hours of those days are considered peak times and which are off-peak times. In addition, the time scheme defines a pool size value for each hour of the day for the days of the week covered by the time scheme. No one desktop group can be associated with two or more time schemes that cover the same day of the week.
 
 For any day of the week not covered by any power time scheme, it is assumed that all hours are off-peak and no pool size management is required for any of the hours.
+
+PeakHours is deprecated, and PeakHalfHours should be used instead.
+
+PoolSize is deprecated, and PoolSizeHalfHours should be used instead.
 
 For more information about the power policy mechanism and pool size management, see 'help about\_Broker\_PowerManagement'.
 
@@ -33,9 +37,13 @@ The BrokerPowerTimeScheme object represents a power time scheme, defining peak/o
 
   * Name (System.String) The unique name of this time scheme.
 
+  * PeakHalfHours (System.Boolean\[\]) A set of 48 boolean flag values, one for each hour half of the day. The first value in the array relates to midnight to 00:29, the next one to 0:30 AM to 0:59 and so on, with the last array element relating to 11:30 PM to 11:59. If the flag is \$true it means that the associated half hour of the day is considered a peak time; if \$false it means that it is considered off-peak.
+
   * PeakHours (System.Boolean\[\]) A set of 24 boolean flag values, one for each hour of the day. The first value in the array relates to midnight to 00:59, the next one to 1 AM to 01:59 and so on, with the last array element relating to 11 PM to 11:59. If the flag is \$true it means that the associated hour of the day is considered a peak time; if it is \$false it means that it is considered off-peak.
 
-  * PoolSize (System.Int32\[\]) A set of 24 integer values, one for each hour of the day. The first value in the array relates to midnight to 00:59, the next one to 1 AM to 01:59 and so on, with the last array element relating to 11 PM to 11:59. The value defines the number of machines (either as an absolute number or a percentage of the machines in the desktop group) that are to be maintained in a running state, whether they are in use or not. A value of -1 has special meaning: pool size management does not apply during such hours.
+  * PoolSize (System.Int32\[\]) For single-session desktop groups, a set of 24 integer values, one for each hour of the day. The first value in the array relates to midnight to 00:59, the next one to 1 AM to 01:59 and so on, with the last array element relating to 11 PM to 11:59. For multi-session desktop groups, a set of 48 integer values, one for each half hour of the day. The first value in the array relates to midnight to 00:29, the next one to 0:30 AM to 0:59 and so on, with the last array element relating to 11:30 PM to 11:59. The value defines the number of machines (either as an absolute number or a percentage of the machines in the desktop group) that are to be maintained in a running state, whether they are in use or not. A value of -1 has special meaning: pool size management does not apply during such hours.
+
+  * PoolSizeHalfHours (System.Int32\[\]) A set of 48 integer values, one for each half hour of the day. The first value in the array relates to midnight to 00:29, the next one to 0:30 AM to 0:59 and so on, with the last array element relating to 11:30 PM to 11:59. The value defines the number of machines (either as an absolute number or a percentage of the machines in the desktop group) that are to be maintained in a running state, whether they are in use or not. A value of -1 has special meaning: pool size management does not apply during such half hours.
 
   * PoolUsingPercentage (System.Boolean?) A boolean flag to indicate whether the integer values in the pool size array are to be treated as absolute values (if this value is \$false) or as percentages of the number of machines in the desktop group (if this value is \$true).
 
@@ -44,10 +52,10 @@ The BrokerPowerTimeScheme object represents a power time scheme, defining peak/o
 
 ## Related Commands
 
-* [New-BrokerPowerTimeScheme](../New-BrokerPowerTimeScheme/)
-* [Set-BrokerPowerTimeScheme](../Set-BrokerPowerTimeScheme/)
-* [Remove-BrokerPowerTimeScheme](../Remove-BrokerPowerTimeScheme/)
-* [Rename-BrokerPowerTimeScheme](../Rename-BrokerPowerTimeScheme/)
+* [New-BrokerPowerTimeScheme](./New-BrokerPowerTimeScheme/)
+* [Set-BrokerPowerTimeScheme](./Set-BrokerPowerTimeScheme/)
+* [Remove-BrokerPowerTimeScheme](./Remove-BrokerPowerTimeScheme/)
+* [Rename-BrokerPowerTimeScheme](./Rename-BrokerPowerTimeScheme/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -63,6 +71,7 @@ The BrokerPowerTimeScheme object represents a power time scheme, defining peak/o
 | Property | Specifies the properties to be returned. This is similar to piping the output of the command through Select-Object, but the properties are filtered more efficiently at the server. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

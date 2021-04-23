@@ -3,7 +3,7 @@
 Creates a new action in the power action queue.
 ## Syntax
 ```
-New-BrokerHostingPowerAction [-MachineName] <String> -Action <PowerManagementAction> [-ActualPriority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+New-BrokerHostingPowerAction [-MachineName] <String> -Action <PowerManagementAction> [-ActualPriority <Int32>] [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The New-BrokerHostingPowerAction cmdlet adds a new power action record into the queue of power actions to be performed. The power actions in the queue are processed on a priority basis and sent to the relevant hypervisor to change the power state of a virtual machine.
@@ -15,9 +15,9 @@ For a detailed description of the queuing mechanism, see 'help about\_Broker\_Po
 
 ## Related Commands
 
-* [Get-BrokerHostingPowerAction](../Get-BrokerHostingPowerAction/)
-* [Set-BrokerHostingPowerAction](../Set-BrokerHostingPowerAction/)
-* [Remove-BrokerHostingPowerAction](../Remove-BrokerHostingPowerAction/)
+* [Get-BrokerHostingPowerAction](./Get-BrokerHostingPowerAction/)
+* [Set-BrokerHostingPowerAction](./Set-BrokerHostingPowerAction/)
+* [Remove-BrokerHostingPowerAction](./Remove-BrokerHostingPowerAction/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -27,6 +27,7 @@ For a detailed description of the queuing mechanism, see 'help about\_Broker\_Po
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

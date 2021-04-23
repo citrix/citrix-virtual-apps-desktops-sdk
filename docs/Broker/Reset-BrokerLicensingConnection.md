@@ -3,7 +3,7 @@
 Resets the broker's license server connection.
 ## Syntax
 ```
-Reset-BrokerLicensingConnection [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [<CommonParameters>]
+Reset-BrokerLicensingConnection [-LoggingId <Guid>] [-AdminAddress <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 The Reset-BrokerLicensingConnection cmdlet resets the broker's connection to the license server.
@@ -17,14 +17,15 @@ Each broker service instance holds its own connection to the license server. In 
 
 ## Related Commands
 
-* [Get-BrokerSite](../Get-BrokerSite/)
-* [Set-BrokerSite](../Set-BrokerSite/)
+* [Get-BrokerSite](./Get-BrokerSite/)
+* [Set-BrokerSite](./Set-BrokerSite/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
 | LoggingId | Specifies the identifier of the high level operation that this cmdlet call forms a part of. Desktop Studio and Desktop Director typically create High Level Operations. PowerShell scripts can also wrap a series of cmdlet calls in a High Level Operation by way of the Start-LogHighLevelOperation and Stop-LogHighLevelOperation cmdlets. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snapin will connect to. This can be provided as a host name or an IP address. | false | false | Localhost. Once a value is provided by any cmdlet, this value will become the default. |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 
 ## Input Type
 

@@ -3,7 +3,7 @@
 Gets the service instances that are registered in the directory.
 ## Syntax
 ```
-Get-ConfigRegisteredServiceInstance [-ServiceInstanceUid <Guid>] [-ServiceGroupUid <Guid>] [-ServiceGroupName <String>] [-ServiceType <String>] [-Address <String>] [-Binding <String>] [-Version <Int32>] [-ServiceAccountSid <String>] [-InterfaceType <String>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-AdminAddress <String>] [<CommonParameters>]
+Get-ConfigRegisteredServiceInstance [-ServiceInstanceUid <Guid>] [-ServiceGroupUid <Guid>] [-ServiceGroupName <String>] [-ServiceType <String>] [-Address <String>] [-Binding <String>] [-Version <Int32>] [-ServiceAccountSid <String>] [-InterfaceType <String>] [-Metadata <String>] [-Property <String[]>] [-ReturnTotalRecordCount] [-MaxRecordCount <Int32>] [-Skip <Int32>] [-SortBy <String>] [-Filter <String>] [-BearerToken <String>] [-VirtualSiteId <String>] [-AdminAddress <String>] [<CommonParameters>]
 ```
 ## Detailed Description
 Use this cmdlet to retrieve the service instances currently registered with the Configuration Service that match the parameters supplied.  If no parameters are supplied, all the service instances are returned.
@@ -11,9 +11,9 @@ Use this cmdlet to retrieve the service instances currently registered with the 
 
 ## Related Commands
 
-* [Register-ConfigServiceInstance](../Register-ConfigServiceInstance/)
-* [Unregister-ConfigRegisteredServiceInstance](../Unregister-ConfigRegisteredServiceInstance/)
-* [Set-ConfigRegisteredServiceInstance](../Set-ConfigRegisteredServiceInstance/)
+* [Register-ConfigServiceInstance](./Register-ConfigServiceInstance/)
+* [Unregister-ConfigRegisteredServiceInstance](./Unregister-ConfigRegisteredServiceInstance/)
+* [Set-ConfigRegisteredServiceInstance](./Set-ConfigRegisteredServiceInstance/)
 ## Parameters
 | Name   | Description | Required? | Pipeline Input | Default Value |
 | --- | --- | --- | --- | --- |
@@ -34,6 +34,7 @@ Use this cmdlet to retrieve the service instances currently registered with the 
 | SortBy | See about\_Config\_Filtering for details. | false | false |  |
 | Filter | See about\_Config\_Filtering for details. | false | false |  |
 | BearerToken | Specifies the bearer token assigned to the calling user | false | false |  |
+| VirtualSiteId | Specifies the virtual site the PowerShell snap-in will connect to. | false | false |  |
 | AdminAddress | Specifies the address of a XenDesktop controller that the PowerShell snap-in connects to.  You can provide this as a host name or an IP address. | false | false | LocalHost. Once a value is provided by any cmdlet, this value becomes the default. |
 
 ## Input Type
@@ -42,8 +43,8 @@ Use this cmdlet to retrieve the service instances currently registered with the 
 
 ## Return Values
 
-### Citrix.Configuration.Sdk.Serviceinstance<br>    This Represents A Service Instance And Has The Following Parameters;<br>    Servicegroupuid &lt;Guid&gt;<br>        The Unique Identifier For The Service Group To Which The Service Instance Belongs.<br>    Servicegroupname &lt;String&gt;<br>        The Name Of The Service Group To Which The Service Instance Belongs.<br>    Serviceinstanceuid &lt;Guid&gt;<br>        The Unique Identifier For The Service Instance.<br>    Servicetype &lt;String&gt;<br>        The Type Of The Service Group.<br>    Address &lt;String&gt;<br>        The Contact Address For The Service Instance.<br>    Binding &lt;String&gt;<br>        The Binding To Use For Connections To The Service Instance.<br>    Version &lt;Int&gt;<br>        The Version Of The Service Instance.<br>    Serviceaccount &lt;String&gt;<br>        The Ad Computer Account For The Computer That Is Providing The Service Instance.<br>    Serviceaccountsid &lt;String&gt;<br>        The Ad Computer Account Sid For The Computer That Is Providing The Service Instance.<br>    Interfacetype &lt;String&gt;<br>        The Interface Type For The Service Instance.<br>    Metadata &lt;Citrix.Configuration.Sdk.Metadata\[\]&gt;<br>        The Metadata For The Service Instance.
-
+### Citrix.Configuration.Sdk.Serviceinstance
+This represents a service instance and has the following parameters;<br>    ServiceGroupUid &lt;Guid&gt;<br>        The unique identifier for the service group to which the service instance belongs.<br>    ServiceGroupName &lt;string&gt;<br>        The name of the service group to which the service instance belongs.<br>    ServiceInstanceUid &lt;Guid&gt;<br>        The unique identifier for the service instance.<br>    ServiceType &lt;string&gt;<br>        The type of the service group.<br>    Address &lt;string&gt;<br>        The contact address for the service instance.<br>    Binding &lt;string&gt;<br>        The binding to use for connections to the service instance.<br>    Version &lt;int&gt;<br>        The version of the service instance.<br>    ServiceAccount &lt;string&gt;<br>        The AD computer account for the computer that is providing the service instance.<br>    ServiceAccountSid &lt;string&gt;<br>        The AD computer account SID for the computer that is providing the service instance.<br>    InterfaceType &lt;string&gt;<br>        The interface type for the service instance.<br>    Metadata &lt;Citrix.Configuration.Sdk.Metadata\[\]&gt;<br>        The metadata for the service instance.
 ## Notes
 In the case of failure, the following errors can result.<br>    Error Codes ----------- PartialData Only a subset of the available data was returned. CouldNotQuueryDatabase The query required to get the database was not defined. CommunicationError An error occurred while communicating with the service. DatabaseNotConfigured The operation could not be completed because the database for the service is not configured. InvalidFilter A filtering expression was supplied that could not be interpreted for this cmdlet. ExceptionThrown An unexpected error occurred.  To locate more details see the Windows event logs on the controller being used, or examine the XenDesktop logs.
 ## Examples
